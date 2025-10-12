@@ -41,12 +41,6 @@ const GallerySection = () => {
       category: "Campus"
     },
     {
-      id: 6,
-      image: "https://sevashiksha.in/wp-content/uploads/2025/07/471170310_1104224021153714_2055218099101870788_n.jpg",
-      title: "Student Activities",
-      category: "Activities"
-    },
-    {
       id: 7,
       image: "https://sevashiksha.in/wp-content/uploads/2025/07/471512483_1104225214486928_7632097580683522277_n.jpg",
       title: "Orientation Program",

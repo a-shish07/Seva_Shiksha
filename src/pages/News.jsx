@@ -182,49 +182,52 @@ const News = () => {
   };
 
   return (
-    <div className="pt-16 min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 mt-20">
+    <div className="pt-16 min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 mt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-400/20 to-blue-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-orange-400/20 to-amber-600/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-orange-300/20 to-orange-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="relative container mx-auto px-4 py-8">
         {/* Hero Header */}
-        <div className="text-center mb-16 relative">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 animate-bounce">
-            <Bell className="w-4 h-4" />
-            Live Updates • Breaking News
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-black mb-6">
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
-              Education
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-teal-600 via-green-600 to-blue-600 bg-clip-text text-transparent">
-              News Hub
-            </span>
-          </h1>
-          
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            Your ultimate destination for the latest updates, breaking news, and opportunities 
-            in India's education landscape. Stay ahead with real-time information.
-          </p>
+        <div className="text-center mb-16 relative overflow-hidden rounded-3xl shadow-2xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-orange-400/20 to-amber-400/20"></div>
+          <div className="relative px-6 py-12 sm:px-16">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 animate-bounce">
+              <Bell className="w-4 h-4" />
+              Live Updates • Breaking News
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-black mb-6">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+                Education
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-teal-600 via-green-600 to-blue-600 bg-clip-text text-transparent">
+                News Hub
+              </span>
+            </h1>
+            
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+              Your ultimate destination for the latest updates, breaking news, and opportunities 
+              in India's education landscape. Stay ahead with real-time information.
+            </p>
 
-          {/* Quick Stats */}
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-              <TrendingUp className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-medium text-gray-700">18 Active Updates</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-              <Zap className="w-4 h-4 text-yellow-600" />
-              <span className="text-sm font-medium text-gray-700">5 Breaking Stories</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-              <ExternalLink className="w-4 h-4 text-blue-600" />
-              <span className="text-sm font-medium text-gray-700">Official Links Available</span>
+            {/* Quick Stats */}
+            <div className="flex flex-wrap justify-center gap-6 mb-8">
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                <TrendingUp className="w-4 h-4 text-green-600" />
+                <span className="text-sm font-medium text-gray-700">18 Active Updates</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                <Zap className="w-4 h-4 text-yellow-600" />
+                <span className="text-sm font-medium text-gray-700">5 Breaking Stories</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                <ExternalLink className="w-4 h-4 text-blue-600" />
+                <span className="text-sm font-medium text-gray-700">Official Links Available</span>
+              </div>
             </div>
           </div>
         </div>
@@ -653,7 +656,7 @@ const News = () => {
                 { title: 'CUET Official Portal', url: 'https://cuet.samarth.ac.in/', desc: 'Apply for central university admissions' },
                 { title: 'JEE Main Results', url: 'https://jeemain.nta.nic.in/', desc: 'Check your engineering entrance results' },
                 { title: 'NEET Applications', url: 'https://neet.nta.nic.in/', desc: 'Medical entrance exam registration' },
-                { title: 'Scholarships Portal', url: 'https://scholarships.gov.in/', desc: 'Apply for government scholarships' },
+                // { title: 'Scholarships Portal', url: 'https://scholarships.gov.in/', desc: 'Apply for government scholarships' },
                 { title: 'Digital India Initiative', url: 'https://digitalindia.gov.in/', desc: 'Learn about digital skill programs' }
               ].map((link, index) => (
                 <a

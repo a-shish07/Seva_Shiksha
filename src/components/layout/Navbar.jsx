@@ -117,7 +117,7 @@ const Navbar = () => {
         { 
           name: 'Student Oath Videos', 
           path: '/student-oath-videos',
-          description: 'Inspiring testimonials',
+          description: 'Watch student pledge ceremonies',
           icon: <Globe className="w-4 h-4" />
         }
       ]
@@ -299,8 +299,8 @@ const Navbar = () => {
                 <span className="text-white font-bold text-lg">SS</span>
               </div>
               <div>
-                <h1 className="text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
-                  SEVA SHIKSHA
+                <h1 className="text-2xl md:text-3xl font-black text-orange-500">
+                  SEVA SHIKSHA TRUST
                 </h1>
                 <p className="text-sm text-gray-600 font-medium">Trust • Excellence • Future</p>
               </div>

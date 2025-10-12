@@ -90,18 +90,18 @@ const MembershipRegistration = () => {
   };
 
   return (
-    <div className="pt-16 min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 mt-10">
+    <div className="pt-16 min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 mt-10">
       <Toaster position="top-right" />
       
       {/* Header Section */}
       <div className="relative py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 to-blue-600/10"></div>
-        <div className="relative container mx-auto px-4 text-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-orange-400/20 to-amber-400/20"></div>
+        <div className="relative container mx-auto px-4 text-center mt-10">
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <Users className="w-12 h-12 text-green-600" />
+              <Users className="w-12 h-12 text-orange-500" />
               <h1 className="text-4xl md:text-5xl font-bold">
-                <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-amber-400 bg-clip-text text-transparent">
                   Membership Registration
                 </span>
               </h1>
