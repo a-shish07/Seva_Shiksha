@@ -101,15 +101,15 @@ const StatsSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="section-padding bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-900 relative overflow-hidden"
+      className="section-padding gradient-soft-alt relative overflow-hidden"
     >
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-hero-pattern opacity-10"></div>
+      <div className="absolute inset-0 bg-hero-pattern opacity-10 mix-blend-soft-light"></div>
       
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-gold-400/20 rounded-full animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-16 h-16 bg-primary-400/20 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-40 right-20 w-12 h-12 bg-secondary-400/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-20 left-10 w-20 h-20 bg-primary-200/40 rounded-full animate-float"></div>
+      <div className="absolute bottom-20 right-10 w-16 h-16 bg-accent-200/40 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-40 right-20 w-12 h-12 bg-saffron-200/40 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
@@ -118,27 +118,27 @@ const StatsSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-base font-semibold mb-6"
+            className="inline-block surface-card text-primary-600 px-4 py-2 rounded-full text-base font-semibold mb-6"
           >
             Our Impact
           </motion.div>
           
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             SEVA SHIKSHA
-            <span className="text-gold-400">ABHIYAN</span>
+            <span className="text-primary-500"> ABHIYAN</span>
           </h2>
           
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed mb-4">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-4">
             OUR MISSION IS TO MAKE FREE QUALITY HIGHER EDUCATION ACCESSIBLE TO EVERYONE.
           </p>
           
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             These numbers represent the lives we've touched and the dreams we've helped achieve
           </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
           {statsData.map((stat, index) => (
             <motion.div
               key={index}
@@ -150,7 +150,7 @@ const StatsSection = () => {
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-500 border border-white/20 group-hover:scale-105 transform">
+              <div className="surface-card rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-500 group">
                 {/* Icon */}
                 <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${stat.color} text-white rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   {stat.icon}
@@ -158,7 +158,7 @@ const StatsSection = () => {
 
                 {/* Counter */}
                 <div className="mb-4">
-                  <div className="text-4xl lg:text-5xl font-bold text-white mb-2">
+                  <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
                     <motion.span
                       className="inline-block"
                       key={stat.value}
@@ -168,18 +168,18 @@ const StatsSection = () => {
                     >
                       {stat.value.toLocaleString()}
                     </motion.span>
-                    <span className="text-gold-400">{stat.suffix}</span>
+                    <span className="text-primary-500">{stat.suffix}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {stat.title}
                   </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-sm leading-relaxed">
                     {stat.description}
                   </p>
                 </div>
 
                 {/* Progress Bar */}
-                <div className="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                <div className="w-full bg-primary-100 rounded-full h-2 overflow-hidden">
                   <motion.div
                     className={`h-full bg-gradient-to-r ${stat.color} rounded-full`}
                     initial={{ width: 0 }}

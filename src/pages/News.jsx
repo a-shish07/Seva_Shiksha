@@ -189,7 +189,7 @@ const News = () => {
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-orange-300/20 to-orange-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative container mx-auto px-4 py-8">
+      <div className="relative container mx-auto px-4 py-8 mt-16">
         {/* Hero Header */}
         <div className="text-center mb-16 relative overflow-hidden rounded-3xl shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-orange-400/20 to-amber-400/20"></div>
@@ -200,11 +200,11 @@ const News = () => {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-black mb-6">
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-accent-600 bg-clip-text text-transparent">
                 Education
               </span>
               <br />
-              <span className="bg-gradient-to-r from-teal-600 via-green-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent-600 via-accent-500 to-primary-500 bg-clip-text text-transparent">
                 News Hub
               </span>
             </h1>
@@ -225,7 +225,7 @@ const News = () => {
                 <span className="text-sm font-medium text-gray-700">5 Breaking Stories</span>
               </div>
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-                <ExternalLink className="w-4 h-4 text-blue-600" />
+                <ExternalLink className="w-4 h-4 text-primary-600" />
                 <span className="text-sm font-medium text-gray-700">Official Links Available</span>
               </div>
             </div>
@@ -263,10 +263,10 @@ const News = () => {
         {featuredNews.length > 0 && (
           <section className="mb-16">
             <div className="flex items-center gap-3 mb-8">
-              <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-2 rounded-lg">
+              <div className="bg-gradient-to-r from-primary-600 to-accent-600 p-2 rounded-lg">
                 <Newspaper className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-primary-700 to-accent-600 bg-clip-text text-transparent">
                 Featured Stories
               </h2>
             </div>
@@ -286,21 +286,21 @@ const News = () => {
                       
                       {/* Priority Badge */}
                       {featuredNews[0].priority === 'high' && (
-                        <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse">
+                        <div className="absolute top-4 left-4 bg-saffron-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse">
                           HIGH PRIORITY
                         </div>
                       )}
                       
                       {/* External Link Badge */}
                       {featuredNews[0].isExternal && (
-                        <div className="absolute top-4 right-4 bg-blue-600 text-white p-2 rounded-full">
+                        <div className="absolute top-4 right-4 bg-primary-600 text-white p-2 rounded-full">
                           <ExternalLink className="w-4 h-4" />
                         </div>
                       )}
                       
                       {/* Trending Badge */}
                       {featuredNews[0].trending && (
-                        <div className="absolute top-16 left-4 flex items-center gap-1 bg-orange-500 text-white px-2 py-1 rounded-full text-xs">
+                        <div className="absolute top-16 left-4 flex items-center gap-1 bg-accent-600 text-white px-2 py-1 rounded-full text-xs">
                           <TrendingUp className="w-3 h-3" />
                           TRENDING
                         </div>
@@ -317,19 +317,19 @@ const News = () => {
                           <Clock size={14} />
                           {featuredNews[0].readTime}
                         </span>
-                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                        <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-accent-600 text-white px-3 py-1 rounded-full text-xs font-medium">
                           {categories.find(cat => cat.id === featuredNews[0].category)?.name}
                         </span>
                       </div>
                       
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">
                         {featuredNews[0].title}
                       </h3>
                       <p className="text-gray-600 mb-6 leading-relaxed">{featuredNews[0].excerpt}</p>
                       
                       <div className="flex flex-wrap gap-2 mb-6">
                         {featuredNews[0].tags.slice(0, 4).map((tag, index) => (
-                          <span key={index} className="flex items-center gap-1 text-xs text-purple-700 bg-purple-50 px-3 py-1 rounded-full border border-purple-200">
+                          <span key={index} className="flex items-center gap-1 text-xs text-primary-700 bg-primary-50 px-3 py-1 rounded-full border border-primary-200">
                             <Tag size={12} />
                             {tag}
                           </span>
@@ -338,7 +338,7 @@ const News = () => {
                       
                       <button 
                         onClick={() => handleNewsClick(featuredNews[0])}
-                        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:shadow-lg transform hover:scale-105 transition-all"
+                        className="bg-gradient-to-r from-primary-600 via-primary-500 to-accent-600 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:shadow-lg transform hover:scale-105 transition-all"
                       >
                         {featuredNews[0].isExternal ? 'Visit Official Site' : 'Read Full Story'}
                         <ArrowRight size={18} />
@@ -361,7 +361,7 @@ const News = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                       
                       {news.isExternal && (
-                        <div className="absolute top-2 right-2 bg-blue-600 text-white p-1 rounded-full">
+                        <div className="absolute top-2 right-2 bg-primary-600 text-white p-1 rounded-full">
                           <ExternalLink className="w-3 h-3" />
                         </div>
                       )}
@@ -371,12 +371,12 @@ const News = () => {
                       <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
                         <span>{getTimeAgo(news.date)}</span>
                         <span>•</span>
-                        <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                        <span className="bg-primary-50 text-primary-700 px-2 py-1 rounded-full border border-primary-200">
                           {categories.find(cat => cat.id === news.category)?.name}
                         </span>
                       </div>
                       
-                      <h4 className="text-sm font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                      <h4 className="text-sm font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors">
                         {news.title}
                       </h4>
                       
@@ -390,7 +390,7 @@ const News = () => {
                       
                       <button 
                         onClick={() => handleNewsClick(news)}
-                        className="text-blue-600 hover:text-blue-700 font-medium text-xs flex items-center gap-1"
+                        className="text-primary-600 hover:text-primary-500 font-medium text-xs flex items-center gap-1"
                       >
                         {news.isExternal ? 'Visit Site' : 'Read More'}
                         <ArrowRight size={12} />
@@ -406,26 +406,26 @@ const News = () => {
         {/* Advanced Search and Filters */}
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-8 mb-12 border border-white/20">
           <div className="flex items-center gap-3 mb-6">
-            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-2 rounded-lg">
+            <div className="bg-gradient-to-r from-primary-600 to-accent-600 p-2 rounded-lg">
               <Filter className="w-5 h-5 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900">Find Your News</h3>
+            <h3 className="text-xl font-bold text-primary-700">Find Your News</h3>
           </div>
           
           <div className="flex flex-col lg:flex-row gap-6 items-center">
             <div className="relative flex-1 max-w-lg">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-primary-300" size={20} />
               <input
                 type="text"
                 placeholder="Search by keywords, tags, or topics..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all bg-white/80 backdrop-blur-sm text-lg"
+                className="w-full pl-12 pr-4 py-4 border-2 border-jasmine-300 rounded-2xl focus:outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all bg-white/80 backdrop-blur-sm text-lg"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-primary-400 hover:text-primary-500"
                 >
                   ×
                 </button>
@@ -441,8 +441,8 @@ const News = () => {
                     onClick={() => setSelectedCategory(category.id)}
                     className={`flex items-center gap-2 px-4 py-3 rounded-2xl font-medium transition-all transform hover:scale-105 ${
                       selectedCategory === category.id
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                        : 'bg-white/60 backdrop-blur-sm text-gray-700 hover:bg-white/80 border border-gray-200'
+                        ? 'bg-gradient-to-r from-primary-600 via-primary-500 to-accent-600 text-white shadow-lg'
+                        : 'bg-white/60 backdrop-blur-sm text-gray-700 hover:bg-jasmine-100/80 border border-jasmine-200'
                     }`}
                   >
                     <Icon size={16} />
@@ -450,7 +450,7 @@ const News = () => {
                     <span className={`text-xs px-2 py-1 rounded-full ${
                       selectedCategory === category.id 
                         ? 'bg-white/20 text-white' 
-                        : 'bg-gray-200 text-gray-600'
+                        : 'bg-jasmine-100 text-primary-600'
                     }`}>
                       {category.count}
                     </span>
@@ -461,8 +461,8 @@ const News = () => {
           </div>
           
           {searchQuery && (
-            <div className="mt-4 text-sm text-gray-600">
-              Showing results for "<span className="font-semibold text-blue-600">{searchQuery}</span>"
+            <div className="mt-4 text-sm text-primary-700">
+              Showing results for "<span className="font-semibold text-accent-600">{searchQuery}</span>"
             </div>
           )}
         </div>
@@ -471,14 +471,14 @@ const News = () => {
         <div className="mb-12">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
-              <div className="bg-gradient-to-r from-green-600 to-teal-600 p-2 rounded-lg">
+              <div className="bg-gradient-to-r from-accent-600 to-primary-600 p-2 rounded-lg">
                 <TrendingUp className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-primary-700 to-accent-600 bg-clip-text text-transparent">
                 Latest Updates
               </h2>
             </div>
-            <div className="text-sm text-gray-500">
+            <div className="text-sm text-secondary-700">
               {filteredNews.length} articles found
             </div>
           </div>
@@ -507,18 +507,18 @@ const News = () => {
                   {/* Priority & Status Badges */}
                   <div className="absolute top-3 left-3 space-y-2">
                     {news.priority === 'high' && (
-                      <div className="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                      <div className="bg-saffron-500 text-white px-2 py-1 rounded-full text-xs font-bold">
                         HIGH PRIORITY
                       </div>
                     )}
                     {news.trending && (
-                      <div className="flex items-center gap-1 bg-orange-500 text-white px-2 py-1 rounded-full text-xs">
+                      <div className="flex items-center gap-1 bg-accent-600 text-white px-2 py-1 rounded-full text-xs">
                         <TrendingUp className="w-3 h-3" />
                         TRENDING
                       </div>
                     )}
                     {news.breaking && (
-                      <div className="flex items-center gap-1 bg-red-600 text-white px-2 py-1 rounded-full text-xs animate-pulse">
+                      <div className="flex items-center gap-1 bg-primary-700 text-white px-2 py-1 rounded-full text-xs animate-pulse">
                         <Zap className="w-3 h-3" />
                         BREAKING
                       </div>
@@ -526,7 +526,7 @@ const News = () => {
                   </div>
                   
                   {news.isExternal && (
-                    <div className="absolute top-3 right-3 bg-blue-600 text-white p-2 rounded-full shadow-lg">
+                    <div className="absolute top-3 right-3 bg-primary-600 text-white p-2 rounded-full shadow-lg">
                       <ExternalLink className="w-4 h-4" />
                     </div>
                   )}
@@ -540,11 +540,11 @@ const News = () => {
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      news.category === 'scholarships' ? 'bg-green-100 text-green-700' :
-                      news.category === 'admissions' ? 'bg-blue-100 text-blue-700' :
-                      news.category === 'events' ? 'bg-purple-100 text-purple-700' :
-                      news.category === 'announcements' ? 'bg-red-100 text-red-700' :
-                      'bg-gray-100 text-gray-700'
+                      news.category === 'scholarships' ? 'bg-accent-100 text-accent-700 border border-accent-200' :
+                      news.category === 'admissions' ? 'bg-primary-100 text-primary-700 border border-primary-200' :
+                      news.category === 'events' ? 'bg-jasmine-100 text-primary-700 border border-jasmine-200' :
+                      news.category === 'announcements' ? 'bg-saffron-100 text-saffron-700 border border-saffron-200' :
+                      'bg-secondary-100 text-secondary-700 border border-secondary-200'
                     }`}>
                       {categories.find(cat => cat.id === news.category)?.name}
                     </span>
@@ -554,14 +554,14 @@ const News = () => {
                     </span>
                   </div>
                   
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-primary-600 transition-colors">
                     {news.title}
                   </h3>
                   <p className="text-gray-600 mb-4 text-sm line-clamp-3 leading-relaxed">{news.excerpt}</p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {news.tags.slice(0, 3).map((tag, index) => (
-                      <span key={index} className="flex items-center gap-1 text-xs text-indigo-700 bg-indigo-50 px-2 py-1 rounded-full border border-indigo-200">
+                      <span key={index} className="flex items-center gap-1 text-xs text-primary-700 bg-primary-50 px-2 py-1 rounded-full border border-primary-200">
                         <Tag size={10} />
                         {tag}
                       </span>
@@ -571,14 +571,14 @@ const News = () => {
                   <div className="flex items-center justify-between">
                     <button 
                       onClick={() => handleNewsClick(news)}
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 hover:shadow-lg transform hover:scale-105 transition-all"
+                      className="bg-gradient-to-r from-primary-600 via-primary-500 to-accent-600 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 hover:shadow-lg transform hover:scale-105 transition-all"
                     >
                       {news.isExternal ? 'Visit Official Site' : 'Read Article'}
                       <ArrowRight size={14} />
                     </button>
                     
                     {news.priority === 'high' && (
-                      <div className="text-red-600 text-xs font-medium bg-red-50 px-2 py-1 rounded-full">
+                      <div className="text-saffron-700 text-xs font-medium bg-saffron-50 px-2 py-1 rounded-full">
                         URGENT
                       </div>
                     )}
@@ -590,12 +590,12 @@ const News = () => {
         </div>
 
         {filteredNews.length === 0 && (
-          <div className="text-center py-16 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/20">
-            <div className="text-gray-300 mb-6">
+          <div className="text-center py-16 bg-white/70 backdrop-blur-sm rounded-3xl border border-jasmine-200">
+            <div className="text-primary-200 mb-6">
               <Search size={64} className="mx-auto" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-700 mb-4">No News Found</h3>
-            <p className="text-gray-500 mb-6 max-w-md mx-auto">
+            <h3 className="text-2xl font-bold text-primary-700 mb-4">No News Found</h3>
+            <p className="text-secondary-700 mb-6 max-w-md mx-auto">
               We couldn't find any articles matching your criteria. Try adjusting your search terms or exploring different categories.
             </p>
             <button 
@@ -603,7 +603,7 @@ const News = () => {
                 setSearchQuery('');
                 setSelectedCategory('all');
               }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all"
+              className="bg-gradient-to-r from-primary-600 via-primary-500 to-accent-600 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all"
             >
               Reset Filters
             </button>
@@ -613,8 +613,8 @@ const News = () => {
         {/* Newsletter & Quick Links */}
         <section className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Newsletter Subscription */}
-          <div className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 rounded-3xl p-8 text-white overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-purple-600/90 backdrop-blur-sm"></div>
+          <div className="relative bg-gradient-to-br from-primary-700 via-primary-600 to-accent-600 rounded-3xl p-8 text-white overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-700/90 to-accent-600/90 backdrop-blur-sm"></div>
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
             <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
             
@@ -623,7 +623,7 @@ const News = () => {
                 <Bell className="w-8 h-8" />
                 <h3 className="text-2xl font-bold">Never Miss an Update</h3>
               </div>
-              <p className="text-blue-100 mb-6 leading-relaxed">
+              <p className="text-jasmine-200 mb-6 leading-relaxed">
                 Get instant notifications about important education news, exam updates, scholarship announcements, and admission deadlines directly in your inbox.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -632,11 +632,11 @@ const News = () => {
                   placeholder="Enter your email address"
                   className="flex-1 px-4 py-3 rounded-2xl text-gray-900 focus:outline-none focus:ring-4 focus:ring-white/20 bg-white/90 backdrop-blur-sm"
                 />
-                <button className="px-6 py-3 bg-white text-blue-600 rounded-2xl font-semibold hover:bg-gray-50 transition-colors transform hover:scale-105">
+                <button className="px-6 py-3 bg-white text-primary-700 rounded-2xl font-semibold hover:bg-secondary-100 transition-colors transform hover:scale-105">
                   Subscribe Now
                 </button>
               </div>
-              <div className="mt-4 text-xs text-blue-200">
+              <div className="mt-4 text-xs text-jasmine-200">
                 ✓ No spam • ✓ Unsubscribe anytime • ✓ Free forever
               </div>
             </div>
@@ -645,10 +645,10 @@ const News = () => {
           {/* Quick Access Links */}
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
             <div className="flex items-center gap-3 mb-6">
-              <div className="bg-gradient-to-r from-green-600 to-teal-600 p-2 rounded-lg">
+              <div className="bg-gradient-to-r from-accent-600 to-primary-600 p-2 rounded-lg">
                 <ExternalLink className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Quick Access</h3>
+              <h3 className="text-2xl font-bold text-primary-700">Quick Access</h3>
             </div>
             
             <div className="space-y-4">
@@ -664,16 +664,16 @@ const News = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-4 bg-gradient-to-r from-gray-50 to-white rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02]"
+                  className="group block p-4 bg-gradient-to-r from-white to-jasmine-50 rounded-2xl border border-jasmine-200 hover:border-primary-400 hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02]"
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      <h4 className="font-semibold text-primary-700 group-hover:text-accent-600 transition-colors">
                         {link.title}
                       </h4>
-                      <p className="text-sm text-gray-500 mt-1">{link.desc}</p>
+                      <p className="text-sm text-secondary-700 mt-1">{link.desc}</p>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-colors" />
+                    <ExternalLink className="w-4 h-4 text-secondary-400 group-hover:text-primary-600 transition-colors" />
                   </div>
                 </a>
               ))}

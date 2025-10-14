@@ -251,7 +251,7 @@ const ContactUs = () => {
   }
 
   return (
-    <div className="pt-16 min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 mt-20">
+    <div className="pt-16 min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 mt-36">
       <Toaster 
         position="top-right"
         toastOptions={{

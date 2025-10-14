@@ -71,7 +71,7 @@ const StudentOathVideos = () => {
       {/* Header Section */}
       <div className="relative py-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-orange-400/20 to-amber-400/20"></div>
-        <div className="relative container mx-auto px-4 text-center mt-16">
+        <div className="relative container mx-auto px-4 text-center mt-36">
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Video className="w-12 h-12 text-orange-500" />

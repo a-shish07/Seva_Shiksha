@@ -412,7 +412,7 @@ const CoursesAfter12th = () => {
       <div className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
         <div className="relative container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto mt-36">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Courses After

@@ -261,15 +261,15 @@ const CoursesAfter10th = () => {
 
     return (
       <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-        <div className="p-6">
-          <div className="flex items-start gap-4">
+        <div className="p-6 ">
+          <div className="flex items-start gap-4 ">
             <div
               className={`p-3 rounded-xl bg-gradient-to-r ${program.gradient} text-white shrink-0`}
             >
               {feature.icon}
             </div>
-            <div className="flex-1">
-              <div className="flex items-center justify-between mb-2">
+            <div className="flex-1 ">
+              <div className="flex items-center justify-between mb-2 ">
                 <h4 className="text-lg font-bold text-gray-900">
                   {String(index + 1).padStart(2, "0")}
                 </h4>
@@ -309,7 +309,7 @@ const CoursesAfter10th = () => {
       <div className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
         <div className="relative container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto mt-36">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Courses After

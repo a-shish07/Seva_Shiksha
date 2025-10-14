@@ -32,7 +32,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="section-padding gradient-soft">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content Side */}
@@ -70,18 +70,18 @@ const AboutSection = () => {
               </div>
 
               {/* Key Stats */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 hover:bg-blue-300">
+              <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                <div className="text-center p-4 surface-card hover:shadow-xl transition-shadow duration-300">
                   <div className="text-3xl font-bold gradient-text mb-2">
                     1000+
                   </div>
-                  <div className="text-base text-black">Students Helped</div>
+                  <div className="text-base text-gray-700">Students Helped</div>
                 </div>
-                <div className="text-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 hover:bg-blue-300">
+                <div className="text-center p-4 surface-card hover:shadow-xl transition-shadow duration-300">
                   <div className="text-3xl font-bold gradient-text mb-2">
                     20+
                   </div>
-                  <div className="text-base text-black">
+                  <div className="text-base text-gray-700">
                     Partner Universities
                   </div>
                 </div>

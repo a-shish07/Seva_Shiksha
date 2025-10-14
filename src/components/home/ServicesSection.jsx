@@ -33,7 +33,7 @@ const ServicesSection = () => {
   ]
 
   return (
-    <section className="section-padding bg-gradient-to-br from-gray-50 to-secondary-50">
+    <section className="section-padding gradient-soft">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">
@@ -41,7 +41,7 @@ const ServicesSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block bg-secondary-100 text-secondary-600 px-4 py-2 rounded-full text-base font-semibold mb-4"
+            className="inline-block surface-card text-secondary-600 px-4 py-2 rounded-full text-base font-semibold mb-4"
           >
             Our Service
           </motion.div>
@@ -54,15 +54,15 @@ const ServicesSection = () => {
             OUR MISSION IS TO MAKE FREE QUALITY HIGHER EDUCATION ACCESSIBLE TO EVERYONE.
           </p>
           
-          <div className="flex items-center justify-center gap-2 text-primary-600">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-primary-600">
             <Heart className="w-5 h-5 fill-current" />
-            <span className="font-medium text-xl">Dedicated to Educational Excellence</span>
+            <span className="font-medium text-base sm:text-xl text-center">Dedicated to Educational Excellence</span>
             <Heart className="w-5 h-5 fill-current" />
           </div>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -114,8 +114,8 @@ const ServicesSection = () => {
                 </motion.button>
 
                 {/* Decorative Elements */}
-                <div className={`absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r ${service.color} rounded-full opacity-10 group-hover:scale-110 transition-transform duration-500`}></div>
-                <div className={`absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r ${service.color} rounded-full opacity-10 group-hover:scale-110 transition-transform duration-500`}></div>
+                <div className={`absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r ${service.color} rounded-full opacity-10 group-hover:scale-110 transition-transform duration-500`}></div>
+                <div className={`absolute -bottom-4 -left-4 w-14 h-14 bg-gradient-to-r ${service.color} rounded-full opacity-10 group-hover:scale-110 transition-transform duration-500`}></div>
               </div>
             </motion.div>
           ))}

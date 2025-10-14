@@ -16,16 +16,16 @@ const HeroSection = () => {
   }
 
   return (
-    <section className="relative h-screen overflow-hidden bg-gradient-to-br from-primary-400 via-primary-500 to-secondary-600">
+    <section className="relative overflow-hidden gradient-soft">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-hero-pattern opacity-20"></div>
+      <div className="absolute inset-0 bg-hero-pattern opacity-10 mix-blend-soft-light"></div>
       
-      <div className="relative z-10 h-full">
-        <div className="container-custom h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+      <div className="relative z-10 h-full bg-orange-600 mt-10">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-16 lg:py-24">
             {/* Left Content */}
             <div className="flex items-center justify-center lg:justify-start">
-              <div className="max-w-2xl px-4 py-8">
+              <div className="max-w-2xl px-4 py-12 md:py-16">
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}

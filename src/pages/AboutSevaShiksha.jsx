@@ -40,7 +40,7 @@ const AboutSevaShiksha = () => {
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-700 text-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center mt-20">
+          <div className="max-w-4xl mx-auto text-center mt-36">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

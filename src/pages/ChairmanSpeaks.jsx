@@ -75,7 +75,7 @@ const ChairmanSpeaks = () => {
     <div className="pt-20 min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
         {/* Header Section */}
-        <div className="text-center mb-20 mt-20">
+        <div className="text-center mb-20 mt-36">
           <h1 className="text-5xl font-bold text-black mb-6">
             Chairman Speaks
           </h1>
@@ -128,24 +128,23 @@ const ChairmanSpeaks = () => {
             </div>
 
             <div className="relative">
-              <div className="h-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-r-2xl lg:rounded-l-none lg:rounded-r-2xl flex items-center justify-center p-6">
-                <div className="text-center text-white max-w-sm">
-                  {/* Chairman Photo */}
-                  <div className="w-40 h-40 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white shadow-lg mx-auto mb-6">
+              <div className="h-full flex items-center justify-center p-6">
+                <div className="w-full max-w-md">
+                  <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-200">
                     <img
                       src="/images/chairmain.jpeg"
                       alt="Chairman"
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto"
                     />
                   </div>
-
-                  {/* Text Content */}
-                  <h3 className="text-2xl font-bold mb-2">
-                    Educational Leader
-                  </h3>
-                  <p className="text-blue-100 text-sm sm:text-base">
-                    Transforming Lives Through Education
-                  </p>
+                  <div className="text-center mt-6">
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      Educational Leader
+                    </h3>
+                    <p className="text-gray-600">
+                      Transforming Lives Through Education
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

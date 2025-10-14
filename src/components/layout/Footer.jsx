@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Facebook, Youtube, Star } from 'lucide-react'
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-emerald-300 via-green-400 to-emerald-500 text-gray-900">
+    <footer className="gradient-soft-alt text-gray-900">
       <div className="container-custom section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and Description */}
