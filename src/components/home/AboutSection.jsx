@@ -50,16 +50,12 @@ const AboutSection = () => {
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 SEVA SHIKSHA
                 <span className="block text-3xl lg:text-4xl gradient-text">
-                  ABHIYAN
+                  ABHIYAAN
                 </span>
               </h2>
 
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                Our core mission revolves around providing scholarships to
-                students who are unable to afford tuition fees, thereby removing
-                financial barriers to education. We firmly believe that
-                education is a fundamental right, and it should be accessible to
-                every individual, regardless of their financial circumstances.
+                Seva Shiksha Trust कोई Loan नही है ना ही इसे वापस करना है, Trust की मुहिम का मकसद देश का GER (Gross Enrollment Ratio) बढना है। Trust आपके रहने खान (Hostel Fee or Examination Fee) को छोड़ कर आपकी शिक्षा में हर प्रकार की मदद के लिए Welcome करता है। आपको जिस भी कोर्स में जाना है और जिस भी राज्य (State) में पड़ना है। आपको चीजों को चुनने की पूरी आजादी है। लेकिन College Allotment का फैसला Board के Member आपकी Counseling के बाद करेगे जो स्टेट Govt. Govt. Universtiy AICTE, NCI, NCBI, NBA, NAAC Govt. of India से Approved रहेगा । हमारा ट्रस्ट किसी भी छात्र एवं छात्रा का किसी भी Private or DEEMED UNIVERSITY में नमांकन नहीं करवाता है और इस तरह की UNIVERISTY में नामांकन करवाए हुए छात्रों को काई मदद नहीं करता है। आपको दी गई SCHOLARHSIP कर्ज नहीं है। बस आपको समाज के लिए बेहतर कार्य करना होगा। इस अभियान से खुद जुड़े और दसुरो को भी जोड़े और दुसरों को भी जोड़े । Online Form भरने के लिए Portal Open कर दिया गया है।
               </p>
 
               {/* Action Buttons */}

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Play, Video, Users, Award, Heart, TrendingUp } from 'lucide-react';
+import React, { useState } from 'react'
+import { Play, Video, Users, Award, Heart, TrendingUp } from 'lucide-react'
 
 const StudentOathVideos = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -8,52 +8,82 @@ const StudentOathVideos = () => {
   const videos = [
     {
       id: 1,
-      title: "Student Oath Ceremony - Community Testimonial",
+      title: "Student Oath Ceremony - Leadership Testimonial",
       thumbnail: "https://img.youtube.com/vi/uKqZAkl9aPk/maxresdefault.jpg",
       embedUrl: "https://www.youtube.com/embed/uKqZAkl9aPk",
-      description: "समायल अहमद साहब shares his experience about students taking oath to pursue quality education with dedication and commitment under Seva Shiksha Trust",
+      description: "समायल अहमद साहब shares inspiring insights about students taking oath to pursue quality education with dedication and commitment under Seva Shiksha Trust",
       date: "April 2024",
       students: 150,
       location: "Patna, Bihar"
     },
     {
       id: 2,
-      title: "Student Oath - National Recognition Ceremony",
+      title: "Students Recognized - National Excellence Event",
       thumbnail: "https://img.youtube.com/vi/SZ_N7fzyJuE/maxresdefault.jpg",
       embedUrl: "https://www.youtube.com/embed/SZ_N7fzyJuE",
-      description: "Students pledge their commitment to education excellence during national recognition event with 2 Lakh Private Schools India",
+      description: "Watch students pledge their commitment to educational excellence during national recognition event with support from 2 Lakh Private Schools India",
       date: "April 2024",
       students: 200,
       location: "Delhi, NCR"
     },
     {
       id: 3,
-      title: "Student Pledge - Understanding Education System",
+      title: "Students Overcoming Challenges - Education System",
       thumbnail: "https://img.youtube.com/vi/cdIszs6ZxSE/maxresdefault.jpg",
       embedUrl: "https://www.youtube.com/embed/cdIszs6ZxSE",
-      description: "Students take oath to overcome education system challenges and commit to their academic journey with Seva Shiksha Trust's guidance",
+      description: "Inspiring documentary featuring students taking oath to overcome education system challenges and commit to their academic success with Seva Shiksha Trust's support",
       date: "April 2024",
       students: 300,
       location: "Patna, Bihar"
     },
     {
       id: 4,
-      title: "Student Oath - Admission Ceremony",
+      title: "Student Admission & Oath Ceremony",
       thumbnail: "https://img.youtube.com/vi/zWmn9Ks5n2k/maxresdefault.jpg",
       embedUrl: "https://www.youtube.com/embed/zWmn9Ks5n2k",
-      description: "New students take their oath during admission ceremony, pledging to maintain discipline and pursue quality education with dedication",
+      description: "Watch new students take their sacred oath during admission ceremony, pledging to maintain discipline and pursue quality education with complete dedication",
       date: "February 2024",
       students: 120,
       location: "Patna, Bihar"
     },
     {
       id: 5,
-      title: "Student Oath - Inspiring Commitment to Education",
+      title: "Student Success Stories - Inspiring Journeys",
       thumbnail: "https://img.youtube.com/vi/35Kdv1gfQAU/maxresdefault.jpg",
       embedUrl: "https://www.youtube.com/embed/35Kdv1gfQAU",
-      description: "Students pledge to follow the inspiring journey of dedication to education and commit to helping fellow students achieve their dreams",
+      description: "Heartwarming stories of students who left their dreams to help underprivileged children while committing to educational excellence with Seva Shiksha Trust",
       date: "February 2024",
       students: 180,
+      location: "Patna, Bihar"
+    },
+    {
+      id: 6,
+      title: "Student Testimonials - Scholarship Recipients",
+      thumbnail: "https://img.youtube.com/vi/35Kdv1gfQAU/maxresdefault.jpg",
+      embedUrl: "https://www.youtube.com/embed/35Kdv1gfQAU",
+      description: "Hear directly from scholarship recipients about their educational journey and the impact of Seva Shiksha Trust's scholarship program on their lives",
+      date: "January 2024",
+      students: 250,
+      location: "Multiple Locations"
+    },
+    {
+      id: 7,
+      title: "Student Life at Seva Shiksha - Campus Tour",
+      thumbnail: "https://img.youtube.com/vi/uKqZAkl9aPk/maxresdefault.jpg",
+      embedUrl: "https://www.youtube.com/embed/uKqZAkl9aPk",
+      description: "Experience a day in the life of Seva Shiksha students as they attend classes, participate in activities, and fulfill their educational commitments",
+      date: "January 2024",
+      students: 200,
+      location: "Patna, Bihar"
+    },
+    {
+      id: 8,
+      title: "Students Pledge - Future Leaders Program",
+      thumbnail: "https://img.youtube.com/vi/SZ_N7fzyJuE/maxresdefault.jpg",
+      embedUrl: "https://www.youtube.com/embed/SZ_N7fzyJuE",
+      description: "Young leaders in making - Students take oath to become change-makers and support underprivileged students while pursuing their own educational dreams",
+      date: "December 2023",
+      students: 175,
       location: "Patna, Bihar"
     }
   ];
@@ -90,28 +120,33 @@ const StudentOathVideos = () => {
 
       {/* Stats Section */}
       <div className="container mx-auto px-4 -mt-8 mb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
           <div className="bg-white rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-transform">
             <Users className="w-10 h-10 text-orange-500 mx-auto mb-3" />
-            <h3 className="text-3xl font-bold text-gray-800 mb-1">1,000+</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-1">1,500+</h3>
             <p className="text-gray-600">Students Pledged</p>
           </div>
           <div className="bg-white rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-transform">
             <Video className="w-10 h-10 text-orange-500 mx-auto mb-3" />
             <h3 className="text-3xl font-bold text-gray-800 mb-1">{videos.length}</h3>
-            <p className="text-gray-600">Oath Ceremonies</p>
+            <p className="text-gray-600">Oath Videos</p>
           </div>
           <div className="bg-white rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-transform">
             <Award className="w-10 h-10 text-orange-500 mx-auto mb-3" />
             <h3 className="text-3xl font-bold text-gray-800 mb-1">100%</h3>
             <p className="text-gray-600">Commitment Rate</p>
           </div>
+          <div className="bg-white rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-transform">
+            <TrendingUp className="w-10 h-10 text-orange-500 mx-auto mb-3" />
+            <h3 className="text-3xl font-bold text-gray-800 mb-1">50K+</h3>
+            <p className="text-gray-600">Video Views</p>
+          </div>
         </div>
       </div>
 
       {/* Videos Grid */}
       <div className="container mx-auto px-4 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {videos.map((video) => (
             <div
               key={video.id}

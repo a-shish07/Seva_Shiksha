@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import HeroSection from '../components/home/HeroSection'
 import AboutSection from '../components/home/AboutSection'
 import CoursesSection from '../components/home/CoursesSection'
@@ -12,6 +13,18 @@ import HonoursSection from '../components/home/HonoursSection'
 import RegistrationSection from '../components/home/RegistrationSection'
 
 const Home = () => {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo)
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' })
+      }
+      window.history.replaceState({}, document.title, window.location.pathname)
+    }
+  }, [location])
+
   return (
     <div className="pt-20"> {/* Account for fixed navbar */}
       <HeroSection />

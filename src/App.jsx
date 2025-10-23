@@ -22,6 +22,7 @@ import StudentRegistration from './pages/StudentRegistration'
 import MembershipRegistration from './pages/MembershipRegistration'
 import News from './pages/News'
 import Brochure from './pages/Brochure'
+import BiharStudentCreditCard from './pages/BiharStudentCreditCard'
 import TermsConditions from './pages/TermsConditions'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import ContactUs from './pages/ContactUs'
@@ -56,6 +57,7 @@ function App() {
             <Route path="/membership-registration" element={<MembershipRegistration />} />
             <Route path="/news" element={<News />} />
             <Route path="/brochure" element={<Brochure />} />
+            <Route path="/bihar-student-credit-card" element={<BiharStudentCreditCard />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/contact-us" element={<ContactUs />} />

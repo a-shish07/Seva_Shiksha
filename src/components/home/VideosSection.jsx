@@ -8,45 +8,46 @@ const VideosSection = () => {
   const videos = [
     {
       id: 1,
-      title: "Seva Shiksha Trust Introduction",
-      thumbnail: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-12-at-4.41.26-PM-5.jpeg",
-      link: "https://www.facebook.com/101429641433162/posts/pfbid02he6f8yDoj55pqqeRc5Ehg2ZhkCxdw6g6ofuKmMioheUhvizytg6fgExJCjMA44U9l/?d=w&mibextid=qC1gEa",
-      description: "Learn about our mission and vision"
+      title: "Student Oath Ceremonies",
+      thumbnail: "https://img.youtube.com/vi/zWmn9Ks5n2k/maxresdefault.jpg",
+      link: "/student-oath-videos",
+      description: "Watch students take their oath to pursue quality education",
+      isInternal: true
     },
     {
       id: 2,
       title: "Student Success Stories",
       thumbnail: "https://sevashiksha.in/wp-content/uploads/2023/10/7.jpeg",
       link: "https://www.facebook.com/101429641433162/posts/pfbid0vZ4bKKjTkmDHAnAAVRYYvLBSiUPt5QsZGF2PsWuyr7uJV2sZpovPdfSsdHztEZ1Jl/?d=w&mibextid=qC1gEa",
-      description: "Inspiring stories from our students"
+      description: "Inspiring stories from our scholarship students"
     },
     {
       id: 3,
       title: "Educational Programs Overview",
       thumbnail: "https://sevashiksha.in/wp-content/uploads/2023/10/6.jpeg",
       link: "https://fb.watch/nDTJzYyflA/?mibextid=qC1gEa",
-      description: "Overview of our educational programs"
+      description: "Explore our comprehensive educational programs"
     },
     {
       id: 4,
       title: "Scholarship Program Benefits",
       thumbnail: "https://sevashiksha.in/wp-content/uploads/2023/10/1-1015x1024.jpeg",
       link: "https://www.facebook.com/100064110904198/posts/pfbid02GB2nhtRyXbcuNjs79duLSe856SPsq8LUZLnD1dZLUc2Zz1ZgqJ265hNZKeyoqNiFl/?d=w&mibextid=qC1gEa",
-      description: "Learn about our scholarship benefits"
+      description: "Discover how we support students financially"
     },
     {
       id: 5,
       title: "University Partnerships",
       thumbnail: "https://sevashiksha.in/wp-content/uploads/2023/09/Banner19.png",
       link: "https://fb.watch/nDTwRRW8zh/?mibextid=qC1gEa",
-      description: "Our university and college partnerships"
+      description: "Our network of university and college partnerships"
     },
     {
       id: 6,
-      title: "Student Testimonials",
+      title: "Seva Shiksha Trust Vision",
       thumbnail: "https://sevashiksha.in/wp-content/uploads/2023/10/8.jpeg",
       link: "https://www.facebook.com/101429641433162/posts/pfbid02CQikUkiVibVswMhrHtfDcSqdgSb89Bit2ixnUbQhbKH5oio6ZN4ZD9q3WTh6p12Dl/?d=w&mibextid=qC1gEa",
-      description: "What our students say about us"
+      description: "Learn about our mission to make quality education accessible"
     }
   ]
 
@@ -104,7 +105,13 @@ const VideosSection = () => {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="absolute inset-0 flex items-center justify-center"
-                    onClick={() => window.open(video.link, '_blank')}
+                    onClick={() => {
+                      if (video.isInternal) {
+                        window.location.href = video.link
+                      } else {
+                        window.open(video.link, '_blank')
+                      }
+                    }}
                   >
                     <div className="bg-white/20 backdrop-blur-md p-4 rounded-full border border-white/30 group-hover:bg-white/30 transition-all duration-300">
                       <Play className="w-8 h-8 text-white ml-1" />
@@ -128,8 +135,8 @@ const VideosSection = () => {
                   
                   <a
                     href={video.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={video.isInternal ? undefined : "_blank"}
+                    rel={video.isInternal ? undefined : "noopener noreferrer"}
                     className="inline-flex items-center text-gold-400 hover:text-gold-300 font-medium transition-colors group"
                   >
                     Watch Now

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { 
   Menu, X, Phone, Mail, Facebook, Youtube, Star, ChevronDown, 
   User, MapPin, ArrowRight, BookOpen, Globe,
   GraduationCap, Users, Award, FileText, MessageCircle,
-  Sparkles, Heart, Shield, Home
+  Sparkles, Heart, Shield, Home, CreditCard
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -13,6 +13,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(null)
   const location = useLocation()
+  const navigate = useNavigate()
   const dropdownTimers = useRef({})
 
   useEffect(() => {
@@ -81,6 +82,19 @@ const Navbar = () => {
         break
       default:
         break
+    }
+  }
+
+  const handleNavigateToSection = (sectionId) => {
+    setIsOpen(false)
+    setOpenDropdown(null)
+    if (location.pathname === '/') {
+      const section = document.getElementById(sectionId)
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' })
+      }
+    } else {
+      navigate('/', { state: { scrollTo: sectionId } })
     }
   }
 
@@ -166,18 +180,23 @@ const Navbar = () => {
         }
       ]
     },
-    { 
-      name: 'News', 
-      path: '/news',
-      icon: <FileText className="w-4 h-4" />,
-      description: 'Latest updates & announcements',
-      badge: 'New'
+    {
+      name: 'BSCCS',
+      path: '/bihar-student-credit-card',
+      icon: <CreditCard className="w-4 h-4" />,
+      description: 'Bihar Student Credit Card'
     },
     {
-      name: 'Resources',
+      name: 'More',
       icon: <FileText className="w-4 h-4" />,
-      description: 'Downloads & information',
+      description: 'News, Resources & More',
       dropdown: [
+        { 
+          name: 'News', 
+          path: '/news',
+          icon: <FileText className="w-4 h-4" />,
+          description: 'Latest updates & announcements'
+        },
         { 
           name: 'Brochure', 
           path: '/brochure',
@@ -197,23 +216,16 @@ const Navbar = () => {
           icon: <Shield className="w-4 h-4" />
         }
       ]
-    },
-    { 
-      name: 'Contact Us', 
-      path: '/contact-us',
-      icon: <Phone className="w-4 h-4" />,
-      description: 'Get in touch with us',
-      highlight: true
     }
   ]
 
   return (
     <div className="fixed w-full top-0 z-50">
       {/* Simplified Top Bar */}
-      <div className="bg-gradient-to-r from-primary-700 via-primary-600 to-accent-600 text-white py-3 px-4">
+      <div className="bg-gradient-to-r from-primary-700 via-primary-600 to-accent-600 text-white py-2 px-4">
         <div className="container mx-auto">
           <div className="flex justify-between items-center">
-            <div className="hidden md:flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-4">
               <div 
                 className="flex items-center space-x-2 cursor-pointer hover:text-jasmine-200 transition-colors"
                 onClick={() => handleQuickContact('phone')}
@@ -234,14 +246,14 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3">
               {/* Social Links */}
               <div className="hidden md:flex items-center space-x-2">
                 <a 
                   href="https://www.facebook.com/profile.php?id=100064110904198" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-primary-500 transition-colors duration-300"
+                  className="p-1.5 bg-white/10 backdrop-blur-sm rounded-full hover:bg-primary-500 transition-colors duration-300"
                 >
                   <Facebook className="w-4 h-4" />
                 </a>
@@ -249,7 +261,7 @@ const Navbar = () => {
                   href="https://www.youtube.com/@sevashikshatrust" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-accent-500 transition-colors duration-300"
+                  className="p-1.5 bg-white/10 backdrop-blur-sm rounded-full hover:bg-accent-500 transition-colors duration-300"
                 >
                   <Youtube className="w-4 h-4" />
                 </a>
@@ -257,7 +269,7 @@ const Navbar = () => {
                   href="https://g.co/kgs/J8tnxXu" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-gold-400 transition-colors duration-300"
+                  className="p-1.5 bg-white/10 backdrop-blur-sm rounded-full hover:bg-gold-400 transition-colors duration-300"
                 >
                   <Star className="w-4 h-4" />
                 </a>
@@ -267,14 +279,21 @@ const Navbar = () => {
               <div className="flex items-center space-x-2">
                 <button
                   onClick={() => handleQuickContact('whatsapp')}
-                  className="hidden sm:flex items-center gap-2 bg-accent-600 hover:bg-accent-500 px-3 py-1.5 rounded-full text-sm font-medium transition-colors duration-300"
+                  className="hidden sm:flex items-center gap-2 bg-accent-600 hover:bg-accent-500 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-300"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>WhatsApp</span>
                 </button>
                 <Link 
+                  to="/contact-us" 
+                  className="hidden sm:flex items-center gap-2 bg-primary-600 hover:bg-primary-500 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-300"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Contact</span>
+                </Link>
+                <Link 
                   to="/student-registration" 
-                  className="bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 px-4 py-1.5 rounded-full text-sm font-bold transition-colors duration-300 flex items-center gap-1"
+                  className="bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 px-3.5 py-1 rounded-full text-sm font-semibold transition-colors duration-300 flex items-center gap-1"
                 >
                   <Sparkles className="w-4 h-4" />
                   Register Now
@@ -292,22 +311,22 @@ const Navbar = () => {
           : 'bg-white shadow-lg'
       }`}>
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-3">
             {/* Elegant Logo */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="relative w-12 h-12 bg-gradient-to-br from-primary-500 via-secondary-200 to-accent-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                <span className="text-white font-bold text-lg">SS</span>
+            <Link to="/" className="flex items-center space-x-2 group">
+              <div className="relative w-9 h-9 md:w-10 md:h-10 bg-gradient-to-br from-primary-500 via-secondary-200 to-accent-500 rounded-lg md:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                <span className="text-white font-bold text-sm md:text-base">SS</span>
               </div>
               <div>
-                <h1 className="text-2xl md:text-3xl font-black text-primary-600">
+                <h1 className="text-lg md:text-xl lg:text-2xl font-black text-primary-600">
                   SEVA SHIKSHA TRUST
                 </h1>
-                <p className="text-sm text-gray-600 font-medium">Trust • Excellence • Future</p>
+                <p className="hidden sm:block text-xs md:text-sm text-gray-600 font-medium">Trust • Excellence • Future</p>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-1">
+            <div className="hidden md:flex items-center space-x-0 md:space-x-0.5 lg:space-x-1">
               {navLinks.map((link, index) => (
                 <div key={index} className="relative dropdown-container">
                   {link.dropdown ? (
@@ -317,7 +336,7 @@ const Navbar = () => {
                       onMouseLeave={() => handleDropdownMouseLeave(link.name)}
                     >
                       <button
-                        className="flex items-center space-x-2 px-4 py-3 text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 rounded-2xl hover:bg-primary-50/80 group"
+                        className="flex items-center space-x-1 px-3 py-2 text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 rounded-2xl hover:bg-primary-50/80 group text-sm"
                         onClick={() => handleDropdownToggle(link.name)}
                       >
                         <span className="text-primary-600">{link.icon}</span>
@@ -339,7 +358,9 @@ const Navbar = () => {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -10, scale: 0.95 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute top-full left-0 mt-1 w-80 bg-white rounded-3xl shadow-2xl border border-jasmine-200 overflow-hidden z-50"
+                            className={`absolute top-full mt-1 w-80 bg-white rounded-3xl shadow-2xl border border-jasmine-200 overflow-hidden z-50 ${
+                              link.name === 'More' ? 'right-0' : 'left-0'
+                            }`}
                             onMouseEnter={() => handleDropdownMouseEnter(link.name)}
                             onMouseLeave={() => handleDropdownMouseLeave(link.name)}
                           >
@@ -376,10 +397,21 @@ const Navbar = () => {
                         )}
                       </AnimatePresence>
                     </div>
+                  ) : link.scrollTarget ? (
+                    <button
+                      type="button"
+                      onClick={() => handleNavigateToSection(link.scrollTarget)}
+                      className="flex items-center space-x-1 px-3 py-2 font-medium text-white text-sm bg-gradient-to-r from-primary-600 via-primary-500 to-accent-600 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      <span className="text-white">
+                        {link.icon}
+                      </span>
+                      <span>{link.name}</span>
+                    </button>
                   ) : (
                     <Link
                       to={link.path}
-                      className={`flex items-center space-x-2 px-4 py-3 font-medium transition-all duration-300 rounded-2xl group ${
+                      className={`flex items-center space-x-1 px-3 py-2 font-medium transition-all duration-300 rounded-2xl group text-sm ${
                         location.pathname === link.path 
                           ? 'text-white bg-gradient-to-r from-primary-600 via-primary-500 to-accent-600 shadow-lg' 
                           : link.highlight
@@ -410,7 +442,7 @@ const Navbar = () => {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-3 bg-gradient-to-r from-primary-600 to-accent-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="md:hidden p-2.5 bg-gradient-to-r from-primary-600 to-accent-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -425,7 +457,7 @@ const Navbar = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden bg-gradient-to-br from-white via-jasmine-50 to-accent-50 border-t border-jasmine-200"
+              className="md:hidden bg-gradient-to-br from-white via-jasmine-50 to-accent-50 border-t border-jasmine-200"
             >
               <div className="container mx-auto px-4 py-6">
 
@@ -441,7 +473,7 @@ const Navbar = () => {
                       {link.dropdown ? (
                         <div className="bg-white rounded-2xl shadow-md overflow-hidden">
                           <button
-                            className="flex items-center justify-between w-full px-6 py-4 text-left text-gray-700 hover:bg-primary-50/80 transition-colors duration-300"
+                            className="flex items-center justify-between w-full px-5 py-3 text-left text-gray-700 hover:bg-primary-50/80 transition-colors duration-300"
                             onClick={() => handleDropdownToggle(link.name)}
                           >
                             <div className="flex items-center space-x-3">
@@ -466,12 +498,12 @@ const Navbar = () => {
                                 exit={{ opacity: 0, height: 0 }}
                                 className="bg-gradient-to-r from-primary-50 via-jasmine-50 to-accent-50 border-t border-jasmine-200"
                               >
-                                <div className="px-6 py-2 space-y-1">
+                                <div className="px-5 py-2 space-y-1">
                                   {link.dropdown.map((dropdownLink, dropIndex) => (
                                     <Link
                                       key={dropIndex}
                                       to={dropdownLink.path}
-                                      className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-white hover:text-primary-600 rounded-xl transition-all duration-300"
+                                      className="flex items-center space-x-3 px-4 py-2.5 text-gray-700 hover:bg-white hover:text-primary-600 rounded-xl transition-all duration-300"
                                       onClick={() => {
                                         setIsOpen(false)
                                         setOpenDropdown(null)
@@ -489,10 +521,26 @@ const Navbar = () => {
                             )}
                           </AnimatePresence>
                         </div>
+                      ) : link.scrollTarget ? (
+                        <button
+                          type="button"
+                          onClick={() => handleNavigateToSection(link.scrollTarget)}
+                          className="w-full flex items-center space-x-3 px-5 py-3 text-white bg-gradient-to-r from-primary-700 via-primary-500 to-accent-600 rounded-2xl font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                        >
+                          <span className="text-white">
+                            {link.icon}
+                          </span>
+                          <div className="flex-1 text-left">
+                            <div>{link.name}</div>
+                            <div className="text-xs text-primary-200">
+                              {link.description}
+                            </div>
+                          </div>
+                        </button>
                       ) : (
                         <Link
                           to={link.path}
-                          className={`flex items-center space-x-3 px-6 py-4 rounded-2xl font-medium transition-all duration-300 ${
+                          className={`flex items-center space-x-3 px-5 py-3 rounded-2xl font-medium transition-all duration-300 ${
                             location.pathname === link.path 
                               ? 'text-white bg-gradient-to-r from-primary-700 via-primary-500 to-accent-600 shadow-lg' 
                               : link.highlight

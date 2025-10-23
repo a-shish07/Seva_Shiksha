@@ -13,7 +13,7 @@ const GallerySection = () => {
     {
       id: 1,
       image: "https://sevashiksha.in/wp-content/uploads/2025/07/84981492_105194297723363_4090189818036748288_n.jpg",
-      title: "Educational Event",
+      title: "Event Moment",
       category: "Events"
     },
     {
@@ -25,13 +25,13 @@ const GallerySection = () => {
     {
       id: 3,
       image: "https://sevashiksha.in/wp-content/uploads/2025/07/470202181_1098805375028912_2977288317256462686_n.jpg",
-      title: "Academic Session",
+      title: "Academic Activity",
       category: "Academic"
     },
     {
       id: 4,
       image: "https://sevashiksha.in/wp-content/uploads/2025/07/470583171_1098805378362245_8124890948991957940_n.jpg",
-      title: "Workshop Session",
+      title: "Workshop",
       category: "Workshop"
     },
     {
@@ -40,6 +40,7 @@ const GallerySection = () => {
       title: "Campus Visit",
       category: "Campus"
     },
+    
     {
       id: 7,
       image: "https://sevashiksha.in/wp-content/uploads/2025/07/471512483_1104225214486928_7632097580683522277_n.jpg",
@@ -49,52 +50,544 @@ const GallerySection = () => {
     {
       id: 8,
       image: "https://sevashiksha.in/wp-content/uploads/2025/07/471492968_1104244221151694_5832561491923558739_n.jpg",
-      title: "Group Discussion",
+      title: "Group Session",
       category: "Discussion"
     },
     {
       id: 9,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/471276730_1104244517818331_6984591706136087635_n.jpg",
+      title: "Campus Moment",
+      category: "Campus"
+    },
+    {
+      id: 10,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/471282544_1104244524484997_3705503312272963239_n.jpg",
+      title: "Student Event",
+      category: "Events"
+    },
+    {
+      id: 11,
       image: "https://sevashiksha.in/wp-content/uploads/2025/07/472664202_1111896313719818_6404931825508900531_n.jpg",
       title: "Interactive Session",
       category: "Interactive"
+    },
+    {
+      id: 12,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/472311805_1111899963719453_4811271653282307702_n.jpg",
+      title: "Class Activity",
+      category: "Academic"
+    },
+    {
+      id: 13,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/472314935_1111928363716613_1784576212494906963_n.jpg",
+      title: "Meeting",
+      category: "Events"
+    },
+    {
+      id: 14,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/472261335_1111928387049944_1248665207053325449_n.jpg",
+      title: "Gathering",
+      category: "Students"
+    },
+    {
+      id: 15,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/472313033_1111928217049961_8494637198938831601_n.jpg",
+      title: "Conference",
+      category: "Events"
+    },
+    {
+      id: 16,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/472735198_1112980373611412_36353083812816353_n.jpg",
+      title: "Workshop Day",
+      category: "Workshop"
+    },
+    {
+      id: 17,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/473166926_1117852419790874_8688774432353474987_n.jpg",
+      title: "Learning Session",
+      category: "Academic"
+    },
+    {
+      id: 18,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/473161459_1117852116457571_8489558478576612489_n.jpg",
+      title: "Group Photo",
+      category: "Students"
+    },
+    {
+      id: 19,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/473183114_1117853496457433_7299003575012833450_n.jpg",
+      title: "Campus Scene",
+      category: "Campus"
+    },
+    {
+      id: 20,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/473041761_1117465146496268_1230483806750999904_n.jpg",
+      title: "Student Program",
+      category: "Program"
+    },
+    {
+      id: 21,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/473599906_1117871636455619_8105786993566858305_n.jpg",
+      title: "Event Highlight",
+      category: "Events"
+    },
+    {
+      id: 22,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/473199674_1118157129760403_6573431136733743839_n.jpg",
+      title: "Activity Time",
+      category: "Students"
+    },
+    {
+      id: 23,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/474758032_1124791249096991_2423450446491242967_n.jpg",
+      title: "Celebration",
+      category: "Events"
+    },
+    {
+      id: 24,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/485665124_1083230830490604_6688374532097037127_n.jpg",
+      title: "Campus Life",
+      category: "Campus"
+    },
+    {
+      id: 25,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/491816161_1108283071318713_4889018891600160668_n.jpg",
+      title: "Learning Together",
+      category: "Academic"
+    },
+    {
+      id: 26,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/492699366_1108282581318762_9061944782463116302_n.jpg",
+      title: "Workshop Session",
+      category: "Workshop"
+    },
+    {
+      id: 27,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/492548258_1110912737722413_8658242697728945063_n.jpg",
+      title: "Team Meeting",
+      category: "Events"
+    },
+    {
+      id: 28,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/500164372_1137096331770720_6384284398828123135_n.jpg",
+      title: "Student Success",
+      category: "Students"
+    },
+    {
+      id: 29,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/500479378_1137100661770287_6182251442385729979_n.jpg",
+      title: "Program Moment",
+      category: "Program"
+    },
+    {
+      id: 30,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/506111893_1150463910433962_3768989802538098802_n.jpg",
+      title: "Campus Event",
+      category: "Events"
+    },
+    {
+      id: 31,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/505483960_1150463757100644_7537563102058359170_n.jpg",
+      title: "Learning Activity",
+      category: "Academic"
+    },
+    {
+      id: 32,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/505810538_1151555623658124_4009253968960611969_n.jpg",
+      title: "Student Interaction",
+      category: "Students"
+    },
+    {
+      id: 33,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/507787160_1151555140324839_4876305815692261748_n.jpg",
+      title: "Campus Tour",
+      category: "Campus"
+    },
+    {
+      id: 34,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/508809124_1153891323424554_8293744129431586207_n.jpg",
+      title: "Workshop Activity",
+      category: "Workshop"
+    },
+    {
+      id: 35,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/508724049_1153891410091212_6610939270073938556_n.jpg",
+      title: "Group Work",
+      category: "Academic"
+    },
+    {
+      id: 36,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/509149323_1153891326757887_1514297376746603800_n.jpg",
+      title: "Class Session",
+      category: "Academic"
+    },
+    {
+      id: 37,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/508568355_1153889000091453_4432558971681715178_n.jpg",
+      title: "Student Moment",
+      category: "Students"
+    },
+    {
+      id: 38,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/508889513_1153891413424545_133210157921931970_n.jpg",
+      title: "Training Session",
+      category: "Workshop"
+    },
+    {
+      id: 39,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/84591475_105194261056700_8546538397060038656_n.jpg",
+      title: "Event Photo",
+      category: "Events"
+    },
+    {
+      id: 40,
+      image: "https://sevashiksha.in/wp-content/uploads/2025/07/84690078_105899307652862_175329640288616448_n.jpg",
+      title: "Campus Celebration",
+      category: "Campus"
     }
   ]
 
   const archivedGallery = [
     {
-      id: 10,
+      id: 41,
       image: "https://sevashiksha.in/wp-content/uploads/2023/10/7-1-768x432.jpeg",
-      title: "Previous Year Event",
+      title: "Previous Event",
       category: "Archive"
     },
     {
-      id: 11,
+      id: 42,
       image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-12-at-4.41.26-PM-5-1-768x576.jpeg",
       title: "Student Program",
       category: "Archive"
     },
     {
-      id: 12,
+      id: 43,
       image: "https://sevashiksha.in/wp-content/uploads/2023/10/10-768x576.jpeg",
       title: "Educational Workshop",
       category: "Archive"
     },
     {
-      id: 13,
+      id: 44,
       image: "https://sevashiksha.in/wp-content/uploads/2023/10/11.jpeg",
       title: "Campus Activity",
       category: "Archive"
     },
     {
-      id: 14,
+      id: 45,
       image: "https://sevashiksha.in/wp-content/uploads/2023/10/8-768x432.jpeg",
       title: "Student Gathering",
       category: "Archive"
     },
     {
-      id: 15,
+      id: 46,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-12-at-4.41.26-PM-5-768x576.jpeg",
+      title: "Training Session",
+      category: "Archive"
+    },
+    {
+      id: 47,
       image: "https://sevashiksha.in/wp-content/uploads/2023/10/6-768x674.jpeg",
       title: "Academic Event",
+      category: "Archive"
+    },
+    {
+      id: 48,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/7-768x432.jpeg",
+      title: "Event Highlights",
+      category: "Archive"
+    },
+    {
+      id: 49,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/1-768x775.jpeg",
+      title: "Student Success",
+      category: "Archive"
+    },
+    {
+      id: 50,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/09/Banner42-768x485.png",
+      title: "Anniversary Banner",
+      category: "Archive"
+    },
+    {
+      id: 51,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/09/Banner39-768x538.png",
+      title: "Promotional Banner",
+      category: "Archive"
+    },
+    {
+      id: 52,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/09/Banner36-768x525.png",
+      title: "Event Banner",
+      category: "Archive"
+    },
+    {
+      id: 53,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/09/Banner25-1-768x757.png",
+      title: "Information Banner",
+      category: "Archive"
+    },
+    {
+      id: 54,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/09/Banner26-768x768.png",
+      title: "Program Banner",
+      category: "Archive"
+    },
+    {
+      id: 55,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/09/Banner19-1-768x775.png",
+      title: "Course Banner",
+      category: "Archive"
+    },
+    {
+      id: 56,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/09/Banner18-768x768.png",
+      title: "Achievements Banner",
+      category: "Archive"
+    },
+    {
+      id: 57,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/09/Banner10-768x768.png",
+      title: "Success Banner",
+      category: "Archive"
+    },
+    {
+      id: 58,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/09/Banner25-768x757.png",
+      title: "Learning Banner",
+      category: "Archive"
+    },
+    {
+      id: 59,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/09/Banner2-768x768.png",
+      title: "Opportunity Banner",
+      category: "Archive"
+    },
+    {
+      id: 60,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/IMG_20221010_172907-Copy.jpg",
+      title: "Campus Photo",
+      category: "Archive"
+    },
+    {
+      id: 61,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/IMG-20210920-WA0002-Copy-768x353.jpg",
+      title: "Student Activity",
+      category: "Archive"
+    },
+    {
+      id: 62,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/IMG-20210920-WA0040-Copy-768x576.jpg",
+      title: "Group Activity",
+      category: "Archive"
+    },
+    {
+      id: 63,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/IMG-20220427-WA0008-Copy-768x576.jpg",
+      title: "Meeting Session",
+      category: "Archive"
+    },
+    {
+      id: 64,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/IMG-20220427-WA0013-Copy-768x576.jpg",
+      title: "Discussion Class",
+      category: "Archive"
+    },
+    {
+      id: 65,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/IMG-20221212-WA0004-Copy.jpg",
+      title: "Celebration Moment",
+      category: "Archive"
+    },
+    {
+      id: 66,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-12-at-4.41.26-PM-6-768x576.jpeg",
+      title: "Student Interaction",
+      category: "Archive"
+    },
+    {
+      id: 67,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-12-at-4.41.26-PM-7-768x576.jpeg",
+      title: "Workshop Activity",
+      category: "Archive"
+    },
+    {
+      id: 68,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-12-at-4.41.26-PM-768x573.jpeg",
+      title: "Team Work",
+      category: "Archive"
+    },
+    {
+      id: 69,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-12-at-4.42.06-PM-768x576.jpeg",
+      title: "Class Photo",
+      category: "Archive"
+    },
+    {
+      id: 70,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.41-PM-1-768x521.jpeg",
+      title: "Event Moment",
+      category: "Archive"
+    },
+    {
+      id: 71,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.41-PM-2-768x342.jpeg",
+      title: "Success Story",
+      category: "Archive"
+    },
+    {
+      id: 72,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.41-PM-3-768x344.jpeg",
+      title: "Learning Session",
+      category: "Archive"
+    },
+    {
+      id: 73,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.41-PM-4-768x768.jpeg",
+      title: "Group Gathering",
+      category: "Archive"
+    },
+    {
+      id: 74,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.41-PM-5-768x576.jpeg",
+      title: "Campus Event",
+      category: "Archive"
+    },
+    {
+      id: 75,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.41-PM-6.jpeg",
+      title: "Program Highlight",
+      category: "Archive"
+    },
+    {
+      id: 76,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.41-PM-7.jpeg",
+      title: "Student Moment",
+      category: "Archive"
+    },
+    {
+      id: 77,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.41-PM-8.jpeg",
+      title: "Achievement",
+      category: "Archive"
+    },
+    {
+      id: 78,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.41-PM-9.jpeg",
+      title: "Celebration Time",
+      category: "Archive"
+    },
+    {
+      id: 79,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.41-PM-768x736.jpeg",
+      title: "Happy Moment",
+      category: "Archive"
+    },
+    {
+      id: 80,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.44-PM-1-768x364.jpeg",
+      title: "Event Coverage",
+      category: "Archive"
+    },
+    {
+      id: 81,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.44-PM-2-768x346.jpeg",
+      title: "Activity Shot",
+      category: "Archive"
+    },
+    {
+      id: 82,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.44-PM-3-768x354.jpeg",
+      title: "Workshop Day",
+      category: "Archive"
+    },
+    {
+      id: 83,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.44-PM-4.jpeg",
+      title: "Training Moment",
+      category: "Archive"
+    },
+    {
+      id: 84,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.15.44-PM-768x509.jpeg",
+      title: "Program Moment",
+      category: "Archive"
+    },
+    {
+      id: 85,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.35-PM-1.jpeg",
+      title: "Campus Scene",
+      category: "Archive"
+    },
+    {
+      id: 86,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.35-PM-2-768x576.jpeg",
+      title: "Student Life",
+      category: "Archive"
+    },
+    {
+      id: 87,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.35-PM-3-768x576.jpeg",
+      title: "Academic Session",
+      category: "Archive"
+    },
+    {
+      id: 88,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.35-PM-4-768x576.jpeg",
+      title: "Class Together",
+      category: "Archive"
+    },
+    {
+      id: 89,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.35-PM-5-768x432.jpeg",
+      title: "Learning Time",
+      category: "Archive"
+    },
+    {
+      id: 90,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.35-PM-6-768x432.jpeg",
+      title: "Workshop Session",
+      category: "Archive"
+    },
+    {
+      id: 91,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.35-PM-7.jpeg",
+      title: "Student Success",
+      category: "Archive"
+    },
+    {
+      id: 92,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.35-PM-8.jpeg",
+      title: "Achievement Photo",
+      category: "Archive"
+    },
+    {
+      id: 93,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.35-PM-9.jpeg",
+      title: "Celebration Photo",
+      category: "Archive"
+    },
+    {
+      id: 94,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.35-PM-768x576.jpeg",
+      title: "Event Photo",
+      category: "Archive"
+    },
+    {
+      id: 95,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.36-PM-1.jpeg",
+      title: "Group Photo",
+      category: "Archive"
+    },
+    {
+      id: 96,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.36-PM-2-768x576.jpeg",
+      title: "Team Meeting",
+      category: "Archive"
+    },
+    {
+      id: 97,
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-13-at-2.31.36-PM-3-768x641.jpeg",
+      title: "Success Moment",
       category: "Archive"
     }
   ]
