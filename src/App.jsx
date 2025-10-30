@@ -1,4 +1,4 @@
-import { useEffect, Suspense } from 'react'
+import React, { useEffect, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
