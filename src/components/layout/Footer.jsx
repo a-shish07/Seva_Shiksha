@@ -86,7 +86,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="text-orange-500 mt-1 flex-shrink-0" size={20} />
                 <p className="text-gray-700 leading-relaxed">
-                  301, N.K Market ashiana digha road, ramnagri more opposite 9 to 9 super market, patna-800025
+                  302, N.K Market ashiana digha road, ramnagri more opposite 9 to 9 super market, patna-800025
                 </p>
               </div>
             </div>

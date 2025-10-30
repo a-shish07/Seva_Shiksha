@@ -15,11 +15,15 @@ import AboutSevaShiksha from './pages/AboutSevaShiksha'
 import ChairmanSpeaks from './pages/ChairmanSpeaks'
 import OurMentors from './pages/OurMentors'
 import StudentOathVideos from './pages/StudentOathVideos'
+import AllCourses from './pages/AllCourses'
 import CoursesAfter10th from './pages/CoursesAfter10th'
 import CoursesAfter12th from './pages/CoursesAfter12th'
 import CoursesAfterGraduation from './pages/CoursesAfterGraduation'
 import StudentRegistration from './pages/StudentRegistration'
 import MembershipRegistration from './pages/MembershipRegistration'
+import BiharMahilaScholarship from './pages/BiharMahilaScholarship'
+import Photos from './pages/Photos'
+import Videos from './pages/Videos'
 import News from './pages/News'
 import Brochure from './pages/Brochure'
 import BiharStudentCreditCard from './pages/BiharStudentCreditCard'
@@ -50,11 +54,15 @@ function App() {
             <Route path="/chairman-speaks" element={<ChairmanSpeaks />} />
             <Route path="/our-mentors" element={<OurMentors />} />
             <Route path="/student-oath-videos" element={<StudentOathVideos />} />
+            <Route path="/all-courses" element={<AllCourses />} />
             <Route path="/courses-after-10th" element={<CoursesAfter10th />} />
             <Route path="/courses-after-12th" element={<CoursesAfter12th />} />
             <Route path="/courses-after-graduation" element={<CoursesAfterGraduation />} />
             <Route path="/student-registration" element={<StudentRegistration />} />
             <Route path="/membership-registration" element={<MembershipRegistration />} />
+            <Route path="/bihar-mahila-scholarship" element={<BiharMahilaScholarship />} />
+            <Route path="/photos" element={<Photos />} />
+            <Route path="/videos" element={<Videos />} />
             <Route path="/news" element={<News />} />
             <Route path="/brochure" element={<Brochure />} />
             <Route path="/bihar-student-credit-card" element={<BiharStudentCreditCard />} />

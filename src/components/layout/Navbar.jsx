@@ -4,7 +4,7 @@ import {
   Menu, X, Phone, Mail, Facebook, Youtube, Star, ChevronDown, 
   User, MapPin, ArrowRight, BookOpen, Globe,
   GraduationCap, Users, Award, FileText, MessageCircle,
-  Sparkles, Heart, Shield, Home, CreditCard
+  Sparkles, Heart, Shield, Home, CreditCard, Image, Video
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -137,7 +137,7 @@ const Navbar = () => {
       ]
     },
     {
-      name: 'Courses',
+       name: 'Courses',
       icon: <BookOpen className="w-4 h-4" />,
       description: 'Explore our programs',
       dropdown: [
@@ -177,14 +177,33 @@ const Navbar = () => {
           path: '/membership-registration',
           description: 'Become a member',
           icon: <Shield className="w-4 h-4" />
+        },
+        { 
+          name: 'Bihar Mahila Scholarship', 
+          path: '/bihar-mahila-scholarship',
+          description: '₹99 आवेदन सहायक योजना',
+          icon: <Award className="w-4 h-4" />
         }
       ]
     },
     {
-      name: 'BSCCS',
-      path: '/bihar-student-credit-card',
-      icon: <CreditCard className="w-4 h-4" />,
-      description: 'Bihar Student Credit Card'
+      name: 'Media',
+      icon: <Image className="w-4 h-4" />,
+      description: 'Photos & Videos',
+      dropdown: [
+        { 
+          name: 'Photos', 
+          path: '/photos',
+          description: 'Gallery of our events',
+          icon: <Image className="w-4 h-4" />
+        },
+        { 
+          name: 'Videos', 
+          path: '/videos',
+          description: 'Educational & event videos',
+          icon: <Video className="w-4 h-4" />
+        }
+      ]
     },
     {
       name: 'More',
@@ -196,6 +215,12 @@ const Navbar = () => {
           path: '/news',
           icon: <FileText className="w-4 h-4" />,
           description: 'Latest updates & announcements'
+        },
+        { 
+          name: 'BSCCS', 
+          path: '/bihar-student-credit-card',
+          icon: <CreditCard className="w-4 h-4" />,
+          description: 'Bihar Student Credit Card'
         },
         { 
           name: 'Brochure', 
@@ -317,10 +342,13 @@ const Navbar = () => {
               <div className="relative w-9 h-9 md:w-10 md:h-10 bg-gradient-to-br from-primary-500 via-secondary-200 to-accent-500 rounded-lg md:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                 <span className="text-white font-bold text-sm md:text-base">SS</span>
               </div>
-              <div>
+              <div className="relative">
                 <h1 className="text-lg md:text-xl lg:text-2xl font-black text-primary-600">
                   SEVA SHIKSHA TRUST
                 </h1>
+                <div className="absolute -top-1 -right-4 md:-right-8 w-5 h-5 md:w-6 md:h-6 border-2 border-red-600 rounded-full flex items-center justify-center bg-white">
+                  <span className="text-red-600 text-xs md:text-sm font-bold">R</span>
+                </div>
                 <p className="hidden sm:block text-xs md:text-sm text-gray-600 font-medium">Trust • Excellence • Future</p>
               </div>
             </Link>

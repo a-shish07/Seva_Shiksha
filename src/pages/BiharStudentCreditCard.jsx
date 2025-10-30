@@ -458,10 +458,6 @@ const BiharStudentCreditCard = () => {
               <div className="mt-6 space-y-3 text-sm">
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  <span>+91 9430521027</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
                   <span>+91 8252845590</span>
                 </div>
                 <div className="flex items-center gap-2">
