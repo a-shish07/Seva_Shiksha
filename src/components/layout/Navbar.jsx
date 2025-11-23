@@ -128,8 +128,8 @@ const Navbar = () => {
           description: 'Meet our expert team',
           icon: <Users className="w-4 h-4" />
         },
-        { 
-          name: 'Student Oath Videos', 
+        {
+          name: 'Student Oath Videos',
           path: '/student-oath-videos',
           description: 'Watch student pledge ceremonies',
           icon: <Globe className="w-4 h-4" />
@@ -166,20 +166,20 @@ const Navbar = () => {
       icon: <FileText className="w-4 h-4" />,
       description: 'Join our community',
       dropdown: [
-        { 
-          name: 'Student Registration', 
+        {
+          name: 'Student Registration',
           path: '/student-registration',
-          description: 'Apply for courses',
+          description: 'Apply for courses - ₹999',
           icon: <User className="w-4 h-4" />
         },
-        { 
-          name: 'Membership Registration', 
+        {
+          name: 'Membership Registration',
           path: '/membership-registration',
-          description: 'Become a member',
+          description: 'Become a member - Active: ₹9999, General: ₹2499',
           icon: <Shield className="w-4 h-4" />
         },
         { 
-          name: 'Bihar Mahila Scholarship', 
+          name: 'Mahila Rojgar Abhiyaan', 
           path: '/bihar-mahila-scholarship',
           description: '₹99 आवेदन सहायक योजना',
           icon: <Award className="w-4 h-4" />
@@ -216,11 +216,11 @@ const Navbar = () => {
           icon: <FileText className="w-4 h-4" />,
           description: 'Latest updates & announcements'
         },
-        { 
-          name: 'BSCCS', 
+        {
+          name: 'BSCCS',
           path: '/bihar-student-credit-card',
           icon: <CreditCard className="w-4 h-4" />,
-          description: 'Bihar Student Credit Card'
+          description: 'Bihar Student Credit Card - ₹499'
         },
         { 
           name: 'Brochure', 
@@ -339,9 +339,11 @@ const Navbar = () => {
           <div className="flex justify-between items-center py-3">
             {/* Elegant Logo */}
             <Link to="/" className="flex items-center space-x-2 group">
-              <div className="relative w-9 h-9 md:w-10 md:h-10 bg-gradient-to-br from-primary-500 via-secondary-200 to-accent-500 rounded-lg md:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                <span className="text-white font-bold text-sm md:text-base">SS</span>
-              </div>
+              <img
+                src="/images/logo.jpg"
+                alt="Seva Shiksha Logo"
+                className="relative w-9 h-9 md:w-10 md:h-10 rounded-lg md:rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+              />
               <div className="relative">
                 <h1 className="text-lg md:text-xl lg:text-2xl font-black text-primary-600">
                   SEVA SHIKSHA TRUST

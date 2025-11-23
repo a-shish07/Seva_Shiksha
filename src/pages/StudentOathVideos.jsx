@@ -4,13 +4,13 @@ import { Play, Video, Users, Award, Heart, TrendingUp } from 'lucide-react'
 const StudentOathVideos = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  // Student oath videos - Real videos from Seva Shiksha Trust YouTube channel
+  // Student oath videos - Local videos from public folder
   const videos = [
     {
       id: 1,
       title: "Student Oath Ceremony - Leadership Testimonial",
-      thumbnail: "https://img.youtube.com/vi/uKqZAkl9aPk/maxresdefault.jpg",
-      embedUrl: "https://www.youtube.com/embed/uKqZAkl9aPk",
+      thumbnail: "/images/placeholder.svg",
+      videoUrl: "/Oath Video/AQM2zkGf1_1QqRgDrjvYBEUVvfrNYr37SfNeGZp1yeKH5fKBJvefqTmQ_ppXBCwXrT3ACQg82aWq34an0_TqZLDC.mp4",
       description: "समायल अहमद साहब shares inspiring insights about students taking oath to pursue quality education with dedication and commitment under Seva Shiksha Trust",
       date: "April 2024",
       students: 150,
@@ -19,8 +19,8 @@ const StudentOathVideos = () => {
     {
       id: 2,
       title: "Students Recognized - National Excellence Event",
-      thumbnail: "https://img.youtube.com/vi/SZ_N7fzyJuE/maxresdefault.jpg",
-      embedUrl: "https://www.youtube.com/embed/SZ_N7fzyJuE",
+      thumbnail: "/images/placeholder.svg",
+      videoUrl: "/Oath Video/AQMd2yww-Oa70Y5Db7S6amnsVi7HhSqmzTpWXUAx_sN3OOgLE2xcPHWoWahou5NXGHbj6D0cfNKLAwT-Xi76rNXR.mp4",
       description: "Watch students pledge their commitment to educational excellence during national recognition event with support from 2 Lakh Private Schools India",
       date: "April 2024",
       students: 200,
@@ -29,8 +29,8 @@ const StudentOathVideos = () => {
     {
       id: 3,
       title: "Students Overcoming Challenges - Education System",
-      thumbnail: "https://img.youtube.com/vi/cdIszs6ZxSE/maxresdefault.jpg",
-      embedUrl: "https://www.youtube.com/embed/cdIszs6ZxSE",
+      thumbnail: "/images/placeholder.svg",
+      videoUrl: "/Oath Video/AQMNDDRKjPUKXAR1hld3RX04XIuMvnzwRjdB9JOJM-3Puhw7zB7CslVsak9FYpKeRB3Hb9lIRQB_s95wg3C9YO4.mp4",
       description: "Inspiring documentary featuring students taking oath to overcome education system challenges and commit to their academic success with Seva Shiksha Trust's support",
       date: "April 2024",
       students: 300,
@@ -39,8 +39,8 @@ const StudentOathVideos = () => {
     {
       id: 4,
       title: "Student Admission & Oath Ceremony",
-      thumbnail: "https://img.youtube.com/vi/zWmn9Ks5n2k/maxresdefault.jpg",
-      embedUrl: "https://www.youtube.com/embed/zWmn9Ks5n2k",
+      thumbnail: "/images/placeholder.svg",
+      videoUrl: "/Oath Video/AQMNeRrIzNyU1tFkoiythkxjpZ_5nDkf4oT2CWq6iNXcnGaXNSSyE5ayPLDbJ5VdeujDlakFPUOGfPcCqTweOe6z.mp4",
       description: "Watch new students take their sacred oath during admission ceremony, pledging to maintain discipline and pursue quality education with complete dedication",
       date: "February 2024",
       students: 120,
@@ -49,8 +49,8 @@ const StudentOathVideos = () => {
     {
       id: 5,
       title: "Student Success Stories - Inspiring Journeys",
-      thumbnail: "https://img.youtube.com/vi/35Kdv1gfQAU/maxresdefault.jpg",
-      embedUrl: "https://www.youtube.com/embed/35Kdv1gfQAU",
+      thumbnail: "/images/placeholder.svg",
+      videoUrl: "/Oath Video/AQMpKZoeKKN492MZjonn3r__Oq857Gt4D1fH4D7W-8um1NiEnH6iTYhFEHTxXdyVLIVjb0MBoVYtLnyy4HLhxOo.mp4",
       description: "Heartwarming stories of students who left their dreams to help underprivileged children while committing to educational excellence with Seva Shiksha Trust",
       date: "February 2024",
       students: 180,
@@ -59,8 +59,8 @@ const StudentOathVideos = () => {
     {
       id: 6,
       title: "Student Testimonials - Scholarship Recipients",
-      thumbnail: "https://img.youtube.com/vi/35Kdv1gfQAU/maxresdefault.jpg",
-      embedUrl: "https://www.youtube.com/embed/35Kdv1gfQAU",
+      thumbnail: "/images/placeholder.svg",
+      videoUrl: "/Oath Video/AQN6PPdZ6kxLB6stMO_NphCPrLK_euYqvyjjedy7XCiTNGTNVuNXQiDIgB5TnBIGrB8QuOiufBQNbwc2ltHufYU.mp4",
       description: "Hear directly from scholarship recipients about their educational journey and the impact of Seva Shiksha Trust's scholarship program on their lives",
       date: "January 2024",
       students: 250,
@@ -69,8 +69,8 @@ const StudentOathVideos = () => {
     {
       id: 7,
       title: "Student Life at Seva Shiksha - Campus Tour",
-      thumbnail: "https://img.youtube.com/vi/uKqZAkl9aPk/maxresdefault.jpg",
-      embedUrl: "https://www.youtube.com/embed/uKqZAkl9aPk",
+      thumbnail: "/images/placeholder.svg",
+      videoUrl: "/Oath Video/AQNa9SG1WkEHCPmfa9opvBt28Eu4Jn5kxkAkiR6vkBYE3cVYBIa7RfWjPQtrGMkVl8gCjMNnubosHrVemLMRP6do.mp4",
       description: "Experience a day in the life of Seva Shiksha students as they attend classes, participate in activities, and fulfill their educational commitments",
       date: "January 2024",
       students: 200,
@@ -79,11 +79,41 @@ const StudentOathVideos = () => {
     {
       id: 8,
       title: "Students Pledge - Future Leaders Program",
-      thumbnail: "https://img.youtube.com/vi/SZ_N7fzyJuE/maxresdefault.jpg",
-      embedUrl: "https://www.youtube.com/embed/SZ_N7fzyJuE",
+      thumbnail: "/images/placeholder.svg",
+      videoUrl: "/Oath Video/AQNHKmmjeLlHFDQXDFxqb6YsIePIWe8u3tPIBljrYlk8idwuDj1HUyTqbr0XcK80nM3_DyEfyCN49ae3zf7RZkA.mp4",
       description: "Young leaders in making - Students take oath to become change-makers and support underprivileged students while pursuing their own educational dreams",
       date: "December 2023",
       students: 175,
+      location: "Patna, Bihar"
+    },
+    {
+      id: 9,
+      title: "Student Oath Ceremony - Part 9",
+      thumbnail: "/images/placeholder.svg",
+      videoUrl: "/Oath Video/AQNTCYWTzLA0tD3KmxnXg0x_kESdfOtDkxm6SJpo2x7BaBGEwoVEFLjjt6_noTutCN02AcBymsTXg61Yis5rddPR.mp4",
+      description: "Additional student oath ceremony showcasing commitment to educational excellence",
+      date: "November 2023",
+      students: 160,
+      location: "Patna, Bihar"
+    },
+    {
+      id: 10,
+      title: "Student Oath Ceremony - Part 10",
+      thumbnail: "/images/placeholder.svg",
+      videoUrl: "/Oath Video/AQOmLhrSlDD4ZepNTXBBRxJpfOkcv1FeMKtYWLdXVU6_KVmQ9vNgfNTCVkw_P5SrBdtimoWe25Dt-Z_sSTmcXiw.mp4",
+      description: "More inspiring moments from student oath ceremonies",
+      date: "October 2023",
+      students: 140,
+      location: "Patna, Bihar"
+    },
+    {
+      id: 11,
+      title: "Student Oath Ceremony - Part 11",
+      thumbnail: "/images/placeholder.svg",
+      videoUrl: "/Oath Video/AQOUxSUh6IjkKQd2713wykN7c4EjxzVQ3pXF3Gfl3roY5sZ4A9QpGiWQVK8bcWBmfvCkZt1IwrKuuR1ooyy-2gw.mp4",
+      description: "Final collection of student oath videos demonstrating dedication",
+      date: "September 2023",
+      students: 130,
       location: "Patna, Bihar"
     }
   ];
@@ -107,7 +137,7 @@ const StudentOathVideos = () => {
               <Video className="w-12 h-12 text-orange-500" />
               <h1 className="text-4xl md:text-5xl font-bold">
                 <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-amber-400 bg-clip-text text-transparent">
-                  Student Oath Videos
+                  Student Videos
                 </span>
               </h1>
             </div>
@@ -153,15 +183,15 @@ const StudentOathVideos = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 cursor-pointer group"
               onClick={() => handleVideoClick(video)}
             >
-              {/* Thumbnail */}
-              <div className="relative h-48 bg-gradient-to-br from-orange-400 to-amber-500 overflow-hidden">
-                <img
-                  src={video.thumbnail}
-                  alt={video.title}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                  }}
+              {/* Direct Video */}
+              <div className="relative h-48 bg-black overflow-hidden">
+                <video
+                  src={video.videoUrl}
+                  className="w-full h-full object-cover"
+                  muted
+                  loop
+                  onMouseEnter={(e) => e.target.play()}
+                  onMouseLeave={(e) => e.target.pause()}
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
                   <div className="bg-white/90 rounded-full p-4 transform group-hover:scale-110 transition-transform">
@@ -173,26 +203,7 @@ const StudentOathVideos = () => {
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-2 line-clamp-2">
-                  {video.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  {video.description}
-                </p>
-                
-                <div className="flex items-center justify-between text-sm text-gray-500">
-                  <div className="flex items-center gap-1">
-                    <Users className="w-4 h-4" />
-                    <span>{video.students} Students</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <TrendingUp className="w-4 h-4" />
-                    <span>{video.location}</span>
-                  </div>
-                </div>
-              </div>
+
             </div>
           ))}
         </div>
@@ -209,15 +220,14 @@ const StudentOathVideos = () => {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Video Player */}
-            <div className="relative pt-[56.25%] bg-black">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src={selectedVideo.embedUrl}
+            <div className="relative bg-black">
+              <video
+                className="w-full h-auto max-h-[70vh]"
+                src={selectedVideo.videoUrl}
                 title={selectedVideo.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+                controls
+                autoPlay
+              ></video>
             </div>
 
             {/* Video Info */}

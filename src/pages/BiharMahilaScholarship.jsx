@@ -25,77 +25,16 @@ const BiharMahilaScholarship = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [showPayment, setShowPayment] = useState(false)
 
-  const { register, handleSubmit, control, formState: { errors }, watch } = useForm()
+  const { register, handleSubmit, control, formState: { errors } } = useForm()
 
-  const watchedEducation = watch("educationLevel")
 
-  const stateOptions = [
-    { value: "Bihar", label: "Bihar" },
-    { value: "Jharkhand", label: "Jharkhand" },
-    { value: "Uttar Pradesh", label: "Uttar Pradesh" },
-    { value: "West Bengal", label: "West Bengal" },
-    { value: "Delhi", label: "NCR / New Delhi" },
-    { value: "Madhya Pradesh", label: "Madhya Pradesh" },
-    { value: "Rajasthan", label: "Rajasthan" },
-    { value: "Karnataka", label: "Karnataka" },
-    { value: "Telangana", label: "Telangana" },
-    { value: "Maharashtra", label: "Maharashtra" },
-    { value: "Gujarat", label: "Gujarat" },
-    { value: "Odisha", label: "Odisha" },
-    { value: "Haryana", label: "Haryana" },
-    { value: "Punjab", label: "Punjab" },
-    { value: "Others", label: "अन्य राज्य" }
-  ]
-
-  const educationOptions = [
-    { value: "intermediate", label: "इंटरमीडिएट / 10+2" },
-    { value: "graduation", label: "स्नातक" },
-    { value: "postgraduation", label: "स्नातकोत्तर / व्यावसायिक" }
-  ]
-
-  const coursesAfterInter = [
-    { value: "engineering", label: "इंजीनियरिंग / B.Tech" },
-    { value: "nursing", label: "बी.एससी. नर्सिंग" },
-    { value: "paramedical", label: "पैरामेडिकल" },
-    { value: "bba", label: "बीबीए / बीकॉम" },
-    { value: "arts", label: "कला एवं मानविकी" }
-  ]
-
-  const coursesAfterGraduation = [
-    { value: "mba", label: "एमबीए / प्रबंधन" },
-    { value: "ma", label: "एमए / मानविकी" },
-    { value: "msc", label: "एमएससी / विज्ञान" },
-    { value: "law", label: "एलएलबी / विधि" },
-    { value: "bEd", label: "बी.एड." }
-  ]
-
-  const coursesAfterPostGraduation = [
-    { value: "research", label: "शोध / पीएचडी" },
-    { value: "professional", label: "व्यावसायिक प्रमाणपत्र" },
-    { value: "civilServices", label: "सिविल सेवा तैयारी" },
-    { value: "international", label: "अंतरराष्ट्रीय छात्रवृत्ति" }
-  ]
-
-  const getCourseOptions = () => {
-    if (watchedEducation?.value === "intermediate") return coursesAfterInter
-    if (watchedEducation?.value === "graduation") return coursesAfterGraduation
-    if (watchedEducation?.value === "postgraduation") return coursesAfterPostGraduation
-    return []
-  }
-
-  const categoryOptions = [
-    { value: "General", label: "सामान्य" },
-    { value: "OBC", label: "ओबीसी" },
-    { value: "SC", label: "एससी / एसटी" },
-    { value: "Minority", label: "अल्पसंख्यक" }
-  ]
 
   const onSubmit = async (data) => {
     try {
       setIsLoading(true)
       console.log("Mahila Scholarship Form:", data)
       setShowPayment(true)
-      toast.success("फॉर्म सफलतापूर्वक जमा हुआ! भुगतान जारी रखें।")
+      toast.success("पंजीकरण फॉर्म सफलतापूर्वक जमा हुआ! अगला चरण जारी रखें।")
     } catch (error) {
       toast.error("फॉर्म सबमिट करने में समस्या आई, कृपया पुनः प्रयास करें।")
     } finally {
@@ -104,61 +43,68 @@ const BiharMahilaScholarship = () => {
   }
 
   const handlePayment = () => {
-    toast.success("भुगतान सफल! आपकी पंजीकरण प्रक्रिया पूरी हो गई है।")
+    toast.success("पंजीकरण सफल! आप सेवा शिक्षा महिला रोज़गार अभियान का हिस्सा बन गए हैं।")
   }
 
   const highlights = [
     {
       icon: Award,
-      title: "सरकारी पहल",
+      title: "महिला सशक्तिकरण",
       description:
-        "बिहार सरकार की विशेष छात्रवृत्ति योजना जो उच्च शिक्षा में महिलाओं को आर्थिक सहायता प्रदान करती है।"
+        "महिलाओं को आर्थिक रूप से मजबूत बनाने का प्रयास और आत्मनिर्भरता एवं आत्मविश्वास बढ़ाना।"
     },
     {
       icon: Sparkles,
-      title: "सिर्फ ₹99 आवेदन शुल्क",
+      title: "कौशल प्रशिक्षण",
       description:
-        "सीमित प्रोसेसिंग शुल्क के साथ तेज़ आवेदन प्रक्रिया, जिससे अधिक छात्राएँ जुड़ सकें।"
+        "Communication प्रशिक्षण, मार्केटिंग एवं सेल्स स्किल, और डिजिटल स्किल्स के माध्यम से ऑनलाइन कार्य के अवसर।"
     },
     {
       icon: GraduationCap,
-      title: "कैरियर समर्थन",
+      title: "शिक्षा और जागरूकता",
       description:
-        "अभ्यर्थियों को पाठ्यक्रम चयन, प्रवेश मार्गदर्शन और भविष्य की योजना में सहयोग।"
+        "महिला शिक्षा को बढ़ावा देना और सामाजिक एवं आर्थिक अधिकारों के प्रति जागरूकता बढ़ाना।"
+    },
+    {
+      icon: Users,
+      title: "कम निवेश, अधिक अवसर",
+      description:
+        "न्यूनतम शुल्क के साथ ज्यादा कमाई के अवसर प्रदान करना।"
     }
   ]
 
   const eligibility = [
-    "आवेदिका बिहार राज्य की निवासी होनी चाहिए और मान्यता प्राप्त संस्थान में प्रवेशित हो",
-    "परिवार की वार्षिक आय निर्धारित सीमा (₹3 लाख तक) के भीतर हो",
-    "10+2 या समकक्ष परीक्षा में न्यूनतम 60% अंक प्राप्त किए हों",
-    "वर्तमान में स्नातक, व्यावसायिक या तकनीकी पाठ्यक्रम में अध्ययनरत छात्राएँ"
+    "आवेदिका बिहार राज्य की निवासी होनी चाहिए",
+    "महिलाओं को घर बैठे या सामूहिक रूप से कार्य करने का अवसर",
+    "कौशल प्रशिक्षण प्राप्त करने के इच्छुक महिलाएँ",
+    "आत्मनिर्भर बनने और आर्थिक स्थिति सुधारने की इच्छा",
+    "सामाजिक एवं आर्थिक अधिकारों के प्रति जागरूकता प्राप्त करना"
   ]
 
   const documents = [
     "हाल ही का पासपोर्ट आकार का फोटो",
     "आधार कार्ड और निवास प्रमाण पत्र",
-    "पिछली परीक्षा की अंक तालिका",
-    "संस्थान का प्रवेश प्रमाण पत्र",
-    "परिवार की आय प्रमाण पत्र",
-    "बैंक पासबुक की प्रति"
+    "शैक्षिक योग्यता का प्रमाण पत्र",
+    "मोबाइल नंबर और ईमेल पता",
+    "बैंक खाता विवरण (वैकल्पिक)",
+    "कौशल प्रशिक्षण में रुचि का प्रमाण"
   ]
 
   const steps = [
     {
       title: "ऑनलाइन पंजीकरण",
       description:
-        "फॉर्म में व्यक्तिगत, शैक्षणिक और बैंक विवरण भरें तथा ₹99 प्रोसेसिंग शुल्क का भुगतान करें।"
+        "फॉर्म में व्यक्तिगत विवरण भरें और सेवा शिक्षा महिला रोज़गार अभियान में शामिल हों।"
     },
     {
-      title: "दस्तावेज़ अपलोड",
+      title: "कौशल प्रशिक्षण",
       description:
-        "आवश्यक दस्तावेज़ों की स्पष्ट स्कैन कॉपी अपलोड करें और जमा करने से पहले विवरण जाँचें।"
+        "Communication, मार्केटिंग, सेल्स और डिजिटल स्किल्स का प्रशिक्षण प्राप्त करें।"
     },
     {
-      title: "सत्यापन एवं सहायता",
+      title: "रोजगार अवसर",
       description:
-        "टीम द्वारा दस्तावेज़ सत्यापन के बाद पात्र अभ्यर्थियों को कॉल और ईमेल के माध्यम से मार्गदर्शन उपलब्ध कराया जाएगा।"
+        "प्रशिक्षण प्राप्त करने के बाद घर बैठे या सामूहिक रूप से कार्य करने के अवसर प्राप्त करें।"
     }
   ]
 
@@ -181,15 +127,15 @@ const BiharMahilaScholarship = () => {
           >
             <div className="inline-flex gap-2 bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide">
               <Shield className="w-4 h-4" />
-              बिहार महिला छात्रवृत्ति योजना 99
+              सेवा शिक्षा महिला रोज़गार अभियान
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-              बिहार महिला छात्रावृत्ति योजना
+SEVA SHIKSHA MAHILA ROJGAR ABHIYAAN
             </h1>
             <p className="text-lg text-gray-600 leading-8">
-              उच्च शिक्षा की ओर अग्रसर छात्राओं के लिए यह विशेष पहल आर्थिक बाधाओं को दूर करती है। मात्र ₹99 आवेदन शुल्क के साथ छात्राएँ गुणवत्तापूर्ण पाठ्यक्रमों तक पहुँच सकती हैं और मार्गदर्शकों से निरंतर सहयोग प्राप्त करती हैं।
+              सेवा शिक्षा महिला रोज़गार अभियान एक सामाजिक पहल है, जिसका उद्देश्य भारत की महिलाओं को शिक्षा और रोजगार के अवसर प्रदान कर उन्हें आत्मनिर्भर बनाना है। यह अभियान महिलाओं को घर बैठे व सामूहिक रूप से कार्य करने, अपनी आर्थिक स्थिति सुधारने और आत्मविश्वास बढ़ाने में मदद करता है।
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {highlights.map((item, index) => {
                 const Icon = item.icon
                 return (
@@ -268,107 +214,46 @@ const BiharMahilaScholarship = () => {
         <div className="container-custom max-w-5xl">
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
             <div className="bg-gradient-to-r from-rose-500 to-pink-500 p-6 text-white">
-              <h2 className="text-2xl font-bold mb-2">महिला छात्रवृत्ति आवेदन फॉर्म</h2>
-              <p className="text-white/80 text-sm md:text-base">नीचे दिए गए विवरण भरकर ₹99 प्रोसेसिंग शुल्क के साथ आवेदन पूरा करें</p>
+              <h2 className="text-2xl font-bold mb-2">SEVA SHIKSHA MAHILA ROJGAR ABHIYAAN</h2>
+              <p className="text-white/80 text-sm md:text-base">REGISTRATION FORM</p>
             </div>
             <form onSubmit={handleSubmit(onSubmit)} className="p-8 space-y-8">
-              <div className="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-2xl">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                  <BookOpen className="w-5 h-5 text-rose-600" />
-                  कार्यक्रम विवरण
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      अध्ययन राज्य <span className="text-red-500">*</span>
-                    </label>
-                    <Controller
-                      name="studyState"
-                      control={control}
-                      rules={{ required: "कृपया राज्य चुनें" }}
-                      render={({ field }) => (
-                        <Select
-                          {...field}
-                          options={stateOptions}
-                          placeholder="राज्य चुनें"
-                          className="react-select-container"
-                          classNamePrefix="react-select"
-                          isClearable
-                        />
-                      )}
-                    />
-                    {errors.studyState && <p className="text-red-500 text-sm mt-1">{errors.studyState.message}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      वर्तमान शिक्षा स्तर <span className="text-red-500">*</span>
-                    </label>
-                    <Controller
-                      name="educationLevel"
-                      control={control}
-                      rules={{ required: "कृपया शिक्षा स्तर चुनें" }}
-                      render={({ field }) => (
-                        <Select
-                          {...field}
-                          options={educationOptions}
-                          placeholder="शिक्षा स्तर"
-                          className="react-select-container"
-                          classNamePrefix="react-select"
-                          isClearable
-                        />
-                      )}
-                    />
-                    {errors.educationLevel && <p className="text-red-500 text-sm mt-1">{errors.educationLevel.message}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      पाठ्यक्रम प्राथमिकता <span className="text-red-500">*</span>
-                    </label>
-                    <Controller
-                      name="preferredCourse"
-                      control={control}
-                      rules={{ required: "कृपया पाठ्यक्रम चुनें" }}
-                      render={({ field }) => (
-                        <Select
-                          {...field}
-                          options={getCourseOptions()}
-                          placeholder="पाठ्यक्रम चुनें"
-                          isDisabled={!watchedEducation}
-                          className="react-select-container"
-                          classNamePrefix="react-select"
-                          isClearable
-                        />
-                      )}
-                    />
-                    {errors.preferredCourse && <p className="text-red-500 text-sm mt-1">{errors.preferredCourse.message}</p>}
-                  </div>
-                </div>
-              </div>
-
               <div className="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-2xl">
                 <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
                   <User className="w-5 h-5 text-amber-600" />
-                  व्यक्तिगत जानकारी
+                  1. Personal Details
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      पूरा नाम <span className="text-red-500">*</span>
+                      Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
-                      {...register("fullName", { required: "कृपया अपना नाम दर्ज करें" })}
+                      {...register("fullName", { required: "Please enter your full name" })}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="अपना पूरा नाम लिखें"
+                      placeholder="Enter your full name"
                     />
                     {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      जन्म तिथि
+                      Father/Husband Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      {...register("fatherHusbandName", { required: "Please enter father/husband name" })}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
+                      placeholder="Enter father/husband name"
+                    />
+                    {errors.fatherHusbandName && <p className="text-red-500 text-sm mt-1">{errors.fatherHusbandName.message}</p>}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Date of Birth <span className="text-red-500">*</span>
                     </label>
                     <Controller
                       name="dateOfBirth"
                       control={control}
+                      rules={{ required: "Please select date of birth" }}
                       render={({ field }) => (
                         <DatePicker
                           {...field}
@@ -378,155 +263,124 @@ const BiharMahilaScholarship = () => {
                           showYearDropdown
                           yearDropdownItemNumber={50}
                           scrollableYearDropdown
-                          placeholderText="जन्म तिथि चुनें"
+                          placeholderText="Select date of birth"
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
                         />
                       )}
                     />
+                    {errors.dateOfBirth && <p className="text-red-500 text-sm mt-1">{errors.dateOfBirth.message}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      मोबाइल नंबर <span className="text-red-500">*</span>
+                      Age <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="number"
+                      {...register("age", {
+                        required: "Please enter your age",
+                        min: { value: 18, message: "Age must be at least 18" },
+                        max: { value: 65, message: "Age must be less than 65" }
+                      })}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
+                      placeholder="Enter your age"
+                    />
+                    {errors.age && <p className="text-red-500 text-sm mt-1">{errors.age.message}</p>}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Mobile Number <span className="text-red-500">*</span>
                     </label>
                     <input
                       {...register("mobile", {
-                        required: "कृपया मोबाइल नंबर दर्ज करें",
+                        required: "Mobile number is required",
                         pattern: {
                           value: /^[6-9]\d{9}$/,
-                          message: "मान्य मोबाइल नंबर दर्ज करें"
+                          message: "Please enter a valid mobile number"
                         }
                       })}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="10 अंकों का मोबाइल नंबर"
+                      placeholder="Enter 10-digit mobile number"
                     />
                     {errors.mobile && <p className="text-red-500 text-sm mt-1">{errors.mobile.message}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      व्हाट्सएप नंबर
+                      Alternate Mobile Number
                     </label>
                     <input
-                      {...register("whatsapp", {
+                      {...register("alternateMobile", {
                         pattern: {
                           value: /^[6-9]\d{9}$/,
-                          message: "मान्य व्हाट्सएप नंबर दर्ज करें"
+                          message: "Please enter a valid mobile number"
                         }
                       })}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="यदि अलग है तो व्हाट्सएप नंबर दर्ज करें"
+                      placeholder="Enter alternate mobile number"
                     />
-                    {errors.whatsapp && <p className="text-red-500 text-sm mt-1">{errors.whatsapp.message}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      ईमेल पता
-                    </label>
-                    <input
-                      type="email"
-                      {...register("email", {
-                        pattern: {
-                          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                          message: "मान्य ईमेल पता दर्ज करें"
-                        }
-                      })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="अपना ईमेल दर्ज करें"
-                    />
-                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      आधार नंबर
-                    </label>
-                    <input
-                      {...register("aadhaar", {
-                        pattern: {
-                          value: /^\d{12}$/,
-                          message: "12 अंकों का आधार नंबर दर्ज करें"
-                        }
-                      })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="आधार नंबर (वैकल्पिक)"
-                      maxLength={12}
-                    />
-                    {errors.aadhaar && <p className="text-red-500 text-sm mt-1">{errors.aadhaar.message}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      श्रेणी <span className="text-red-500">*</span>
-                    </label>
-                    <Controller
-                      name="category"
-                      control={control}
-                      rules={{ required: "कृपया श्रेणी चुनें" }}
-                      render={({ field }) => (
-                        <Select
-                          {...field}
-                          options={categoryOptions}
-                          placeholder="श्रेणी चुनें"
-                          className="react-select-container"
-                          classNamePrefix="react-select"
-                          isClearable
-                        />
-                      )}
-                    />
-                    {errors.category && <p className="text-red-500 text-sm mt-1">{errors.category.message}</p>}
+                    {errors.alternateMobile && <p className="text-red-500 text-sm mt-1">{errors.alternateMobile.message}</p>}
                   </div>
                 </div>
               </div>
 
               <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-2xl">
                 <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                  <Users className="w-5 h-5 text-indigo-600" />
-                  परिवार विवरण
+                  <GraduationCap className="w-5 h-5 text-indigo-600" />
+                  2. Education Details
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      अभिभावक का नाम
+                      Highest Qualification <span className="text-red-500">*</span>
                     </label>
-                    <input
-                      {...register("guardianName")}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="अभिभावक का नाम"
+                    <Controller
+                      name="highestQualification"
+                      control={control}
+                      rules={{ required: "Please select highest qualification" }}
+                      render={({ field }) => (
+                        <Select
+                          {...field}
+                          options={[
+                            { value: "10th", label: "10th" },
+                            { value: "12th", label: "12th" },
+                            { value: "graduation", label: "Graduation" },
+                            { value: "other", label: "Other" }
+                          ]}
+                          placeholder="Select highest qualification"
+                          className="react-select-container"
+                          classNamePrefix="react-select"
+                          isClearable
+                        />
+                      )}
                     />
+                    {errors.highestQualification && <p className="text-red-500 text-sm mt-1">{errors.highestQualification.message}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      अभिभावक का मोबाइल नंबर <span className="text-red-500">*</span>
+                      Experience (if any) <span className="text-red-500">*</span>
                     </label>
-                    <input
-                      {...register("guardianPhone", {
-                        required: "अभिभावक का मोबाइल नंबर आवश्यक है",
-                        pattern: {
-                          value: /^[6-9]\d{9}$/,
-                          message: "मान्य मोबाइल नंबर दर्ज करें"
-                        }
-                      })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="अभिभावक का मोबाइल नंबर"
-                    />
-                    {errors.guardianPhone && <p className="text-red-500 text-sm mt-1">{errors.guardianPhone.message}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      अभिभावक का व्यवसाय
-                    </label>
-                    <input
-                      {...register("guardianOccupation")}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="व्यवसाय / सेवा"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      वार्षिक पारिवारिक आय
-                    </label>
-                    <input
-                      {...register("familyIncome")}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="राशि रुपये में"
-                    />
+                    <div className="space-y-2">
+                      <div className="flex items-center">
+                        <input
+                          type="radio"
+                          id="experience-yes"
+                          {...register("hasExperience", { required: "Please select experience status" })}
+                          value="yes"
+                          className="h-4 w-4 text-rose-600 focus:ring-rose-500 border-gray-300"
+                        />
+                        <label htmlFor="experience-yes" className="ml-2 text-sm text-gray-700">Yes</label>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          type="radio"
+                          id="experience-no"
+                          {...register("hasExperience", { required: "Please select experience status" })}
+                          value="no"
+                          className="h-4 w-4 text-rose-600 focus:ring-rose-500 border-gray-300"
+                        />
+                        <label htmlFor="experience-no" className="ml-2 text-sm text-gray-700">No</label>
+                      </div>
+                    </div>
+                    {errors.hasExperience && <p className="text-red-500 text-sm mt-1">{errors.hasExperience.message}</p>}
                   </div>
                 </div>
               </div>
@@ -534,55 +388,45 @@ const BiharMahilaScholarship = () => {
               <div className="bg-gradient-to-r from-yellow-50 to-lime-50 p-6 rounded-2xl">
                 <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-lime-600" />
-                  पता विवरण
+                  Complete Address
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      पूरा पता <span className="text-red-500">*</span>
-                    </label>
-                    <textarea
-                      {...register("address", { required: "कृपया पूरा पता दर्ज करें" })}
-                      rows={3}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="घरेलू पता, पोस्ट ऑफिस, थाना आदि"
-                    />
-                    {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address.message}</p>}
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      जिला <span className="text-red-500">*</span>
+                      District <span className="text-red-500">*</span>
                     </label>
                     <input
-                      {...register("district", { required: "कृपया जिला दर्ज करें" })}
+                      {...register("district", { required: "Please enter district" })}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="जिले का नाम"
+                      placeholder="Enter district"
                     />
                     {errors.district && <p className="text-red-500 text-sm mt-1">{errors.district.message}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      प्रखंड / ब्लॉक
+                      State <span className="text-red-500">*</span>
                     </label>
                     <input
-                      {...register("block")}
+                      {...register("state", { required: "Please enter state" })}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="ब्लॉक / प्रखंड का नाम"
+                      placeholder="Enter state"
                     />
+                    {errors.state && <p className="text-red-500 text-sm mt-1">{errors.state.message}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      पिन कोड
+                      Pin Code <span className="text-red-500">*</span>
                     </label>
                     <input
                       {...register("pinCode", {
+                        required: "Please enter pin code",
                         pattern: {
                           value: /^\d{6}$/,
-                          message: "6 अंकों का पिन कोड दर्ज करें"
+                          message: "Please enter 6-digit pin code"
                         }
                       })}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
-                      placeholder="पिन कोड"
+                      placeholder="Enter pin code"
                       maxLength={6}
                     />
                     {errors.pinCode && <p className="text-red-500 text-sm mt-1">{errors.pinCode.message}</p>}
@@ -590,16 +434,72 @@ const BiharMahilaScholarship = () => {
                 </div>
               </div>
 
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-2xl">
+                <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-cyan-600" />
+                  3. ID Proof
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Aadhar Number <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      {...register("aadhaar", {
+                        required: "Aadhar number is required",
+                        pattern: {
+                          value: /^\d{12}$/,
+                          message: "Please enter 12-digit Aadhar number"
+                        }
+                      })}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
+                      placeholder="Enter 12-digit Aadhar number"
+                      maxLength={12}
+                    />
+                    {errors.aadhaar && <p className="text-red-500 text-sm mt-1">{errors.aadhaar.message}</p>}
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-2xl">
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">Declaration</h3>
+                <div className="space-y-4">
+                  <p className="text-sm text-gray-700">
+                    I declare that all the information I have provided is correct and any misrepresentation may result in my registration being cancelled.
+                  </p>
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="declaration-checkbox"
+                      {...register("acceptDeclaration", { required: "Please accept the declaration" })}
+                      className="h-5 w-5 text-rose-600 focus:ring-rose-500 border-gray-300 rounded mt-1"
+                    />
+                    <label htmlFor="declaration-checkbox" className="text-sm text-gray-700">
+                      <span className="text-red-500">*</span> I confirm that all information provided is true and accurate.
+                    </label>
+                  </div>
+                  {errors.acceptDeclaration && <p className="text-red-500 text-sm mt-1">{errors.acceptDeclaration.message}</p>}
+                </div>
+              </div>
+
               <div className="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-2xl">
-                <div className="flex items-start gap-3">
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">Terms & Conditions</h3>
+                <div className="space-y-3 text-sm text-gray-700">
+                  <p>1. This campaign is for women only.</p>
+                  <p>2. The registration fee of ₹99/- is non-refundable.</p>
+                  <p>3. The information provided must be accurate.</p>
+                  <p>4. Income is dependent on performance and not guaranteed.</p>
+                  <p>5. Failure to comply with these rules may result in cancellation of membership.</p>
+                </div>
+                <div className="flex items-start gap-3 mt-4">
                   <input
                     type="checkbox"
-                    id="mahila-terms"
-                    {...register("acceptTerms", { required: "कृपया नियमों से सहमति दें" })}
+                    id="terms-checkbox"
+                    {...register("acceptTerms", { required: "Please accept the terms and conditions" })}
                     className="h-5 w-5 text-rose-600 focus:ring-rose-500 border-gray-300 rounded mt-1"
                   />
-                  <label htmlFor="mahila-terms" className="text-sm text-gray-700">
-                    <span className="text-red-500">*</span> मैं पुष्टि करती हूँ कि सभी विवरण सत्य एवं पूर्ण हैं।
+                  <label htmlFor="terms-checkbox" className="text-sm text-gray-700">
+                    <span className="text-red-500">*</span> I accept the terms and conditions.
                   </label>
                 </div>
                 {errors.acceptTerms && <p className="text-red-500 text-sm mt-1">{errors.acceptTerms.message}</p>}
@@ -611,7 +511,7 @@ const BiharMahilaScholarship = () => {
                   disabled={isLoading}
                   className="bg-gradient-to-r from-rose-600 to-pink-600 text-white py-4 px-12 rounded-xl font-semibold text-lg hover:from-rose-700 hover:to-pink-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isLoading ? "Processing..." : "सबमिट करें और भुगतान जारी रखें"}
+                  {isLoading ? "Processing..." : "Register Now"}
                 </button>
               </div>
             </form>
@@ -621,22 +521,22 @@ const BiharMahilaScholarship = () => {
               <div className="bg-gradient-to-r from-pink-500 to-rose-500 p-6 text-white">
                 <h3 className="text-2xl font-bold flex items-center gap-2">
                   <CreditCard className="w-6 h-6" />
-                  भुगतान विवरण
+                  पंजीकरण विवरण
                 </h3>
-                <p className="text-white/80 text-sm md:text-base">₹99 प्रोसेसिंग शुल्क ऑनलाइन जमा करें</p>
+                <p className="text-white/80 text-sm md:text-base">सेवा शिक्षा महिला रोज़गार अभियान में शामिल हों</p>
               </div>
               <div className="p-8 space-y-6">
                 <div className="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-2xl flex items-center justify-between">
                   <div>
-                    <div className="text-sm uppercase tracking-widest text-rose-500">Processing Fee</div>
-                    <div className="text-xl font-semibold text-gray-800">महिला छात्रवृत्ति आवेदन</div>
+                    <div className="text-sm uppercase tracking-widest text-rose-500">Registration Fee</div>
+                    <div className="text-xl font-semibold text-gray-800">महिला रोज़गार अभियान</div>
                   </div>
                   <span className="text-3xl font-bold text-rose-600">₹99</span>
                 </div>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• दस्तावेज़ सत्यापन और योग्यता जांच</li>
-                  <li>• करियर काउंसलिंग एवं पाठ्यक्रम मार्गदर्शन</li>
-                  <li>• छात्रवृत्ति अपडेट और सहायता</li>
+                  <li>• कौशल प्रशिक्षण और मार्गदर्शन</li>
+                  <li>• रोजगार अवसर और आर्थिक सहायता</li>
+                  <li>• महिला सशक्तिकरण और आत्मविश्वास निर्माण</li>
                 </ul>
                 <div className="text-center">
                   <button
@@ -644,7 +544,7 @@ const BiharMahilaScholarship = () => {
                     onClick={handlePayment}
                     className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white px-10 py-4 rounded-xl font-semibold hover:from-pink-700 hover:to-rose-700 transition-all duration-200"
                   >
-                    भुगतान पूरा करें
+                    पंजीकरण पूरा करें
                   </button>
                   <p className="text-xs text-gray-500 mt-3">UPI, नेट बैंकिंग, कार्ड भुगतान स्वीकार्य हैं</p>
                 </div>
@@ -667,9 +567,9 @@ const BiharMahilaScholarship = () => {
                 <FileText className="w-8 h-8" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">पात्रता मानदंड</h2>
+                <h2 className="text-3xl font-bold text-gray-900">महिला सशक्तिकरण पात्रता</h2>
                 <p className="text-gray-600 mt-2 text-sm md:text-base">
-                  आवेदन करने से पहले निम्न शर्तों को सुनिश्चित करें ताकि छात्रवृत्ति का लाभ प्राप्त हो सके।
+                  सेवा शिक्षा महिला रोज़गार अभियान में शामिल होने के लिए निम्न योग्यताएँ आवश्यक हैं।
                 </p>
               </div>
             </div>
@@ -694,7 +594,7 @@ const BiharMahilaScholarship = () => {
               viewport={{ once: true }}
               className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">आवेदन प्रक्रिया</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">महिला सशक्तिकरण प्रक्रिया</h2>
               <div className="space-y-5">
                 {steps.map((step, index) => (
                   <div key={index} className="flex items-start gap-4">
@@ -716,7 +616,7 @@ const BiharMahilaScholarship = () => {
               viewport={{ once: true }}
               className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">आवश्यक दस्तावेज़</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">पंजीकरण के लिए आवश्यक दस्तावेज़</h3>
               <div className="space-y-3">
                 {documents.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
@@ -740,9 +640,9 @@ const BiharMahilaScholarship = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold">प्रक्रिया सहायता केंद्र</h2>
+                <h2 className="text-3xl font-bold">महिला सशक्तिकरण सहायता केंद्र</h2>
                 <p className="text-white/85 text-sm md:text-base">
-                  आवेदन जमा करने के बाद 48 घंटों के भीतर हमारी सहायता टीम आपके दस्तावेज़ों की समीक्षा करती है और आवश्यकता होने पर आपको फोन या ईमेल पर संपर्क करती है।
+                  पंजीकरण के बाद हमारी टीम आपको कौशल प्रशिक्षण, रोजगार अवसरों और महिला सशक्तिकरण कार्यक्रमों के बारे में जानकारी प्रदान करती है।
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {support.map((item, index) => (
@@ -756,19 +656,19 @@ const BiharMahilaScholarship = () => {
                 </div>
               </div>
               <div className="bg-white rounded-3xl p-6 text-gray-900 shadow-xl">
-                <h3 className="text-2xl font-bold mb-3">त्वरित आवेदन अनुस्मारक</h3>
+                <h3 className="text-2xl font-bold mb-3">महिला सशक्तिकरण अनुस्मारक</h3>
                 <ul className="space-y-3 text-sm text-gray-600">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-rose-500 mt-0.5" />
-                    <span>₹99 का भुगतान UPI, नेट बैंकिंग या क्यूआर स्कैन से करें और रसीद संचित रखें।</span>
+                    <span>₹99 पंजीकरण शुल्क का भुगतान करके महिला रोज़गार अभियान का हिस्सा बनें।</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-rose-500 mt-0.5" />
-                    <span>दस्तावेज़ स्पष्ट, बिना धुंधलेपन के और मोबाइल कैमरा से स्कैन किए हों।</span>
+                    <span>कौशल प्रशिक्षण प्राप्त करके घर बैठे या सामूहिक रूप से कार्य करने के अवसर प्राप्त करें।</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-rose-500 mt-0.5" />
-                    <span>सभी संचार registered ईमेल और मोबाइल पर भेजे जाएंगे, कृपया नियमित रूप से जांचें।</span>
+                    <span>आत्मनिर्भर बनने और आर्थिक स्थिति सुधारने के लिए हमारी टीम आपकी मदद करेगी।</span>
                   </li>
                 </ul>
               </div>
