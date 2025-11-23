@@ -10,9 +10,11 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="lg:col-span-2" data-aos="fade-right">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-gold-400 to-gold-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">SS</span>
-              </div>
+              <img
+                src="/images/logo.jpg"
+                alt="Seva Shiksha Logo"
+                className="w-12 h-12 rounded-lg"
+              />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">SEVA SHIKSHA</h1>
                 <p className="text-orange-600">Trust</p>
