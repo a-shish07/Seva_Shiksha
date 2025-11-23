@@ -24,6 +24,8 @@ import MembershipRegistration from './pages/MembershipRegistration'
 import BiharMahilaScholarship from './pages/BiharMahilaScholarship'
 import Photos from './pages/Photos'
 import Videos from './pages/Videos'
+import NewsClip from './pages/NewsClip'
+import PaymentPage from './pages/PaymentPage'
 import News from './pages/News'
 import Brochure from './pages/Brochure'
 import BiharStudentCreditCard from './pages/BiharStudentCreditCard'
@@ -63,6 +65,8 @@ function App() {
             <Route path="/bihar-mahila-scholarship" element={<BiharMahilaScholarship />} />
             <Route path="/photos" element={<Photos />} />
             <Route path="/videos" element={<Videos />} />
+            <Route path="/news-clip" element={<NewsClip />} />
+            <Route path="/payment" element={<PaymentPage />} />
             <Route path="/news" element={<News />} />
             <Route path="/brochure" element={<Brochure />} />
             <Route path="/bihar-student-credit-card" element={<BiharStudentCreditCard />} />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import Select from 'react-select';
 import toast, { Toaster } from 'react-hot-toast';
@@ -7,8 +8,8 @@ import { GraduationCap, Users, Award, Target, Star, BookOpen, CreditCard, MapPin
 import "react-datepicker/dist/react-datepicker.css";
 
 const StudentRegistration = () => {
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const [showPayment, setShowPayment] = useState(false);
 
   const { register, handleSubmit, control, formState: { errors }, watch } = useForm();
 
@@ -116,10 +117,15 @@ const StudentRegistration = () => {
     try {
       setIsLoading(true);
       console.log('Form Data:', data);
-      
-      // Show payment section
-      setShowPayment(true);
-      toast.success('Form submitted successfully! Please proceed with payment.');
+
+      // Redirect to payment page with form data
+      navigate('/payment', {
+        state: {
+          formData: data,
+          amount: 999,
+          formType: 'Student Registration'
+        }
+      });
     } catch (error) {
       toast.error('Failed to submit form. Please try again.');
     } finally {
@@ -127,10 +133,7 @@ const StudentRegistration = () => {
     }
   };
 
-  const handlePayment = () => {
-    toast.success('Payment successful! Your registration is complete.');
-    // Here you would integrate with actual payment gateway
-  };
+
 
   return (
     <div className="pt-16 min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 mt-10">
@@ -623,6 +626,8 @@ const StudentRegistration = () => {
               {errors.acceptTerms && <p className="text-red-500 text-sm mt-1">{errors.acceptTerms.message}</p>}
             </div>
 
+
+
             {/* Submit Button */}
             <div className="text-center">
               <button
@@ -636,56 +641,7 @@ const StudentRegistration = () => {
           </form>
         </div>
 
-        {/* Payment Section */}
-        {showPayment && (
-          <div className="mt-8 bg-white rounded-2xl shadow-2xl overflow-hidden">
-            <div className="bg-gradient-to-r from-green-600 to-teal-600 p-6 text-white">
-              <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
-                <CreditCard className="w-6 h-6" />
-                Payment Details
-              </h2>
-              <p className="opacity-90">Complete your registration with payment</p>
-            </div>
 
-            <div className="p-8">
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl mb-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-800">Registration Fee</h3>
-                    <p className="text-gray-600">One-time registration and scholarship processing fee</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-3xl font-bold text-blue-600">₹999</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
-                <h4 className="font-semibold mb-2 text-yellow-800">What's included in registration:</h4>
-                <ul className="text-sm text-yellow-700 space-y-1">
-                  <li>• Complete career guidance and counseling</li>
-                  <li>• University admission assistance</li>
-                  <li>• Scholarship guidance and application support</li>
-                  <li>• Regular updates on admission notifications</li>
-                  <li>• Access to educational resources and materials</li>
-                  <li>• Personalized course recommendations</li>
-                </ul>
-              </div>
-
-              <div className="text-center">
-                <button
-                  onClick={handlePayment}
-                  className="bg-gradient-to-r from-green-600 to-teal-600 text-white py-4 px-12 rounded-xl hover:from-green-700 hover:to-teal-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
-                >
-                  Proceed to Payment
-                </button>
-                <p className="text-sm text-gray-500 mt-4">
-                  Secure payment gateway • Multiple payment options available
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* Features Section */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">

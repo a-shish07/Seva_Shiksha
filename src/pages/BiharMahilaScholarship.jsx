@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useForm, Controller } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
 import Select from "react-select"
 import toast, { Toaster } from "react-hot-toast"
 import DatePicker from "react-datepicker"
@@ -22,8 +23,8 @@ import {
 } from "lucide-react"
 
 const BiharMahilaScholarship = () => {
+  const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
-  const [showPayment, setShowPayment] = useState(false)
 
   const { register, handleSubmit, control, formState: { errors } } = useForm()
 
@@ -33,8 +34,15 @@ const BiharMahilaScholarship = () => {
     try {
       setIsLoading(true)
       console.log("Mahila Scholarship Form:", data)
-      setShowPayment(true)
-      toast.success("पंजीकरण फॉर्म सफलतापूर्वक जमा हुआ! अगला चरण जारी रखें।")
+
+      // Redirect to payment page with form data
+      navigate('/payment', {
+        state: {
+          formData: data,
+          amount: 99,
+          formType: 'Mahila Rojgar Abhiyaan Registration'
+        }
+      });
     } catch (error) {
       toast.error("फॉर्म सबमिट करने में समस्या आई, कृपया पुनः प्रयास करें।")
     } finally {
@@ -42,9 +50,7 @@ const BiharMahilaScholarship = () => {
     }
   }
 
-  const handlePayment = () => {
-    toast.success("पंजीकरण सफल! आप सेवा शिक्षा महिला रोज़गार अभियान का हिस्सा बन गए हैं।")
-  }
+
 
   const highlights = [
     {
@@ -505,6 +511,8 @@ SEVA SHIKSHA MAHILA ROJGAR ABHIYAAN
                 {errors.acceptTerms && <p className="text-red-500 text-sm mt-1">{errors.acceptTerms.message}</p>}
               </div>
 
+
+
               <div className="text-center">
                 <button
                   type="submit"
@@ -516,41 +524,6 @@ SEVA SHIKSHA MAHILA ROJGAR ABHIYAAN
               </div>
             </form>
           </div>
-          {showPayment && (
-            <div className="mt-10 bg-white rounded-3xl shadow-xl overflow-hidden">
-              <div className="bg-gradient-to-r from-pink-500 to-rose-500 p-6 text-white">
-                <h3 className="text-2xl font-bold flex items-center gap-2">
-                  <CreditCard className="w-6 h-6" />
-                  पंजीकरण विवरण
-                </h3>
-                <p className="text-white/80 text-sm md:text-base">सेवा शिक्षा महिला रोज़गार अभियान में शामिल हों</p>
-              </div>
-              <div className="p-8 space-y-6">
-                <div className="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-2xl flex items-center justify-between">
-                  <div>
-                    <div className="text-sm uppercase tracking-widest text-rose-500">Registration Fee</div>
-                    <div className="text-xl font-semibold text-gray-800">महिला रोज़गार अभियान</div>
-                  </div>
-                  <span className="text-3xl font-bold text-rose-600">₹99</span>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• कौशल प्रशिक्षण और मार्गदर्शन</li>
-                  <li>• रोजगार अवसर और आर्थिक सहायता</li>
-                  <li>• महिला सशक्तिकरण और आत्मविश्वास निर्माण</li>
-                </ul>
-                <div className="text-center">
-                  <button
-                    type="button"
-                    onClick={handlePayment}
-                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-pink-600 to-rose-600 text-white px-10 py-4 rounded-xl font-semibold hover:from-pink-700 hover:to-rose-700 transition-all duration-200"
-                  >
-                    पंजीकरण पूरा करें
-                  </button>
-                  <p className="text-xs text-gray-500 mt-3">UPI, नेट बैंकिंग, कार्ड भुगतान स्वीकार्य हैं</p>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </section>
 

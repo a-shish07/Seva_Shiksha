@@ -191,17 +191,23 @@ const Navbar = () => {
       icon: <Image className="w-4 h-4" />,
       description: 'Photos & Videos',
       dropdown: [
-        { 
-          name: 'Photos', 
+        {
+          name: 'Photos',
           path: '/photos',
           description: 'Gallery of our events',
           icon: <Image className="w-4 h-4" />
         },
-        { 
-          name: 'Videos', 
+        {
+          name: 'Videos',
           path: '/videos',
           description: 'Educational & event videos',
           icon: <Video className="w-4 h-4" />
+        },
+        {
+          name: 'News Clip',
+          path: '/news-clip',
+          description: 'Latest news coverage',
+          icon: <FileText className="w-4 h-4" />
         }
       ]
     },

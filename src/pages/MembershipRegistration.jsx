@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 import toast, { Toaster } from 'react-hot-toast';
 import { Users, User, Mail, Phone, MapPin, Camera, FileText, Award, Target } from 'lucide-react';
 
 const MembershipRegistration = () => {
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [uploadedPhoto, setUploadedPhoto] = useState(null);
 
@@ -77,11 +79,19 @@ const MembershipRegistration = () => {
       setIsLoading(true);
       console.log('Membership Form Data:', data);
       console.log('Uploaded Photo:', uploadedPhoto);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      toast.success('सदस्यता पंजीकरण सफलतापूर्वक जमा हुआ! आपको जल्द ही पुष्टिकरण ईमेल प्राप्त होगा।');
+
+      // Determine amount based on membership type
+      const amount = data.membershipType === 'active-member' ? 9999 : 2499;
+      const formType = data.membershipType === 'active-member' ? 'Active Membership Registration' : 'General Membership Registration';
+
+      // Redirect to payment page with form data
+      navigate('/payment', {
+        state: {
+          formData: { ...data, uploadedPhoto },
+          amount: amount,
+          formType: formType
+        }
+      });
     } catch (error) {
       toast.error('सदस्यता पंजीकरण जमा करने में विफल। कृपया पुनः प्रयास करें।');
     } finally {
@@ -520,6 +530,8 @@ const MembershipRegistration = () => {
               </div>
               {errors.acceptTerms && <p className="text-red-500 text-sm mt-1">{errors.acceptTerms.message}</p>}
             </div>
+
+
 
             {/* Submit Button */}
             <div className="pt-6">

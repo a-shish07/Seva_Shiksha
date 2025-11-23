@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useForm, Controller } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
 import Select from "react-select"
 import toast, { Toaster } from "react-hot-toast"
 import DatePicker from "react-datepicker"
@@ -32,9 +33,9 @@ import {
 } from "../components/home/BiharStudentCreditCardSection"
 
 const BiharStudentCreditCard = () => {
+  const navigate = useNavigate()
   const [faqOpen, setFaqOpen] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
-  const [showPayment, setShowPayment] = useState(false)
 
   const { register, handleSubmit, control, formState: { errors } } = useForm()
 
@@ -42,8 +43,15 @@ const BiharStudentCreditCard = () => {
     try {
       setIsLoading(true)
       console.log("Student Credit Card Registration:", data)
-      setShowPayment(true)
-      toast.success("Registration form submitted successfully! Proceed to next step.")
+
+      // Redirect to payment page with form data
+      navigate('/payment', {
+        state: {
+          formData: data,
+          amount: 499,
+          formType: 'Bihar Student Credit Card Registration'
+        }
+      });
     } catch (error) {
       toast.error("Error submitting form, please try again.")
     } finally {
@@ -51,9 +59,7 @@ const BiharStudentCreditCard = () => {
     }
   }
 
-  const handlePayment = () => {
-    toast.success("Registration successful! You are now part of Bihar Student Credit Card Scheme.")
-  }
+
 
   const faqItems = [
     {
@@ -342,8 +348,7 @@ const BiharStudentCreditCard = () => {
                 </div>
               </div>
 
-              {!showPayment ? (
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
                   {/* Student Details Section */}
                   <div className="bg-gray-50 rounded-2xl p-6">
                     <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
@@ -564,6 +569,8 @@ const BiharStudentCreditCard = () => {
                     </div>
                   </div>
 
+
+
                   <button
                     type="submit"
                     disabled={isLoading}
@@ -572,19 +579,6 @@ const BiharStudentCreditCard = () => {
                     {isLoading ? "Submitting..." : "Submit Registration"}
                   </button>
                 </form>
-              ) : (
-                <div className="text-center py-8">
-                  <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Registration Submitted Successfully!</h3>
-                  <p className="text-gray-600 mb-6">Proceed to payment to complete your application.</p>
-                  <button
-                    onClick={handlePayment}
-                    className="px-8 py-3 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    Complete Payment
-                  </button>
-                </div>
-              )}
             </motion.div>
 
             <motion.div
