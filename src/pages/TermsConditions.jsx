@@ -354,7 +354,7 @@ const TermsConditions = () => {
                 </div>
                 <h4 className="text-xl font-semibold mb-2">Office Address</h4>
                 <p className="text-blue-200 text-sm mb-3">Visit us for in-person consultation</p>
-                <p className="text-white font-medium text-sm">201, N.K Market, Patna-800025</p>
+                <p className="text-white font-medium text-sm">301, N.K Market, Patna-800025</p>
               </div>
             </div>
           </div>

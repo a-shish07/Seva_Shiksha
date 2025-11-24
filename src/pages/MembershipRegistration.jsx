@@ -104,19 +104,19 @@ const MembershipRegistration = () => {
       <Toaster position="top-right" />
       
       {/* Header Section */}
-      <div className="relative py-16 overflow-hidden">
+      <div className="relative py-12 sm:py-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-orange-400/20 to-amber-400/20"></div>
-        <div className="relative container mx-auto px-4 text-center mt-36">
+        <div className="relative container mx-auto px-3 sm:px-4 text-center mt-12 sm:mt-36">
           <div className="max-w-3xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Users className="w-12 h-12 text-orange-500" />
-              <h1 className="text-4xl md:text-5xl font-bold">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6 flex-wrap">
+              <Users className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-orange-500" />
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                 <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-amber-400 bg-clip-text text-transparent">
                   सेवा शिक्षा सदस्यता
                 </span>
               </h1>
             </div>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed px-2">
               सेवा शिक्षा सदस्यता एक ऐसा सामाजिक सदस्यता कार्यक्रम है जिसमें जुड़कर न केवल समाज सेवा का हिस्सा बनते हैं, बल्कि शिक्षा, कौशल विकास और रोजगार के माध्यम से आत्मनिर्भर भी बनते हैं।
             </p>
           </div>
@@ -124,23 +124,23 @@ const MembershipRegistration = () => {
       </div>
 
       {/* Form Section */}
-      <div className="container mx-auto px-4 pb-16 max-w-4xl mt-10">
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <div className="container mx-auto px-3 sm:px-4 pb-12 sm:pb-16 max-w-4xl mt-8 sm:mt-10">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden">
           {/* Form Header */}
-          <div className="bg-gradient-to-r from-green-600 to-blue-600 p-6 text-white">
-            <h2 className="text-2xl font-bold mb-2">SEVA SHIKSHA TRUST MEMBERSHIP FORM</h2>
-            <p className="opacity-90">Join the Seva Shiksha Community</p>
+          <div className="bg-gradient-to-r from-green-600 to-blue-600 p-4 sm:p-6 text-white">
+            <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">SEVA SHIKSHA TRUST MEMBERSHIP FORM</h2>
+            <p className="opacity-90 text-xs sm:text-base">Join the Seva Shiksha Community</p>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="p-8 space-y-8">
+          <form onSubmit={handleSubmit(onSubmit)} className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
             {/* Personal Information */}
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <User className="w-5 h-5 text-green-600" />
-                1) Personal Details
+            <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 sm:p-6 rounded-xl">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3 sm:mb-4 flex items-center gap-2">
+                <User className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                <span>1) Personal Details</span>
               </h3>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name <span className="text-red-500">*</span>
@@ -155,10 +155,10 @@ const MembershipRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Father/Husband Name <span className="text-red-500">*</span>
+                    Father/Husband Name
                   </label>
                   <input
-                    {...register('fatherHusbandName', { required: 'Please enter father/husband name' })}
+                    {...register('fatherHusbandName')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
                     placeholder="Enter father/husband name"
                   />
@@ -167,11 +167,11 @@ const MembershipRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Date of Birth <span className="text-red-500">*</span>
+                    Date of Birth
                   </label>
                   <input
                     type="date"
-                    {...register('dateOfBirth', { required: 'Please select date of birth' })}
+                    {...register('dateOfBirth')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
                   />
                   {errors.dateOfBirth && <p className="text-red-500 text-sm mt-1">{errors.dateOfBirth.message}</p>}
@@ -179,12 +179,11 @@ const MembershipRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Age <span className="text-red-500">*</span>
+                    Age
                   </label>
                   <input
                     type="number"
                     {...register('age', {
-                      required: 'Please enter your age',
                       min: { value: 18, message: 'Age must be at least 18' },
                       max: { value: 80, message: 'Age must be less than 80' }
                     })}
@@ -231,12 +230,11 @@ const MembershipRegistration = () => {
 
                 <div className="md:col-span-2">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email <span className="text-red-500">*</span>
+                    Email
                   </label>
                   <input
                     type="email"
                     {...register('email', {
-                      required: 'Email is required',
                       pattern: {
                         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                         message: 'Please enter a valid email address'
@@ -260,10 +258,10 @@ const MembershipRegistration = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    District <span className="text-red-500">*</span>
+                    District
                   </label>
                   <input
-                    {...register('district', { required: 'Please enter district' })}
+                    {...register('district')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     placeholder="Enter district"
                   />
@@ -272,12 +270,11 @@ const MembershipRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    State <span className="text-red-500">*</span>
+                    State
                   </label>
                   <Controller
                     name="state"
                     control={control}
-                    rules={{ required: 'Please select state' }}
                     render={({ field }) => (
                       <Select
                         {...field}
@@ -293,11 +290,10 @@ const MembershipRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    PIN <span className="text-red-500">*</span>
+                    PIN
                   </label>
                   <input
                     {...register('pinCode', {
-                      required: 'Please enter PIN code',
                       pattern: {
                         value: /^\d{6}$/,
                         message: 'Please enter 6-digit PIN code'
@@ -322,12 +318,11 @@ const MembershipRegistration = () => {
               <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Highest Qualification <span className="text-red-500">*</span>
+                    Highest Qualification
                   </label>
                   <Controller
                     name="highestQualification"
                     control={control}
-                    rules={{ required: 'Please select highest qualification' }}
                     render={({ field }) => (
                       <Select
                         {...field}
@@ -449,14 +444,14 @@ const MembershipRegistration = () => {
               <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-3">
-                    Select Membership Type <span className="text-red-500">*</span>
+                    Select Membership Type
                   </label>
                   <div className="space-y-3">
                     <div className="flex items-center">
                       <input
                         type="radio"
                         id="active-member"
-                        {...register('membershipType', { required: 'Please select membership type' })}
+                        {...register('membershipType')}
                         value="active-member"
                         className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300"
                       />
@@ -468,7 +463,7 @@ const MembershipRegistration = () => {
                       <input
                         type="radio"
                         id="general-member"
-                        {...register('membershipType', { required: 'Please select membership type' })}
+                        {...register('membershipType')}
                         value="general-member"
                         className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300"
                       />
@@ -493,11 +488,11 @@ const MembershipRegistration = () => {
                   <input
                     type="checkbox"
                     id="declaration-checkbox"
-                    {...register('acceptDeclaration', { required: 'Please accept the declaration' })}
+                    {...register('acceptDeclaration')}
                     className="h-5 w-5 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded mt-1"
                   />
                   <label htmlFor="declaration-checkbox" className="text-sm text-gray-700">
-                    <span className="text-red-500">*</span> I confirm that all information provided is true and accurate.
+                    I confirm that all information provided is true and accurate.
                   </label>
                 </div>
                 {errors.acceptDeclaration && <p className="text-red-500 text-sm mt-1">{errors.acceptDeclaration.message}</p>}
@@ -521,11 +516,11 @@ const MembershipRegistration = () => {
                 <input
                   type="checkbox"
                   id="terms-checkbox"
-                  {...register('acceptTerms', { required: 'Please accept the terms and conditions' })}
+                  {...register('acceptTerms')}
                   className="h-5 w-5 text-pink-600 focus:ring-pink-500 border-gray-300 rounded mt-1"
                 />
                 <label htmlFor="terms-checkbox" className="text-sm text-gray-700">
-                  <span className="text-red-500">*</span> I accept the terms and conditions.
+                  I accept the terms and conditions.
                 </label>
               </div>
               {errors.acceptTerms && <p className="text-red-500 text-sm mt-1">{errors.acceptTerms.message}</p>}

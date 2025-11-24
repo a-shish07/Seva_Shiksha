@@ -89,7 +89,7 @@ const ContactUs = () => {
       description: 'Personal consultation and document verification',
       icon: <MapPin className="w-8 h-8" />,
       color: 'from-purple-500 to-pink-500',
-      primary: '201, N.K Market, Patna',
+      primary: '301, N.K Market, Patna',
       secondary: 'Ashiana Digha Road',
       action: 'Get Directions',
       availability: 'Mon-Sat',
@@ -439,7 +439,7 @@ const ContactUs = () => {
                               } else if (method.id === 'whatsapp') {
                                 window.open(`https://wa.me/919430521027`, '_blank', 'noopener,noreferrer')
                               } else if (method.id === 'visit') {
-                                window.open('https://maps.google.com/?q=201,N.K Market,Patna', '_blank', 'noopener,noreferrer')
+                                window.open('https://maps.google.com/?q=301,N.K Market,Patna', '_blank', 'noopener,noreferrer')
                               }
                             }}
                             className={`bg-gradient-to-r ${method.color} text-white px-6 py-3 rounded-2xl font-medium hover:shadow-lg transition-all duration-300 flex items-center gap-2 group-hover:scale-105`}
@@ -481,7 +481,7 @@ const ContactUs = () => {
                       </div>
                       <h4 className="text-xl font-semibold mb-2">Address</h4>
                       <p className="text-blue-200 text-sm">
-                        201, N.K Market, Ashiana Digha Road<br />
+                        301, N.K Market, Ashiana Digha Road<br />
                         Ramnagri More, Opposite 9 to 9 Super Market<br />
                         Patna - 800025, Bihar, India
                       </p>

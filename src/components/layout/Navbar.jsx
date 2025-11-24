@@ -253,81 +253,82 @@ const Navbar = () => {
   return (
     <div className="fixed w-full top-0 z-50">
       {/* Simplified Top Bar */}
-      <div className="bg-gradient-to-r from-primary-700 via-primary-600 to-accent-600 text-white py-2 px-4">
-        <div className="container mx-auto">
-          <div className="flex justify-between items-center">
-            <div className="hidden md:flex items-center space-x-4">
+      <div className="bg-gradient-to-r from-primary-700 via-primary-600 to-accent-600 text-white py-2 px-3 sm:px-4">
+        <div className="container mx-auto px-3 sm:px-4">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
+            <div className="hidden sm:flex items-center space-x-2 md:space-x-4 text-xs md:text-sm">
               <div 
-                className="flex items-center space-x-2 cursor-pointer hover:text-jasmine-200 transition-colors"
+                className="flex items-center space-x-1 cursor-pointer hover:text-jasmine-200 transition-colors"
                 onClick={() => handleQuickContact('phone')}
               >
-                <Phone className="w-4 h-4" />
-                <span className="text-sm font-medium">094305 21027</span>
+                <Phone className="w-3 h-3 md:w-4 md:h-4" />
+                <span className="font-medium hidden lg:inline">094305 21027</span>
               </div>
               <div 
-                className="flex items-center space-x-2 cursor-pointer hover:text-accent-200 transition-colors"
+                className="flex items-center space-x-1 cursor-pointer hover:text-accent-200 transition-colors hidden md:flex"
                 onClick={() => handleQuickContact('email')}
               >
-                <Mail className="w-4 h-4" />
-                <span className="text-sm font-medium">info@sevashiksha.com</span>
+                <Mail className="w-3 h-3 md:w-4 md:h-4" />
+                <span className="font-medium">info@sevashiksha.com</span>
               </div>
-              <div className="flex items-center space-x-2 text-accent-200">
-                <MapPin className="w-4 h-4" />
-                <span className="text-sm">Patna, Bihar</span>
+              <div className="flex items-center space-x-1 text-accent-200 hidden lg:flex">
+                <MapPin className="w-3 h-3 md:w-4 md:h-4" />
+                <span>Patna, Bihar</span>
               </div>
             </div>
 
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end">
               {/* Social Links */}
               <div className="hidden md:flex items-center space-x-2">
                 <a 
                   href="https://www.facebook.com/profile.php?id=100064110904198" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="p-1.5 bg-white/10 backdrop-blur-sm rounded-full hover:bg-primary-500 transition-colors duration-300"
+                  className="p-1 md:p-1.5 bg-white/10 backdrop-blur-sm rounded-full hover:bg-primary-500 transition-colors duration-300"
                 >
-                  <Facebook className="w-4 h-4" />
+                  <Facebook className="w-3 h-3 md:w-4 md:h-4" />
                 </a>
                 <a 
                   href="https://www.youtube.com/@sevashikshatrust" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="p-1.5 bg-white/10 backdrop-blur-sm rounded-full hover:bg-accent-500 transition-colors duration-300"
+                  className="p-1 md:p-1.5 bg-white/10 backdrop-blur-sm rounded-full hover:bg-accent-500 transition-colors duration-300"
                 >
-                  <Youtube className="w-4 h-4" />
+                  <Youtube className="w-3 h-3 md:w-4 md:h-4" />
                 </a>
                 <a 
                   href="https://g.co/kgs/J8tnxXu" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="p-1.5 bg-white/10 backdrop-blur-sm rounded-full hover:bg-gold-400 transition-colors duration-300"
+                  className="p-1 md:p-1.5 bg-white/10 backdrop-blur-sm rounded-full hover:bg-gold-400 transition-colors duration-300"
                 >
-                  <Star className="w-4 h-4" />
+                  <Star className="w-3 h-3 md:w-4 md:h-4" />
                 </a>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center gap-1 md:gap-2">
                 <button
                   onClick={() => handleQuickContact('whatsapp')}
-                  className="hidden sm:flex items-center gap-2 bg-accent-600 hover:bg-accent-500 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-300"
+                  className="hidden md:flex items-center gap-1 bg-accent-600 hover:bg-accent-500 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium transition-colors duration-300"
                 >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>WhatsApp</span>
+                  <MessageCircle className="w-3 h-3 md:w-4 md:h-4" />
+                  <span className="hidden lg:inline">WhatsApp</span>
                 </button>
                 <Link 
                   to="/contact-us" 
-                  className="hidden sm:flex items-center gap-2 bg-primary-600 hover:bg-primary-500 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-300"
+                  className="hidden md:flex items-center gap-1 bg-primary-600 hover:bg-primary-500 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium transition-colors duration-300"
                 >
-                  <Phone className="w-4 h-4" />
-                  <span>Contact</span>
+                  <Phone className="w-3 h-3 md:w-4 md:h-4" />
+                  <span className="hidden lg:inline">Contact</span>
                 </Link>
                 <Link 
                   to="/student-registration" 
-                  className="bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 px-3.5 py-1 rounded-full text-sm font-semibold transition-colors duration-300 flex items-center gap-1"
+                  className="bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 px-2 md:px-3.5 py-1 rounded-full text-xs md:text-sm font-semibold transition-colors duration-300 flex items-center gap-1"
                 >
-                  <Sparkles className="w-4 h-4" />
-                  Register Now
+                  <Sparkles className="w-3 h-3 md:w-4 md:h-4" />
+                  <span className="hidden sm:inline">Register Now</span>
+                  <span className="sm:hidden">Register</span>
                 </Link>
               </div>
             </div>
@@ -341,23 +342,23 @@ const Navbar = () => {
           ? 'bg-white/95 backdrop-blur-lg shadow-2xl border-b border-jasmine-200' 
           : 'bg-white shadow-lg'
       }`}>
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-3">
+        <div className="container mx-auto px-3 sm:px-4">
+          <div className="flex justify-between items-center py-2 sm:py-3">
             {/* Elegant Logo */}
-            <Link to="/" className="flex items-center space-x-2 group">
+            <Link to="/" className="flex items-center space-x-1 sm:space-x-2 group flex-shrink-0">
               <img
                 src="/images/logo.jpg"
                 alt="Seva Shiksha Logo"
-                className="relative w-9 h-9 md:w-10 md:h-10 rounded-lg md:rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+                className="relative w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg md:rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300"
               />
               <div className="relative">
-                <h1 className="text-lg md:text-xl lg:text-2xl font-black text-primary-600">
-                  SEVA SHIKSHA TRUST
+                <h1 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-black text-primary-600 whitespace-nowrap">
+                  SEVA SHIKSHA
                 </h1>
-                <div className="absolute -top-1 -right-4 md:-right-8 w-5 h-5 md:w-6 md:h-6 border-2 border-red-600 rounded-full flex items-center justify-center bg-white">
-                  <span className="text-red-600 text-xs md:text-sm font-bold">R</span>
+                <div className="absolute -top-1 -right-2 sm:-right-3 md:-right-4 lg:-right-5 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 border-2 border-black rounded-full flex items-center justify-center bg-black">
+                  <span className="text-white text-xs font-bold">R</span>
                 </div>
-                <p className="hidden sm:block text-xs md:text-sm text-gray-600 font-medium">Trust • Excellence • Future</p>
+                <p className="hidden sm:block text-xs md:text-xs lg:text-sm text-gray-600 font-medium">Trust • Excellence</p>
               </div>
             </Link>
 

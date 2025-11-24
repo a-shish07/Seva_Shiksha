@@ -433,7 +433,7 @@ const PrivacyPolicy = () => {
               </div>
               <h4 className="text-xl font-semibold mb-2 text-gray-900">Office Visit</h4>
               <p className="text-green-600 text-sm mb-3">In-person privacy consultation</p>
-              <p className="text-gray-900 font-medium text-sm">201, N.K Market, Patna-800025</p>
+              <p className="text-gray-900 font-medium text-sm">301, N.K Market, Patna-800025</p>
             </div>
           </div>
         </motion.div>

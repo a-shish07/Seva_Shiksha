@@ -51,10 +51,9 @@ const BiharStudentCreditCard = () => {
           amount: 499,
           formType: 'Bihar Student Credit Card Registration'
         }
-      });
+      })
     } catch (error) {
       toast.error("Error submitting form, please try again.")
-    } finally {
       setIsLoading(false)
     }
   }
@@ -103,55 +102,55 @@ const BiharStudentCreditCard = () => {
   ]
 
   return (
-    <div className="pt-24 pb-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
-      <section className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-10 items-center">
+    <div className="pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+      <section className="container-custom px-3 sm:px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-6 sm:gap-8 lg:gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
-            <div className="inline-flex gap-2 bg-primary-100 text-primary-600 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide">
-              <CreditCard className="w-4 h-4" />
-              सरकार की प्रमुख योजना
+            <div className="inline-flex gap-2 bg-primary-100 text-primary-600 px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide">
+              <CreditCard className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span>सरकार की प्रमुख योजना</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
               बिहार स्टूडेंट क्रेडिट कार्ड योजना (BSCCS)
             </h1>
-            <p className="text-lg text-gray-600 leading-8">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-7 sm:leading-8">
               आर्थिक रूप से कमजोर लेकिन मेधावी विद्यार्थियों के लिए बिहार सरकार की यह पहल उच्च शिक्षा के द्वार खोलती है। शिक्षा वित्त निगम द्वारा संचालित यह योजना छात्रों को बैंक से 4 लाख रुपये तक का ऋण उपलब्ध कराती है, जिसमें राज्य सरकार स्वयं गारंटर होती है।
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {bsccsHighlights.map((item, index) => (
-                <div key={index} className="surface-card rounded-2xl p-5 text-center shadow-md hover:shadow-xl transition-all duration-300">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-50 text-primary-600 mb-3">
+                <div key={index} className="surface-card rounded-xl sm:rounded-2xl p-4 sm:p-5 text-center shadow-md hover:shadow-xl transition-all duration-300">
+                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-50 text-primary-600 mb-2 sm:mb-3">
                     {item.icon}
                   </div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2 leading-snug">
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 leading-snug line-clamp-2">
                     {item.title}
                   </h4>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
               ))}
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
               <a
                 href="https://www.7nishchay-yuvaupmission.bihar.gov.in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary inline-flex items-center justify-center gap-2"
+                className="btn-primary inline-flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto"
               >
                 Apply Online
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="tel:+918252845590"
-                className="btn-secondary inline-flex items-center justify-center gap-2"
+                className="btn-secondary inline-flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto"
               >
-                <Phone className="w-4 h-4" /> Helpline
+                <Phone className="w-4 h-4" /> <span>Helpline</span>
               </a>
             </div>
           </motion.div>
@@ -160,7 +159,7 @@ const BiharStudentCreditCard = () => {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl shadow-xl p-6 md:p-8 space-y-6"
+            className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6"
           >
             <div className="rounded-2xl bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 text-white p-6">
               <div className="text-sm uppercase tracking-widest text-white/80 mb-2">
@@ -329,299 +328,276 @@ const BiharStudentCreditCard = () => {
 
       <section className="mt-20" id="bsccs-form">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <div className="p-4 bg-gradient-to-br from-primary-500 to-accent-500 text-white rounded-2xl shadow-lg">
-                  <CreditCard className="w-8 h-8" />
-                </div>
-                <div>
-                  <h2 className="text-3xl font-bold text-gray-900">Bihar Student Credit Card Registration</h2>
-                  <p className="text-gray-600 mt-2 text-sm md:text-base">
-                    Fill out the registration form to apply for Bihar Student Credit Card Scheme.
-                  </p>
-                </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <div className="p-4 bg-gradient-to-br from-primary-500 to-accent-500 text-white rounded-2xl shadow-lg">
+                <CreditCard className="w-8 h-8" />
               </div>
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900">Bihar Student Credit Card Registration</h2>
+                <p className="text-gray-600 mt-2 text-sm md:text-base">
+                  Fill out the registration form to apply for Bihar Student Credit Card Scheme.
+                </p>
+              </div>
+            </div>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-                  {/* Student Details Section */}
-                  <div className="bg-gray-50 rounded-2xl p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-                      <User className="w-5 h-5 text-primary-600" />
-                      Student Details
-                    </h3>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Courses Student Full Name*</label>
-                        <input
-                          type="text"
-                          {...register("fullName", { required: "Full name is required" })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                          placeholder="Enter full name"
-                        />
-                        {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>}
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Father's Name*</label>
-                        <input
-                          type="text"
-                          {...register("fatherName", { required: "Father's name is required" })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                          placeholder="Enter father's name"
-                        />
-                        {errors.fatherName && <p className="text-red-500 text-sm mt-1">{errors.fatherName.message}</p>}
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Mother's Name*</label>
-                        <input
-                          type="text"
-                          {...register("motherName", { required: "Mother's name is required" })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                          placeholder="Enter mother's name"
-                        />
-                        {errors.motherName && <p className="text-red-500 text-sm mt-1">{errors.motherName.message}</p>}
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Date of Birth*</label>
-                        <Controller
-                          name="dateOfBirth"
-                          control={control}
-                          rules={{ required: "Date of birth is required" }}
-                          render={({ field }) => (
-                            <DatePicker
-                              selected={field.value}
-                              onChange={(date) => field.onChange(date)}
-                              dateFormat="dd/MM/yyyy"
-                              maxDate={new Date()}
-                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                              placeholderText="Select date of birth"
-                            />
-                          )}
-                        />
-                        {errors.dateOfBirth && <p className="text-red-500 text-sm mt-1">{errors.dateOfBirth.message}</p>}
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Gender*</label>
-                        <div className="flex gap-6 mt-2">
-                          {["Male", "Female", "Other"].map((gender) => (
-                            <label key={gender} className="flex items-center">
-                              <input
-                                type="radio"
-                                {...register("gender", { required: "Gender is required" })}
-                                value={gender}
-                                className="w-4 h-4 text-primary-600 focus:ring-primary-500"
-                              />
-                              <span className="ml-2 text-sm text-gray-700">{gender}</span>
-                            </label>
-                          ))}
-                        </div>
-                        {errors.gender && <p className="text-red-500 text-sm mt-1">{errors.gender.message}</p>}
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Aadhaar Number*</label>
-                        <input
-                          type="text"
-                          {...register("aadhaarNumber", {
-                            required: "Aadhaar number is required",
-                            pattern: {
-                              value: /^\d{12}$/,
-                              message: "Aadhaar number must be 12 digits"
-                            }
-                          })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                          placeholder="Enter 12-digit Aadhaar number"
-                          maxLength="12"
-                        />
-                        {errors.aadhaarNumber && <p className="text-red-500 text-sm mt-1">{errors.aadhaarNumber.message}</p>}
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Mobile Number*</label>
-                        <input
-                          type="tel"
-                          {...register("mobileNumber", {
-                            required: "Mobile number is required",
-                            pattern: {
-                              value: /^[6-9]\d{9}$/,
-                              message: "Enter valid 10-digit mobile number"
-                            }
-                          })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                          placeholder="Enter mobile number"
-                          maxLength="10"
-                        />
-                        {errors.mobileNumber && <p className="text-red-500 text-sm mt-1">{errors.mobileNumber.message}</p>}
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Email ID*</label>
-                        <input
-                          type="email"
-                          {...register("email", {
-                            required: "Email is required",
-                            pattern: {
-                              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                              message: "Enter valid email address"
-                            }
-                          })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                          placeholder="Enter email address"
-                        />
-                        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
-                      </div>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+                {/* Personal Information */}
+                <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                    <User className="w-5 h-5 text-green-600" />
+                    Personal Information
+                  </h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Full Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        {...register('fullName', { required: 'Name is required' })}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Enter your full name"
+                      />
+                      {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>}
                     </div>
 
-                    <div className="mt-6">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Permanent Address*</label>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Mobile Number <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        {...register('mobileNumber', {
+                          required: 'Mobile number is required',
+                          pattern: {
+                            value: /^[6-9]\d{9}$/,
+                            message: 'Please enter a valid mobile number'
+                          }
+                        })}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Enter mobile number"
+                      />
+                      {errors.mobileNumber && <p className="text-red-500 text-sm mt-1">{errors.mobileNumber.message}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Email ID
+                      </label>
+                      <input
+                        type="email"
+                        {...register('email', {
+                          pattern: {
+                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                            message: 'Please enter a valid email address'
+                          }
+                        })}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Enter email address"
+                      />
+                      {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Aadhaar Number <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        {...register('aadhaarNumber', {
+                          required: 'Aadhaar number is required',
+                          pattern: {
+                            value: /^\d{12}$/,
+                            message: 'Please enter a valid 12-digit Aadhaar number'
+                          }
+                        })}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Enter Aadhaar number"
+                      />
+                      {errors.aadhaarNumber && <p className="text-red-500 text-sm mt-1">{errors.aadhaarNumber.message}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Father's Name
+                      </label>
+                      <input
+                        {...register('fatherName')}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Enter father's name"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Mother's Name
+                      </label>
+                      <input
+                        {...register('motherName')}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Enter mother's name"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Date of Birth
+                      </label>
+                      <Controller
+                        name="dateOfBirth"
+                        control={control}
+                        render={({ field }) => (
+                          <DatePicker
+                            {...field}
+                            selected={field.value}
+                            onChange={field.onChange}
+                            dateFormat="dd/MM/yyyy"
+                            maxDate={new Date()}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                            placeholderText="Select date of birth"
+                          />
+                        )}
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Gender
+                      </label>
+                      <Controller
+                        name="gender"
+                        control={control}
+                        render={({ field }) => (
+                          <Select
+                            {...field}
+                            options={[
+                              { value: 'Male', label: 'Male' },
+                              { value: 'Female', label: 'Female' },
+                              { value: 'Other', label: 'Other' }
+                            ]}
+                            placeholder="Select Gender"
+                            className="react-select-container"
+                            classNamePrefix="react-select"
+                          />
+                        )}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Address Information */}
+                <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-orange-600" />
+                    Address Information
+                  </h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="md:col-span-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Permanent Address
+                      </label>
                       <textarea
-                        {...register("permanentAddress", { required: "Permanent address is required" })}
+                        {...register('permanentAddress')}
                         rows={3}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                         placeholder="Enter permanent address"
                       />
-                      {errors.permanentAddress && <p className="text-red-500 text-sm mt-1">{errors.permanentAddress.message}</p>}
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">District*</label>
-                        <input
-                          type="text"
-                          {...register("district", { required: "District is required" })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                          placeholder="Enter district"
-                        />
-                        {errors.district && <p className="text-red-500 text-sm mt-1">{errors.district.message}</p>}
-                      </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        District
+                      </label>
+                      <input
+                        {...register('district')}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Enter district"
+                      />
+                    </div>
 
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Pin Code*</label>
-                        <input
-                          type="text"
-                          {...register("pinCode", {
-                            required: "Pin code is required",
-                            pattern: {
-                              value: /^\d{6}$/,
-                              message: "Pin code must be 6 digits"
-                            }
-                          })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                          placeholder="Enter 6-digit pin code"
-                          maxLength="6"
-                        />
-                        {errors.pinCode && <p className="text-red-500 text-sm mt-1">{errors.pinCode.message}</p>}
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Father's / Guardian Occupation*</label>
-                        <input
-                          type="text"
-                          {...register("fatherOccupation", { required: "Father's occupation is required" })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                          placeholder="Enter father's occupation"
-                        />
-                        {errors.fatherOccupation && <p className="text-red-500 text-sm mt-1">{errors.fatherOccupation.message}</p>}
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Annual Family Income*</label>
-                        <input
-                          type="text"
-                          {...register("annualIncome", { required: "Annual family income is required" })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                          placeholder="Enter annual family income (₹)"
-                        />
-                        {errors.annualIncome && <p className="text-red-500 text-sm mt-1">{errors.annualIncome.message}</p>}
-                      </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Pin Code
+                      </label>
+                      <input
+                        {...register('pinCode', {
+                          pattern: {
+                            value: /^\d{6}$/,
+                            message: 'Please enter a valid 6-digit PIN code'
+                          }
+                        })}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Enter PIN code"
+                      />
+                      {errors.pinCode && <p className="text-red-500 text-sm mt-1">{errors.pinCode.message}</p>}
                     </div>
                   </div>
+                </div>
 
-                  {/* Declaration Section */}
-                  <div className="bg-blue-50 rounded-2xl p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <Shield className="w-5 h-5 text-primary-600" />
-                      Declaration
-                    </h3>
+                {/* Family Information */}
+                <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                    <Users className="w-5 h-5 text-purple-600" />
+                    Family Information
+                  </h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Father's Occupation
+                      </label>
+                      <input
+                        {...register('fatherOccupation')}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Enter father's occupation"
+                      />
+                    </div>
 
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-3">
-                        <input
-                          type="checkbox"
-                          {...register("declaration", { required: "You must accept the declaration" })}
-                          className="w-4 h-4 text-primary-600 focus:ring-primary-500 mt-1"
-                        />
-                        <p className="text-sm text-gray-700 leading-relaxed">
-                          I hereby declare that the information provided by me is true and correct. I agree to follow all rules and terms of Bihar Student Credit Card Scheme.
-                        </p>
-                      </div>
-                      {errors.declaration && <p className="text-red-500 text-sm mt-1">{errors.declaration.message}</p>}
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Annual Family Income
+                      </label>
+                      <input
+                        {...register('annualIncome')}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Enter annual family income (₹)"
+                      />
                     </div>
                   </div>
+                </div>
 
+                {/* Declaration */}
+                <div className="bg-gradient-to-r from-gray-50 to-blue-50 p-6 rounded-xl">
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="terms"
+                      {...register('declaration')}
+                      className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mt-1"
+                    />
+                    <label htmlFor="terms" className="text-sm text-gray-700">
+                      I declare that the information provided by me is true and correct. I agree to follow all rules and terms of Bihar Student Credit Card Scheme.
+                    </label>
+                  </div>
+                </div>
 
-
+                {/* Submit Button */}
+                <div className="text-center">
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-12 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isLoading ? "Submitting..." : "Submit Registration"}
+                    {isLoading ? 'Submitting...' : 'SUBMIT & PAY'}
                   </button>
-                </form>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-primary-600 via-primary-500 to-accent-500 text-white rounded-3xl p-8 md:p-10 shadow-2xl"
-            >
-              <div className="text-center mb-6">
-                <div className="inline-flex items-center gap-3 text-lg font-semibold bg-white/10 px-5 py-2 rounded-full border border-white/20">
-                  <CreditCard className="w-5 h-5" />
-                  Processing Fee
                 </div>
-                <div className="text-5xl font-black mt-6">₹499</div>
-                <p className="text-white/80 mt-2 text-sm">
-                  डेमो QR स्कैन कर शुल्क जमा करें और ट्रांजैक्शन का स्क्रीनशॉट अपलोड करें।
-                </p>
-              </div>
-              <div className="bg-white rounded-3xl p-6 shadow-inner flex flex-col items-center gap-4">
-                <img
-                  src="https://via.placeholder.com/240x240.png?text=QR+Demo"
-                  alt="QR Demo"
-                  className="w-48 h-48 object-cover rounded-2xl"
-                />
-                <div className="text-center">
-                  <p className="text-sm text-gray-600 font-medium">Scan & Pay ₹499</p>
-                  <p className="text-xs text-gray-500 mt-1">
-                    भुगतान सत्यापन के बाद आपकी प्रोसेसिंग शुरू होगी।
-                  </p>
-                </div>
-              </div>
-              <div className="mt-8 space-y-3 text-sm text-white/85">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-gold-200 mt-0.5" />
-                  <span>प्रोसेसिंग शुल्क वापसी के योग्य नहीं है।</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-gold-200 mt-0.5" />
-                  <span>स्वीकृति बैंक और सरकार की गाइडलाइन अनुसार।</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+              </form>
+          </motion.div>
         </div>
       </section>
 

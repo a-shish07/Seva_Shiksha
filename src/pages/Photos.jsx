@@ -289,33 +289,33 @@ const Photos = () => {
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <div className="relative py-16 overflow-hidden bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
-        <div className="container mx-auto px-4 text-center">
+      <div className="relative py-12 sm:py-16 overflow-hidden bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+        <div className="container mx-auto px-3 sm:px-4 text-center">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
           >
             Photo Gallery
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-xl text-white/90"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 px-2"
           >
             Explore all the moments from Seva Shiksha Trust
           </motion.p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12">
         {/* Tab Navigation */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setActiveTab('recent')}
-            className={`px-8 py-3 rounded-full font-semibold transition-all ${
+            className={`px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all ${
               activeTab === 'recent'
                 ? 'bg-primary-600 text-white shadow-lg'
                 : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-primary-600'
@@ -327,7 +327,7 @@ const Photos = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setActiveTab('archived')}
-            className={`px-8 py-3 rounded-full font-semibold transition-all ${
+            className={`px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all ${
               activeTab === 'archived'
                 ? 'bg-primary-600 text-white shadow-lg'
                 : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-primary-600'
@@ -340,7 +340,7 @@ const Photos = () => {
         {/* Photos Grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6"
         >
           <AnimatePresence>
             {allImages.map((photo, index) => (
@@ -353,7 +353,7 @@ const Photos = () => {
                 onClick={() => setSelectedImage(photo)}
                 className="group cursor-pointer"
               >
-                <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden rounded-lg sm:rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300">
                   <div className="relative aspect-square overflow-hidden">
                     <img
                       src={photo.image}
@@ -362,11 +362,11 @@ const Photos = () => {
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <ZoomIn className="w-8 h-8 text-white" />
+                      <ZoomIn className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-gray-800 text-sm">{photo.title}</h3>
+                  <div className="p-2 sm:p-4">
+                    <h3 className="font-semibold text-gray-800 text-xs sm:text-sm line-clamp-2">{photo.title}</h3>
                     <p className="text-xs text-gray-500 mt-1">{photo.category}</p>
                   </div>
                 </div>

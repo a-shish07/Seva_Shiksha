@@ -140,19 +140,19 @@ const StudentRegistration = () => {
       <Toaster position="top-right" />
       
       {/* Header Section */}
-      <div className="relative py-16 overflow-hidden">
+      <div className="relative py-12 sm:py-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-orange-400/20 to-amber-400/20"></div>
-        <div className="relative container mx-auto px-4 text-center mt-36">
+        <div className="relative container mx-auto px-3 sm:px-4 text-center mt-12 sm:mt-36">
           <div className="max-w-3xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <GraduationCap className="w-12 h-12 text-orange-500" />
-              <h1 className="text-4xl md:text-5xl font-bold">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6 flex-wrap">
+              <GraduationCap className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-orange-500" />
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                 <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-amber-400 bg-clip-text text-transparent">
                   Student Registration
                 </span>
               </h1>
             </div>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed px-2">
               Complete your scholarship form and unlock access to quality higher education opportunities
             </p>
           </div>
@@ -160,31 +160,30 @@ const StudentRegistration = () => {
       </div>
 
       {/* Form Section */}
-      <div className="container mx-auto px-4 pb-16 max-w-4xl mt-10">
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <div className="container mx-auto px-3 sm:px-4 pb-12 sm:pb-16 max-w-4xl mt-8 sm:mt-10">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden">
           {/* Form Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white">
-            <h2 className="text-2xl font-bold mb-2">Scholarship Application Form</h2>
-            <p className="opacity-90">Fill out this form to apply for educational opportunities</p>
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 sm:p-6 text-white">
+            <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">Scholarship Application Form</h2>
+            <p className="opacity-90 text-xs sm:text-base">Fill out this form to apply for educational opportunities</p>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="p-8 space-y-8">
+          <form onSubmit={handleSubmit(onSubmit)} className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
             {/* Program Selection */}
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-blue-600" />
-                Program Selection
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 sm:p-6 rounded-xl">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3 sm:mb-4 flex items-center gap-2">
+                <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
+                <span>Program Selection</span>
               </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Select State <span className="text-red-500">*</span>
+                    Select State
                   </label>
                   <Controller
                     name="state"
                     control={control}
-                    rules={{ required: 'Please select a state' }}
                     render={({ field }) => (
                       <Select
                         {...field}
@@ -200,12 +199,11 @@ const StudentRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Select Program <span className="text-red-500">*</span>
+                    Select Program
                   </label>
                   <Controller
                     name="program"
                     control={control}
-                    rules={{ required: 'Please select a program' }}
                     render={({ field }) => (
                       <Select
                         {...field}
@@ -221,12 +219,11 @@ const StudentRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Courses <span className="text-red-500">*</span>
+                    Courses
                   </label>
                   <Controller
                     name="course"
                     control={control}
-                    rules={{ required: 'Please select a course' }}
                     render={({ field }) => (
                       <Select
                         {...field}
@@ -244,13 +241,13 @@ const StudentRegistration = () => {
             </div>
 
             {/* Personal Information */}
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <User className="w-5 h-5 text-green-600" />
-                Personal Information
+            <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 sm:p-6 rounded-xl">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3 sm:mb-4 flex items-center gap-2">
+                <User className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                <span>Personal Information</span>
               </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name <span className="text-red-500">*</span>
@@ -312,10 +309,11 @@ const StudentRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Aadhaar Number
+                    Aadhaar Number <span className="text-red-500">*</span>
                   </label>
                   <input
                     {...register('aadhaar', {
+                      required: 'Aadhaar number is required',
                       pattern: {
                         value: /^\d{12}$/,
                         message: 'Please enter a valid 12-digit Aadhaar number'
@@ -329,12 +327,11 @@ const StudentRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Current Education Qualification <span className="text-red-500">*</span>
+                    Current Education Qualification
                   </label>
                   <Controller
                     name="currentEducation"
                     control={control}
-                    rules={{ required: 'Please select current education qualification' }}
                     render={({ field }) => (
                       <Select
                         {...field}
@@ -350,12 +347,11 @@ const StudentRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Category <span className="text-red-500">*</span>
+                    Category
                   </label>
                   <Controller
                     name="category"
                     control={control}
-                    rules={{ required: 'Please select category' }}
                     render={({ field }) => (
                       <Select
                         {...field}
@@ -426,13 +422,13 @@ const StudentRegistration = () => {
             </div>
 
             {/* Family Information */}
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <Users className="w-5 h-5 text-purple-600" />
-                Family Information
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-4 sm:p-6 rounded-xl">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3 sm:mb-4 flex items-center gap-2">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 flex-shrink-0" />
+                <span>Family Information</span>
               </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Father's/Guardian Name
@@ -457,11 +453,10 @@ const StudentRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Father's Mobile Number <span className="text-red-500">*</span>
+                    Father's Mobile Number
                   </label>
                   <input
                     {...register('fatherMobile', {
-                      required: "Father's mobile number is required",
                       pattern: {
                         value: /^[6-9]\d{9}$/,
                         message: 'Please enter a valid mobile number'
@@ -498,13 +493,13 @@ const StudentRegistration = () => {
             </div>
 
             {/* Address Information */}
-            <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-xl">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-orange-600" />
-                Address Information
+            <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-4 sm:p-6 rounded-xl">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3 sm:mb-4 flex items-center gap-2">
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600 flex-shrink-0" />
+                <span>Address Information</span>
               </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
                 <div className="md:col-span-2">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Full Address
@@ -519,10 +514,10 @@ const StudentRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    District <span className="text-red-500">*</span>
+                    District
                   </label>
                   <input
-                    {...register('district', { required: 'District is required' })}
+                    {...register('district')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     placeholder="Enter district"
                   />
@@ -531,12 +526,11 @@ const StudentRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    State <span className="text-red-500">*</span>
+                    State
                   </label>
                   <Controller
                     name="addressState"
                     control={control}
-                    rules={{ required: 'Please select state' }}
                     render={({ field }) => (
                       <Select
                         {...field}
@@ -581,13 +575,13 @@ const StudentRegistration = () => {
             </div>
 
             {/* State Preferences */}
-            <div className="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-xl">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <Target className="w-5 h-5 text-teal-600" />
-                State Preferences (Choose any five states only)
+            <div className="bg-gradient-to-r from-teal-50 to-cyan-50 p-4 sm:p-6 rounded-xl">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3 sm:mb-4 flex items-center gap-2">
+                <Target className="w-4 h-4 sm:w-5 sm:h-5 text-teal-600 flex-shrink-0" />
+                <span className="line-clamp-2">State Preferences (Choose any five states only)</span>
               </h3>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4">
                 {[
                   'NCR / New Delhi', 'Tamil Nadu', 'Chandigarh', 'Rajasthan',
                   'Uttar Pradesh', 'Karnataka', 'Telangana', 'Punjab',
@@ -611,19 +605,19 @@ const StudentRegistration = () => {
             </div>
 
             {/* Terms and Conditions */}
-            <div className="bg-gradient-to-r from-gray-50 to-blue-50 p-6 rounded-xl">
-              <div className="flex items-start gap-3">
+            <div className="bg-gradient-to-r from-gray-50 to-blue-50 p-4 sm:p-6 rounded-xl">
+              <div className="flex items-start gap-2 sm:gap-3">
                 <input
                   type="checkbox"
                   id="terms"
-                  {...register('acceptTerms', { required: 'Please accept the terms and conditions' })}
-                  className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mt-1"
+                  {...register('acceptTerms')}
+                  className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mt-1 flex-shrink-0"
                 />
-                <label htmlFor="terms" className="text-sm text-gray-700">
-                  <span className="text-red-500">*</span> I confirm all the details are correct to the best of my knowledge
+                <label htmlFor="terms" className="text-xs sm:text-sm text-gray-700">
+                  I confirm all the details are correct to the best of my knowledge
                 </label>
               </div>
-              {errors.acceptTerms && <p className="text-red-500 text-sm mt-1">{errors.acceptTerms.message}</p>}
+              {errors.acceptTerms && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.acceptTerms.message}</p>}
             </div>
 
 
@@ -633,7 +627,7 @@ const StudentRegistration = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-12 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 sm:py-3 md:py-4 px-6 sm:px-10 md:px-12 rounded-lg sm:rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
               >
                 {isLoading ? 'Submitting...' : 'SUBMIT & PAY'}
               </button>
@@ -644,29 +638,29 @@ const StudentRegistration = () => {
 
 
         {/* Features Section */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Award className="w-8 h-8 text-white" />
+        <div className="mt-10 sm:mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <div className="text-center p-4 sm:p-6 bg-white rounded-lg sm:rounded-2xl shadow-lg">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <Award className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Quality Education</h3>
-            <p className="text-gray-600">Access to top universities and quality educational programs across India</p>
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 mb-2">Quality Education</h3>
+            <p className="text-xs sm:text-sm md:text-base text-gray-600">Access to top universities and quality educational programs across India</p>
           </div>
 
-          <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-            <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Target className="w-8 h-8 text-white" />
+          <div className="text-center p-4 sm:p-6 bg-white rounded-lg sm:rounded-2xl shadow-lg">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <Target className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Career Guidance</h3>
-            <p className="text-gray-600">Expert counseling to help you choose the right career path</p>
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 mb-2">Career Guidance</h3>
+            <p className="text-xs sm:text-sm md:text-base text-gray-600">Expert counseling to help you choose the right career path</p>
           </div>
 
-          <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-            <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Star className="w-8 h-8 text-white" />
+          <div className="text-center p-4 sm:p-6 bg-white rounded-lg sm:rounded-2xl shadow-lg">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <Star className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Scholarship Support</h3>
-            <p className="text-gray-600">Assistance in finding and applying for various scholarship opportunities</p>
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 mb-2">Scholarship Support</h3>
+            <p className="text-xs sm:text-sm md:text-base text-gray-600">Assistance in finding and applying for various scholarship opportunities</p>
           </div>
         </div>
       </div>

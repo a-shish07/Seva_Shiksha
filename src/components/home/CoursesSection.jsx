@@ -41,30 +41,30 @@ const CoursesSection = () => {
   ]
 
   return (
-    <section className="py-10 bg-gradient-to-br from-gray-50 to-gray-100 relative">
-      <div className="container mx-auto px-6">
+    <section className="py-8 sm:py-10 bg-gradient-to-br from-gray-50 to-gray-100 relative">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-6">
         {/* Section Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-8 sm:mb-10">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-5 py-2 rounded-full text-base font-semibold mb-4 shadow-lg"
+            className="inline-block bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 sm:px-5 py-2 rounded-full text-xs sm:text-base font-semibold mb-4 shadow-lg"
           >
             🚀 Our Courses
           </motion.span>
 
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
             Choose Your <span className="gradient-text">Learning Path</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Whether you’re just starting out or looking to specialize, we’ve got the perfect
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
+            Whether you're just starting out or looking to specialize, we've got the perfect
             program designed to help you achieve your career goals.
           </p>
         </div>
 
         {/* Course Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {courses.map((course, index) => (
             <motion.div
               key={index}
@@ -73,49 +73,49 @@ const CoursesSection = () => {
               whileHover={{ scale: 1.05 }}  // ✅ Removed 3D rotation
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
               viewport={{ once: true }}
-              className="relative rounded-2xl p-10 bg-white/70 border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-500 group overflow-hidden"
+              className="relative rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 bg-white/70 border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-500 group overflow-hidden"
             >
               {/* Ribbon Tag */}
               <div
-                className={`absolute top-0 right-0 bg-gradient-to-r ${course.color} text-white text-xs font-bold px-3 py-1 rounded-bl-xl`}
+                className={`absolute top-0 right-0 bg-gradient-to-r ${course.color} text-white text-xs font-bold px-2 sm:px-3 py-1 rounded-bl-xl`}
               >
                 {course.tag}
               </div>
 
               {/* Floating Icon */}
               <div
-                className={`w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-r ${course.color} text-white shadow-lg mb-6 animate-bounce`}
+                className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center bg-gradient-to-r ${course.color} text-white shadow-lg mb-4 sm:mb-6 animate-bounce`}
               >
                 {course.icon}
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-gray-900 mb-1">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
                 {course.title}
               </h3>
-              <p className="text-base text-gray-500 mb-4">{course.subtitle}</p>
+              <p className="text-sm sm:text-base text-gray-500 mb-4">{course.subtitle}</p>
 
               {/* Rating & Duration */}
-              <div className="flex justify-between items-center mb-6 text-gray-700 text-sm">
+              <div className="flex justify-between items-center mb-4 sm:mb-6 text-gray-700 text-xs sm:text-sm">
                 <div className="flex items-center space-x-1">
-                  <Star className="w-4 h-4 text-yellow-400" />
+                  <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" />
                   <span>{course.rating}</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <Clock className="w-4 h-4 text-primary-500" />
+                  <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-primary-500" />
                   <span>{course.duration}</span>
                 </div>
               </div>
 
               {/* Features */}
-              <ul className="space-y-2 mb-6 text-gray-600 text-base hover:text-black">
+              <ul className="space-y-2 mb-4 sm:mb-6 text-gray-600 text-xs sm:text-sm md:text-base hover:text-black">
                 {course.features.map((f, i) => (
                   <li
                     key={i}
                     className="flex items-center group-hover:translate-x-1 transition-transform duration-300"
                   >
-                    <span className="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
-                    {f}
+                    <span className="w-2 h-2 bg-primary-500 rounded-full mr-2 flex-shrink-0"></span>
+                    <span className="line-clamp-1 sm:line-clamp-none">{f}</span>
                   </li>
                 ))}
               </ul>
@@ -124,7 +124,7 @@ const CoursesSection = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   to={course.link}
-                  className="inline-block w-full text-center font-semibold py-3 px-6 rounded-lg border-2 border-transparent bg-gradient-to-r from-primary-600 to-secondary-600 text-white hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 shadow-md"
+                  className="inline-block w-full text-center font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg border-2 border-transparent bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-sm sm:text-base hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 shadow-md"
                 >
                   Start Learning 🚀
                 </Link>

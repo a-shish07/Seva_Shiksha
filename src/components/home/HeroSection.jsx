@@ -21,11 +21,11 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-hero-pattern opacity-10 mix-blend-soft-light"></div>
       
       <div className="relative z-10 h-full bg-orange-600 mt-10">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-16 lg:py-24">
+        <div className="container-custom px-3 sm:px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 py-8 sm:py-16 lg:py-24">
             {/* Left Content */}
             <div className="flex items-center justify-center lg:justify-start">
-              <div className="max-w-2xl px-4 py-12 md:py-16">
+              <div className="w-full max-w-2xl px-2 sm:px-4 py-8 sm:py-12 md:py-16">
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -37,12 +37,12 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="mb-6"
+                    className="mb-4 sm:mb-6"
                   >
-                    <h2 className="text-gold-400 text-lg md:text-xl font-semibold mb-2">
+                    <h2 className="text-gold-400 text-base sm:text-lg md:text-xl font-semibold mb-2">
                       SEVA SHIKSHA TRUST
                     </h2>
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4 text-shadow-lg">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4 text-shadow-lg">
                       {heroContent.title}
                     </h1>
                   </motion.div>
@@ -52,7 +52,7 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="text-lg md:text-xl text-gray-200 font-medium mb-2"
+                    className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 font-medium mb-2"
                   >
                     OUR MISSION IS TO MAKE FREE QUALITY
                   </motion.p>
@@ -60,7 +60,7 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="text-lg md:text-xl text-gold-400 font-bold mb-6"
+                    className="text-sm sm:text-base md:text-lg lg:text-xl text-gold-400 font-bold mb-4 sm:mb-6"
                   >
                     HIGHER EDUCATION ACCESSIBLE TO EVERYONE.
                   </motion.p>
@@ -70,7 +70,7 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6 }}
-                    className="text-base md:text-lg text-gray-300 mb-8 leading-relaxed"
+                    className="text-xs sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed"
                   >
                     {heroContent.subtitle}
                   </motion.p>
@@ -80,12 +80,12 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.7 }}
-                    className="bg-white/10 border border-white/20 rounded-xl p-4 backdrop-blur-md text-white shadow-lg mb-8"
+                    className="bg-white/10 border border-white/20 rounded-lg sm:rounded-xl p-3 sm:p-4 backdrop-blur-md text-white shadow-lg mb-6 sm:mb-8"
                   >
-                    <p className="text-sm text-gray-200 uppercase tracking-wide mb-1">
+                    <p className="text-xs sm:text-sm text-gray-200 uppercase tracking-wide mb-1">
                       {heroContent.highlight.label}
                     </p>
-                    <p className="text-lg font-semibold text-gold-300">
+                    <p className="text-sm sm:text-base md:text-lg font-semibold text-gold-300">
                       {heroContent.highlight.name}
                     </p>
                   </motion.div>
@@ -95,11 +95,11 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                    className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
                   >
                     <Link
                       to={heroContent.buttonLink}
-                      className="btn-primary text-lg px-8 py-4 animate-glow"
+                      className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 animate-glow"
                     >
                       {heroContent.buttonText}
                     </Link>
@@ -109,12 +109,12 @@ const HeroSection = () => {
             </div>
 
             {/* Right Image */}
-            <div className="relative flex items-center justify-center mt-10">
+            <div className="relative flex items-center justify-center mt-8 sm:mt-10 lg:mt-0">
               <motion.div
                 initial={{ opacity: 0, x: 50, scale: 0.9 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 0.7 }}
-                className="relative w-full h-96 lg:h-full max-h-[600px] rounded-2xl overflow-hidden shadow-2xl"
+                className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full max-h-[500px] sm:max-h-[600px] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl"
               >
                 <img
                   src={heroContent.image}
