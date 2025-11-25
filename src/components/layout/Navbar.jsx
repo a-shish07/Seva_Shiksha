@@ -353,11 +353,8 @@ const Navbar = () => {
               />
               <div className="relative">
                 <h1 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-black text-primary-600 whitespace-nowrap">
-                  SEVA SHIKSHA
+                  SEVA SHIKSHA TRUST<sup className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-black ml-1">®</sup>
                 </h1>
-                <div className="absolute -top-1 -right-2 sm:-right-3 md:-right-4 lg:-right-5 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 border-2 border-black rounded-full flex items-center justify-center bg-black">
-                  <span className="text-white text-xs font-bold">R</span>
-                </div>
                 <p className="hidden sm:block text-xs md:text-xs lg:text-sm text-gray-600 font-medium">Trust • Excellence</p>
               </div>
             </Link>

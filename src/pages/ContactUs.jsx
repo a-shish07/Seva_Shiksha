@@ -286,7 +286,7 @@ const ContactUs = () => {
             24/7 Support • Instant Response
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-black mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-8">
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
               Get In
             </span>

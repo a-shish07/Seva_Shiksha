@@ -38,12 +38,12 @@ const Photos = () => {
       title: "Campus Visit",
       category: "Campus"
     },
-    {
-      id: 7,
-      image: "https://sevashiksha.in/wp-content/uploads/2025/07/471512483_1104225214486928_7632097580683522277_n.jpg",
-      title: "Orientation Program",
-      category: "Program"
-    },
+    // {
+    //   id: 7,
+    //   image: "https://sevashiksha.in/wp-content/uploads/2025/07/471512483_1104225214486928_7632097580683522277_n.jpg",
+    //   title: "Orientation Program",
+    //   category: "Program"
+    // },
     {
       id: 8,
       image: "https://sevashiksha.in/wp-content/uploads/2025/07/471492968_1104244221151694_5832561491923558739_n.jpg",
@@ -68,12 +68,12 @@ const Photos = () => {
       title: "Interactive Session",
       category: "Interactive"
     },
-    {
-      id: 12,
-      image: "https://sevashiksha.in/wp-content/uploads/2025/07/472311805_1111899963719453_4811271653282307702_n.jpg",
-      title: "Class Activity",
-      category: "Academic"
-    },
+    // {
+    //   id: 12,
+    //   image: "https://sevashiksha.in/wp-content/uploads/2025/07/472311805_1111899963719453_4811271653282307702_n.jpg",
+    //   title: "Class Activity",
+    //   category: "Academic"
+    // },
     {
       id: 13,
       image: "https://sevashiksha.in/wp-content/uploads/2025/07/472314935_1111928363716613_1784576212494906963_n.jpg",
@@ -241,6 +241,282 @@ const Photos = () => {
       image: "https://sevashiksha.in/wp-content/uploads/2025/07/84690078_105899307652862_175329640288616448_n.jpg",
       title: "Campus Celebration",
       category: "Campus"
+    },
+    {
+      id: 41,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.40_188a3d02.jpg",
+      title: "Recent Activity",
+      category: "Events"
+    },
+    {
+      id: 42,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.40_d4f45c4d.jpg",
+      title: "Student Moment",
+      category: "Students"
+    },
+    {
+      id: 43,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.40_edf8c4e4.jpg",
+      title: "Class Session",
+      category: "Academic"
+    },
+    {
+      id: 44,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.41_158c3ca2.jpg",
+      title: "Workshop Activity",
+      category: "Workshop"
+    },
+    {
+      id: 45,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.41_dfdb9f3f.jpg",
+      title: "Group Discussion",
+      category: "Discussion"
+    },
+    {
+      id: 46,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.42_0ebd44a2.jpg",
+      title: "Campus Event",
+      category: "Events"
+    },
+    {
+      id: 47,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.42_421380b3.jpg",
+      title: "Student Gathering",
+      category: "Students"
+    },
+    {
+      id: 48,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.44_90592562.jpg",
+      title: "Learning Session",
+      category: "Academic"
+    },
+    {
+      id: 49,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.44_bc784307.jpg",
+      title: "Program Activity",
+      category: "Program"
+    },
+    {
+      id: 50,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.45_47f60a32.jpg",
+      title: "Interactive Session",
+      category: "Interactive"
+    },
+    {
+      id: 51,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.45_cb6a50dc.jpg",
+      title: "Campus Life",
+      category: "Campus"
+    },
+    {
+      id: 52,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.46_af467035.jpg",
+      title: "Team Meeting",
+      category: "Events"
+    },
+    {
+      id: 53,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.47_871bb3f7.jpg",
+      title: "Student Success",
+      category: "Students"
+    },
+    {
+      id: 54,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.48_82c694fd.jpg",
+      title: "Workshop Session",
+      category: "Workshop"
+    },
+    {
+      id: 55,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.48_c9d350cb.jpg",
+      title: "Group Work",
+      category: "Academic"
+    },
+    {
+      id: 56,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.48_f1d864bf.jpg",
+      title: "Training Program",
+      category: "Program"
+    },
+    {
+      id: 57,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.49_aefb2ceb.jpg",
+      title: "Event Highlight",
+      category: "Events"
+    },
+    {
+      id: 58,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.49_bf18a345.jpg",
+      title: "Student Interaction",
+      category: "Students"
+    },
+    {
+      id: 59,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.50_1f39a299.jpg",
+      title: "Campus Tour",
+      category: "Campus"
+    },
+    {
+      id: 60,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.50_6bbddfaf.jpg",
+      title: "Learning Activity",
+      category: "Academic"
+    },
+    {
+      id: 61,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.51_6c641586.jpg",
+      title: "Discussion Session",
+      category: "Discussion"
+    },
+    {
+      id: 62,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.52_13d46748.jpg",
+      title: "Celebration Moment",
+      category: "Events"
+    },
+    {
+      id: 63,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.52_8958428b.jpg",
+      title: "Student Program",
+      category: "Program"
+    },
+    {
+      id: 64,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.52_9b1f1736.jpg",
+      title: "Interactive Learning",
+      category: "Interactive"
+    },
+    {
+      id: 65,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.53_3de3c989.jpg",
+      title: "Campus Scene",
+      category: "Campus"
+    },
+    {
+      id: 66,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.54_5ac813e2.jpg",
+      title: "Workshop Day",
+      category: "Workshop"
+    },
+    {
+      id: 67,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.54_9e3e6499.jpg",
+      title: "Group Photo",
+      category: "Students"
+    },
+    {
+      id: 68,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.55_8a60aaa8.jpg",
+      title: "Academic Session",
+      category: "Academic"
+    },
+    {
+      id: 69,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.56_1cc3d2a7.jpg",
+      title: "Event Photo",
+      category: "Events"
+    },
+    {
+      id: 70,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.56_2bbb7e79.jpg",
+      title: "Student Moment",
+      category: "Students"
+    },
+    {
+      id: 71,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.56_edd5fd75.jpg",
+      title: "Campus Activity",
+      category: "Campus"
+    },
+    {
+      id: 72,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.57_87baa4c7.jpg",
+      title: "Program Highlight",
+      category: "Program"
+    },
+    {
+      id: 73,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.58_1b974390.jpg",
+      title: "Training Session",
+      category: "Workshop"
+    },
+    {
+      id: 74,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.58_31c90f17.jpg",
+      title: "Learning Together",
+      category: "Academic"
+    },
+    {
+      id: 75,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.59_244c4322.jpg",
+      title: "Discussion Group",
+      category: "Discussion"
+    },
+    {
+      id: 76,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.59_a563730d.jpg",
+      title: "Event Celebration",
+      category: "Events"
+    },
+    {
+      id: 77,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.59_c7fec841.jpg",
+      title: "Student Success",
+      category: "Students"
+    },
+    {
+      id: 78,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.59_e262acaa.jpg",
+      title: "Campus Life",
+      category: "Campus"
+    },
+    {
+      id: 79,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.21.00_cea192f6.jpg",
+      title: "Interactive Program",
+      category: "Interactive"
+    },
+    {
+      id: 80,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.21.00_d251d282.jpg",
+      title: "Workshop Activity",
+      category: "Workshop"
+    },
+    {
+      id: 81,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.21.01_42648e18.jpg",
+      title: "Academic Excellence",
+      category: "Academic"
+    },
+    {
+      id: 82,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.21.01_b026d1e1.jpg",
+      title: "Program Moment",
+      category: "Program"
+    },
+    {
+      id: 83,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.21.01_d76eaf89.jpg",
+      title: "Event Gathering",
+      category: "Events"
+    },
+    {
+      id: 84,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.21.02_3ba9adcb.jpg",
+      title: "Student Achievement",
+      category: "Students"
+    },
+    {
+      id: 85,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.21.02_6572da69.jpg",
+      title: "Campus Celebration",
+      category: "Campus"
+    },
+    {
+      id: 86,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.21.02_960d4847.jpg",
+      title: "Special Event",
+      category: "Events"
     }
   ]
 

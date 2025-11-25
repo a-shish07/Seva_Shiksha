@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Play, ExternalLink } from 'lucide-react'
+import { Play, ExternalLink, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Videos = () => {
   const [selectedVideo, setSelectedVideo] = useState(null)
+  const [selectedLocalVideo, setSelectedLocalVideo] = useState(null)
 
   const videos = [
     {
@@ -48,11 +49,69 @@ const Videos = () => {
       thumbnail: "https://sevashiksha.in/wp-content/uploads/2023/10/8.jpeg",
       link: "https://www.facebook.com/101429641433162/posts/pfbid02CQikUkiVibVswMhrHtfDcSqdgSb89Bit2ixnUbQhbKH5oio6ZN4ZD9q3WTh6p12Dl/?d=w&mibextid=qC1gEa",
       description: "Learn about our mission to make quality education accessible"
+    },
+    {
+      id: 7,
+      title: "Seva Shiksha Trust Introduction",
+      thumbnail: "/images/logo.jpg",
+      videoSrc: "/video/AQMa-yRPFX9v9DcZEJ2PU3LB0B9fw1Xxfbh9F_8_gZLTcf6ms9Z891Si1Q0qBPGMe_khtXlmcAlTadeydn3Y12AfCGrLqIwx5zyYRRQ7iALnYQ.mp4",
+      description: "Welcome to Seva Shiksha Trust - our mission and vision",
+      isLocal: true
+    },
+    {
+      id: 8,
+      title: "Student Achievement Highlights",
+      thumbnail: "/images/chairmain.jpeg",
+      videoSrc: "/video/AQMi7IQumHx1CG6e__YcL9QsUSdU9l0YIYWaYovoxnQkT2jYqse_JRUJ8SNJEe8uq7G4MyxOi8mdyimON9kXfWjKbFKcfC7uzn7T3RLL3OGQrA.mp4",
+      description: "Celebrating student achievements and milestones",
+      isLocal: true
+    },
+    {
+      id: 9,
+      title: "Educational Workshops & Seminars",
+      thumbnail: "/images/logo 2.jpg",
+      videoSrc: "/video/AQN2Wp8LUFSZIaQoYWhdxwziWH9tvLCAXLC-OzLUSMwAwxkS-ZVnqmKNkDmhC_UNz8AmCcvgS5-nHwQQvU5QKL6D6ElpBzJnfLBv4NImFgumCA.mp4",
+      description: "Interactive learning sessions and skill development programs",
+      isLocal: true
+    },
+    {
+      id: 10,
+      title: "Community Outreach Programs",
+      thumbnail: "/images/chairmain.jpeg",
+      videoSrc: "/video/AQNsH4JIUfkKXs4fstn96ippFChMnO-JJOKqeDaLSh4D1f6KTj4m7w4pznDSndW6y0h2bwmD7JM65gvFUVHXkZV63SfFpMbpUwHiUVc5TytErw.mp4",
+      description: "Our initiatives to support education in rural communities",
+      isLocal: true
+    },
+    {
+      id: 11,
+      title: "Mentorship Program Overview",
+      thumbnail: "/images/logo.jpg",
+      videoSrc: "/video/AQOaXYDMC0g3jnGsWXvEMjruyRVKc9tN8w9r44Lr3hsFk0-JWo6iusW5yAL4TZfdlntq4Z7P7048X3v9clG27O_W.mp4",
+      description: "How our expert mentors guide students towards success",
+      isLocal: true
+    },
+    {
+      id: 12,
+      title: "Scholarship Distribution Events",
+      thumbnail: "/images/logo 2.jpg",
+      videoSrc: "/video/AQPoNQf7LX829GJg3YdkqfX3UU1QsvUj_DwUPzfMhzhd8TZ1qP7AYsKoepyxbXQR7yhEwjlmHrs3n7_LxkQdj-1XL3b7m2pD6hAsJbolGR3ZhA.mp4",
+      description: "Heartwarming moments from scholarship award ceremonies",
+      isLocal: true
+    },
+    {
+      id: 13,
+      title: "Annual Achievement Awards",
+      thumbnail: "/images/chairmain.jpeg",
+      videoSrc: "/video/AQPPXvkH-Mm5u-TWI8niGJohgtk2fTzSSxURBC-wIN_qohlSAPfJ-pzY7RvssWBYbIEqbOkj70dZ7c-JkvBH3B3cd8rLCAHX4rmfaqBGgiqmmQ.mp4",
+      description: "Recognizing excellence in education and community service",
+      isLocal: true
     }
   ]
 
   const handlePlayVideo = (video) => {
-    if (video.isInternal) {
+    if (video.isLocal) {
+      setSelectedLocalVideo(video)
+    } else if (video.isInternal) {
       window.location.href = video.link
     } else {
       window.open(video.link, '_blank', 'noopener,noreferrer')
@@ -192,6 +251,48 @@ const Videos = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Local Video Modal */}
+      <AnimatePresence>
+        {selectedLocalVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedLocalVideo(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-6 border-b border-gray-200 flex items-center justify-between">
+                <h3 className="text-xl font-bold text-gray-900">{selectedLocalVideo.title}</h3>
+                <button
+                  onClick={() => setSelectedLocalVideo(null)}
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                >
+                  <X className="w-6 h-6 text-gray-500" />
+                </button>
+              </div>
+              <div className="p-6">
+                <video
+                  src={selectedLocalVideo.videoSrc}
+                  controls
+                  className="w-full rounded-lg"
+                  autoPlay
+                >
+                  Your browser does not support the video tag.
+                </video>
+                <p className="mt-4 text-gray-600">{selectedLocalVideo.description}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

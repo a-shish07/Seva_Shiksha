@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Facebook, Youtube, Star } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const Footer = () => {
   return (
     <footer className="gradient-soft-alt text-gray-900">
       <div className="container-custom section-padding px-3 sm:px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
           {/* Logo and Description */}
-          <div className="sm:col-span-2 lg:col-span-2" data-aos="fade-right">
+          <div className="sm:col-span-2 lg:col-span-2 xl:col-span-2" data-aos="fade-right">
             <div className="flex items-center space-x-2 sm:space-x-3 mb-6">
               <img
                 src="/images/logo.jpg"
@@ -16,8 +17,8 @@ const Footer = () => {
                 className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg"
               />
               <div>
-                <h1 className="text-lg sm:text-2xl font-bold text-gray-900">SEVA SHIKSHA</h1>
-                <p className="text-sm sm:text-base text-orange-600">Trust</p>
+                <h1 className="text-lg sm:text-2xl font-bold text-orange-600">SEVA SHIKSHA TRUST<sup className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-black ml-1">®</sup></h1>
+               
               </div>
             </div>
             <h3 className="text-base sm:text-lg lg:text-xl font-semibold mb-4 text-orange-600">SEVA SHIKSHA ABHIYAN</h3>
@@ -123,12 +124,38 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
+          {/* Review QR Code */}
+          <div data-aos="fade-up" data-aos-delay="300" className="text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <h3 className="text-base sm:text-lg lg:text-xl font-semibold mb-4 text-orange-600">
+                Share Your Review
+              </h3>
+              <p className="text-sm text-gray-700 mb-4 leading-relaxed">
+                Help us improve by sharing your feedback
+              </p>
+              <div className="bg-white p-3 rounded-lg shadow-md inline-block border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                <img
+                  src="/review code.jpg"
+                  alt="Review QR Code"
+                  className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain"
+                />
+              </div>
+              <p className="text-xs text-gray-500 mt-3">
+                Scan to share your experience
+              </p>
+            </motion.div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-8 sm:mt-12 pt-6 sm:pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
-            <p className="text-xs sm:text-sm text-gray-400 text-center sm:text-left">
+            <p className="text-xs sm:text-sm text-gray-900 text-center sm:text-left">
               © {new Date().getFullYear()} Seva Shiksha Trust. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-4 text-xs sm:text-sm">
