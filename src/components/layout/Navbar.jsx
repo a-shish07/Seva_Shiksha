@@ -127,12 +127,6 @@ const Navbar = () => {
           path: '/our-mentors',
           description: 'Meet our expert team',
           icon: <Users className="w-4 h-4" />
-        },
-        {
-          name: 'Student Oath Videos',
-          path: '/student-oath-videos',
-          description: 'Watch student pledge ceremonies',
-          icon: <Globe className="w-4 h-4" />
         }
       ]
     },
@@ -208,6 +202,12 @@ const Navbar = () => {
           path: '/news-clip',
           description: 'Latest news coverage',
           icon: <FileText className="w-4 h-4" />
+        },
+        {
+          name: 'Student Oath Videos',
+          path: '/student-oath-videos',
+          description: 'Watch student pledge ceremonies',
+          icon: <Video className="w-4 h-4" />
         }
       ]
     },

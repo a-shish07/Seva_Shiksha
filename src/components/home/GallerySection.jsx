@@ -41,12 +41,12 @@ const GallerySection = () => {
       category: "Campus"
     },
     
-    {
-      id: 7,
-      image: "https://sevashiksha.in/wp-content/uploads/2025/07/471512483_1104225214486928_7632097580683522277_n.jpg",
-      title: "Orientation Program",
-      category: "Program"
-    },
+    // {
+    //   id: 7,
+    //   image: "https://sevashiksha.in/wp-content/uploads/2025/07/471512483_1104225214486928_7632097580683522277_n.jpg",
+    //   title: "Orientation Program",
+    //   category: "Program"
+    // },
     {
       id: 8,
       image: "https://sevashiksha.in/wp-content/uploads/2025/07/471492968_1104244221151694_5832561491923558739_n.jpg",
@@ -71,12 +71,12 @@ const GallerySection = () => {
       title: "Interactive Session",
       category: "Interactive"
     },
-    {
-      id: 12,
-      image: "https://sevashiksha.in/wp-content/uploads/2025/07/472311805_1111899963719453_4811271653282307702_n.jpg",
-      title: "Class Activity",
-      category: "Academic"
-    },
+    // {
+    //   id: 12,
+    //   image: "https://sevashiksha.in/wp-content/uploads/2025/07/472311805_1111899963719453_4811271653282307702_n.jpg",
+    //   title: "Class Activity",
+    //   category: "Academic"
+    // },
     {
       id: 13,
       image: "https://sevashiksha.in/wp-content/uploads/2025/07/472314935_1111928363716613_1784576212494906963_n.jpg",

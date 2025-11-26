@@ -1,19 +1,61 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const HeroSection = () => {
-  const heroContent = {
-    image: "https://sevashiksha.in/wp-content/uploads/2023/10/7.jpeg",
-    title: "We help the students in need",
-    subtitle: "Providing quality education and scholarships to deserving students",
-    buttonText: "Read More",
-    buttonLink: "/about-seva-shiksha",
-    highlight: {
-      label: "Featuring:",
-      name: "National President of Pvt School Children Welfare Association"
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [autoPlay, setAutoPlay] = useState(true)
+
+  const slides = [
+    {
+      image: "https://sevashiksha.in/wp-content/uploads/2023/10/7.jpeg",
+      title: "We help the students in need",
+      subtitle: "Providing quality education and scholarships to deserving students",
+      buttonText: "Read More",
+      buttonLink: "/about-seva-shiksha",
+      highlight: {
+        label: "Featuring:",
+        name: "National President of Pvt School Children Welfare Association"
+      }
+    },
+    {
+      image: "/slide.jpg",
+      title: "Your Dreams, Our Mission",
+      subtitle: "Transforming Lives Through Education",
+      content: "यह कोई कहानी नहीं है… यह कड़वी सच्चाई है। यहाँ आँसू भी हैं… और सपने भी। यहाँ एक तरफ़ चुनौतियाँ हैं— और दूसरी तरफ़ वो उम्मीद, जो हर माँ–बाप अपने बच्चे के लिए लेकर चलते हैं… कि उनका बेटा या बेटी पढ़कर एक बेहतर भविष्य बनाए।",
+      buttonText: "Join Us",
+      buttonLink: "/student-registration",
+      highlight: {
+        label: "Our Promise:",
+        name: "No child left behind due to financial constraints"
+      }
     }
+  ]
+
+  useEffect(() => {
+    if (!autoPlay) return
+    
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length)
+    }, 5000)
+    
+    return () => clearInterval(interval)
+  }, [autoPlay, slides.length])
+
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length)
+    setAutoPlay(false)
+    setTimeout(() => setAutoPlay(true), 5000)
   }
+
+  const handlePrev = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+    setAutoPlay(false)
+    setTimeout(() => setAutoPlay(true), 5000)
+  }
+
+  const heroContent = slides[currentSlide]
 
   return (
     <section className="relative overflow-hidden gradient-soft">
@@ -26,12 +68,15 @@ const HeroSection = () => {
             {/* Left Content */}
             <div className="flex items-center justify-center lg:justify-start">
               <div className="w-full max-w-2xl px-2 sm:px-4 py-8 sm:py-12 md:py-16">
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-center lg:text-left"
-                >
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentSlide}
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 50 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center lg:text-left"
+                  >
                   {/* Main Title */}
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -75,6 +120,18 @@ const HeroSection = () => {
                     {heroContent.subtitle}
                   </motion.p>
 
+                  {/* Poem Content - Show only on second slide */}
+                  {heroContent.content && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.7 }}
+                      className="text-xs sm:text-sm md:text-base text-gray-200 mb-6 sm:mb-8 leading-relaxed italic text-justify"
+                    >
+                      {heroContent.content}
+                    </motion.p>
+                  )}
+
                   {/* Highlighted Name */}
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -105,33 +162,38 @@ const HeroSection = () => {
                     </Link>
                   </motion.div>
                 </motion.div>
+                </AnimatePresence>
               </div>
             </div>
 
             {/* Right Image */}
             <div className="relative flex items-center justify-center mt-8 sm:mt-10 lg:mt-0">
-              <motion.div
-                initial={{ opacity: 0, x: 50, scale: 0.9 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                transition={{ duration: 0.7 }}
-                className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full max-h-[500px] sm:max-h-[600px] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl"
-              >
-                <img
-                  src={heroContent.image}
-                  alt={heroContent.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-900/30 to-transparent"></div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, x: 50, scale: 0.9 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  exit={{ opacity: 0, x: -50, scale: 0.9 }}
+                  transition={{ duration: 0.7 }}
+                  className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full max-h-[500px] sm:max-h-[600px] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl"
+                >
+                  <img
+                    src={heroContent.image}
+                    alt={heroContent.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-900/30 to-transparent"></div>
 
-                <div className="absolute bottom-6 left-6 bg-black/40 backdrop-blur-sm border border-white/20 rounded-lg px-5 py-3 text-white shadow-lg">
-                  <p className="text-xs uppercase tracking-wider text-gold-300">
-                    {heroContent.highlight.label}
-                  </p>
-                  <p className="text-sm font-semibold">
-                    {heroContent.highlight.name}
-                  </p>
-                </div>
-              </motion.div>
+                  <div className="absolute bottom-6 left-6 bg-black/40 backdrop-blur-sm border border-white/20 rounded-lg px-5 py-3 text-white shadow-lg">
+                    <p className="text-xs uppercase tracking-wider text-gold-300">
+                      {heroContent.highlight.label}
+                    </p>
+                    <p className="text-sm font-semibold">
+                      {heroContent.highlight.name}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </div>
@@ -141,6 +203,48 @@ const HeroSection = () => {
       <div className="absolute top-20 left-10 w-16 h-16 bg-gold-900/20 rounded-full animate-float hidden lg:block"></div>
       <div className="absolute top-32 left-32 w-12 h-12 bg-primary-400/20 rounded-full animate-float hidden lg:block" style={{ animationDelay: '1s' }}></div>
       <div className="absolute bottom-32 right-32 w-14 h-14 bg-secondary-400/20 rounded-full animate-float hidden lg:block" style={{ animationDelay: '2s' }}></div>
+
+      {/* Slider Navigation - Previous Button */}
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={handlePrev}
+        className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-white/30 rounded-full p-2 sm:p-3 text-white transition-all duration-300"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+      </motion.button>
+
+      {/* Slider Navigation - Next Button */}
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={handleNext}
+        className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-white/30 rounded-full p-2 sm:p-3 text-white transition-all duration-300"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+      </motion.button>
+
+      {/* Slider Indicator Dots */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 sm:gap-3">
+        {slides.map((_, index) => (
+          <motion.button
+            key={index}
+            onClick={() => {
+              setCurrentSlide(index)
+              setAutoPlay(false)
+              setTimeout(() => setAutoPlay(true), 5000)
+            }}
+            className={`rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? 'bg-white w-8 h-3'
+                : 'bg-white/50 hover:bg-white/70 w-3 h-3'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
 
       {/* Scholarship Form Button */}
       {/* <motion.div

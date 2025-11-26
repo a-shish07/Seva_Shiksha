@@ -26,7 +26,18 @@ const NewsClip = () => {
     { id: 17, image: "/news photo/17.jpg", title: "News Clip 17" },
     { id: 18, image: "/news photo/18.jpg", title: "News Clip 18" },
     { id: 19, image: "/news photo/19.jpg", title: "News Clip 19" },
-    { id: 20, image: "/news photo/20.jpg", title: "News Clip 20" }
+    { id: 20, image: "/news photo/20.jpg", title: "News Clip 20" },
+    { id: 21, image: "/news photo/21.jpg", title: "News Clip 21" },
+    { id: 22, image: "/news photo/22.jpg", title: "News Clip 22" },
+    { id: 23, image: "/news photo/23.jpg", title: "News Clip 23" },
+    { id: 24, image: "/news photo/24.jpg", title: "News Clip 24" },
+    { id: 25, image: "/news photo/25.jpg", title: "News Clip 25" },
+    { id: 26, image: "/news photo/26.jpg", title: "News Clip 26" },
+    { id: 27, image: "/news photo/27.jpg", title: "News Clip 27" },
+    {id: 28, image: "/news photo/28.jpg", title: "News Clip 28" },
+    {id: 29, image: "/news photo/29.jpg", title: "News Clip 29" },
+    {id: 30, image: "/news photo/30.jpg", title: "News Clip 30" },
+    
   ]
 
   return (
