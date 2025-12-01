@@ -113,6 +113,11 @@ const StudentRegistration = () => {
     { value: 'Other', label: 'Other' },
   ];
 
+  const registrationTypeOptions = [
+    { value: 'member', label: 'Member' },
+    { value: 'coordinator', label: 'Coordinator' },
+  ];
+
   const onSubmit = async (data) => {
     try {
       setIsLoading(true);
@@ -179,22 +184,23 @@ const StudentRegistration = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Select State
+                    Registration Type <span className="text-red-500">*</span>
                   </label>
                   <Controller
-                    name="state"
+                    name="registrationType"
                     control={control}
+                    rules={{ required: 'Registration type is required' }}
                     render={({ field }) => (
                       <Select
                         {...field}
-                        options={stateOptions}
-                        placeholder="Select State"
+                        options={registrationTypeOptions}
+                        placeholder="Select Registration Type"
                         className="react-select-container"
                         classNamePrefix="react-select"
                       />
                     )}
                   />
-                  {errors.state && <p className="text-red-500 text-sm mt-1">{errors.state.message}</p>}
+                  {errors.registrationType && <p className="text-red-500 text-sm mt-1">{errors.registrationType.message}</p>}
                 </div>
 
                 <div>
@@ -219,23 +225,36 @@ const StudentRegistration = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Courses
+                    Course <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    {...register('course', { required: 'Course is required' })}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    placeholder="Enter your desired course"
+                  />
+                  {errors.course && <p className="text-red-500 text-sm mt-1">{errors.course.message}</p>}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-3 sm:gap-6 mt-3 sm:mt-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Select State
                   </label>
                   <Controller
-                    name="course"
+                    name="state"
                     control={control}
                     render={({ field }) => (
                       <Select
                         {...field}
-                        options={getCurrentCourses()}
-                        placeholder="Select Course"
-                        isDisabled={!watchedProgram}
+                        options={stateOptions}
+                        placeholder="Select State"
                         className="react-select-container"
                         classNamePrefix="react-select"
                       />
                     )}
                   />
-                  {errors.course && <p className="text-red-500 text-sm mt-1">{errors.course.message}</p>}
+                  {errors.state && <p className="text-red-500 text-sm mt-1">{errors.state.message}</p>}
                 </div>
               </div>
             </div>

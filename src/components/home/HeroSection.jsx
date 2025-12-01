@@ -23,7 +23,7 @@ const HeroSection = () => {
       image: "/slide.jpg",
       title: "Your Dreams, Our Mission",
       subtitle: "Transforming Lives Through Education",
-      content: "यह कोई कहानी नहीं है… यह कड़वी सच्चाई है। यहाँ आँसू भी हैं… और सपने भी। यहाँ एक तरफ़ चुनौतियाँ हैं— और दूसरी तरफ़ वो उम्मीद, जो हर माँ–बाप अपने बच्चे के लिए लेकर चलते हैं… कि उनका बेटा या बेटी पढ़कर एक बेहतर भविष्य बनाए।",
+      content: "यह कोई कहानी नहीं… यह सच्चाई है।\nकई बच्चे सिर्फ़ पैसों की कमी से अपने सपने अधूरे छोड़ देते हैं।\nसेवा शिक्षा ट्रस्ट ने ठान लिया है—\nअब कोई बच्चा आर्थिक वजहों से पढ़ाई से दूर नहीं रहेगा।\nआज 10,000+ छात्रों को\nहमने शिक्षा के साथ नई उम्मीद और नया आत्मविश्वास दिया है।\nक्योंकि जब एक बच्चा पढ़ता है,\nतब एक पूरा परिवार बदलता है।",
       buttonText: "Join Us",
       buttonLink: "/student-registration",
       highlight: {
@@ -38,7 +38,7 @@ const HeroSection = () => {
     
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
+    }, 12000)
     
     return () => clearInterval(interval)
   }, [autoPlay, slides.length])
@@ -46,13 +46,13 @@ const HeroSection = () => {
   const handleNext = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
     setAutoPlay(false)
-    setTimeout(() => setAutoPlay(true), 5000)
+    setTimeout(() => setAutoPlay(true), 8000)
   }
 
   const handlePrev = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
     setAutoPlay(false)
-    setTimeout(() => setAutoPlay(true), 5000)
+    setTimeout(() => setAutoPlay(true), 8000)
   }
 
   const heroContent = slides[currentSlide]
@@ -110,15 +110,17 @@ const HeroSection = () => {
                     HIGHER EDUCATION ACCESSIBLE TO EVERYONE.
                   </motion.p>
 
-                  {/* Subtitle */}
-                  <motion.p
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                    className="text-xs sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed"
-                  >
-                    {heroContent.subtitle}
-                  </motion.p>
+                  {/* Subtitle - Hide if poem content exists */}
+                  {!heroContent.content && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 }}
+                      className="text-xs sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed"
+                    >
+                      {heroContent.subtitle}
+                    </motion.p>
+                  )}
 
                   {/* Poem Content - Show only on second slide */}
                   {heroContent.content && (
@@ -126,26 +128,28 @@ const HeroSection = () => {
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.7 }}
-                      className="text-xs sm:text-sm md:text-base text-gray-200 mb-6 sm:mb-8 leading-relaxed italic text-justify"
+                      className="text-sm sm:text-base md:text-lg text-gray-200 mb-6 sm:mb-8 leading-relaxed whitespace-pre-line text-center"
                     >
                       {heroContent.content}
                     </motion.p>
                   )}
 
-                  {/* Highlighted Name */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7 }}
-                    className="bg-white/10 border border-white/20 rounded-lg sm:rounded-xl p-3 sm:p-4 backdrop-blur-md text-white shadow-lg mb-6 sm:mb-8"
-                  >
-                    <p className="text-xs sm:text-sm text-gray-200 uppercase tracking-wide mb-1">
-                      {heroContent.highlight.label}
-                    </p>
-                    <p className="text-sm sm:text-base md:text-lg font-semibold text-gold-300">
-                      {heroContent.highlight.name}
-                    </p>
-                  </motion.div>
+                  {/* Highlighted Name - Hide if poem content exists */}
+                  {!heroContent.content && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.7 }}
+                      className="bg-white/10 border border-white/20 rounded-lg sm:rounded-xl p-3 sm:p-4 backdrop-blur-md text-white shadow-lg mb-6 sm:mb-8"
+                    >
+                      <p className="text-xs sm:text-sm text-gray-200 uppercase tracking-wide mb-1">
+                        {heroContent.highlight.label}
+                      </p>
+                      <p className="text-sm sm:text-base md:text-lg font-semibold text-gold-300">
+                        {heroContent.highlight.name}
+                      </p>
+                    </motion.div>
+                  )}
 
                   {/* Action Buttons */}
                   <motion.div
@@ -175,12 +179,12 @@ const HeroSection = () => {
                   animate={{ opacity: 1, x: 0, scale: 1 }}
                   exit={{ opacity: 0, x: -50, scale: 0.9 }}
                   transition={{ duration: 0.7 }}
-                  className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full max-h-[500px] sm:max-h-[600px] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl"
+                  className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full max-h-[500px] sm:max-h-[600px] rounded-xl sm:rounded-2xl overflow-hidden   flex items-center justify-center"
                 >
                   <img
                     src={heroContent.image}
                     alt={heroContent.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-900/30 to-transparent"></div>
 
