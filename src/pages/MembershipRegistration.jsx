@@ -84,6 +84,39 @@ const MembershipRegistration = () => {
       const amount = data.membershipType === 'active-member' ? 9999 : 2499;
       const formType = data.membershipType === 'active-member' ? 'Active Membership Registration' : 'General Membership Registration';
 
+      // Prepare form data for email
+      const emailPayload = {
+        formType: formType,
+        amount: amount,
+        formData: JSON.stringify({ ...data, uploadedPhoto: uploadedPhoto ? uploadedPhoto.name : null }),
+        submissionDate: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        timestamp: new Date().getTime()
+      };
+
+      // Send email with form details
+      try {
+        const emailResponse = await fetch('http://localhost:3001/api/send-registration-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(emailPayload)
+        });
+
+        const emailResult = await emailResponse.json();
+        
+        if (!emailResponse.ok) {
+          console.warn('Email notification failed:', emailResult);
+        } else {
+          console.log('Email sent successfully:', emailResult);
+          toast.success('सदस्यता जमा की गई। पुष्टि ईमेल भेजी गई।');
+        }
+      } catch (emailError) {
+        console.warn('Error sending email:', emailError);
+        toast.warning('सदस्यता जमा की गई लेकिन ईमेल भेजने में विफल। कृपया भुगतान जारी रखें।');
+      }
+
       // Redirect to payment page with form data
       navigate('/payment', {
         state: {

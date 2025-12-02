@@ -517,7 +517,62 @@ const Photos = () => {
       image: "/media/WhatsApp Image 2025-11-25 at 14.21.02_960d4847.jpg",
       title: "Special Event",
       category: "Events"
-    }
+    },
+    {
+      id: 87,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.32_25a2f686.jpg",
+      title: "People Review",
+      category: "Review"
+    },
+    {
+      id: 88,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.33_6f56bad7.jpg",
+       title: "People Review",
+      category: "Review"
+    },
+    {
+      id: 89,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.33_f119686d.jpg",
+      title: "People Review",
+      category: "Review"
+    },
+    {
+      id: 90,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.34_9e494406.jpg",
+       title: "People Review",
+      category: "Review"
+    },
+    {
+      id: 91,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.36_047e6dd6.jpg",
+      title: "People Review",
+      category: "Review"
+    },
+    {
+      id: 92,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.38_09cd3fdb.jpg",
+      title: "People Review",
+      category: "Review"
+    },
+    {
+      id: 93,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.38_99e11fcd.jpg",
+      title: "People Review",
+      category: "Review"
+    },
+    {
+      id: 94,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.38_c738f82f.jpg",
+       title: "People Review",
+      category: "Review"
+    },
+    {
+      id: 95,
+      image: "/media/WhatsApp Image 2025-11-25 at 14.20.39_97fb7273.jpg",
+      title: "People Review",
+      category: "Review"
+    },
+
   ]
 
   const archivedGallery = [

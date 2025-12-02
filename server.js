@@ -136,6 +136,69 @@ app.post('/api/send-registration-email', upload.single('paymentScreenshot'), asy
   }
 });
 
+// API endpoint to send contact form email
+app.post('/api/send-contact-email', async (req, res) => {
+  try {
+    const {
+      name,
+      email,
+      phone,
+      subject,
+      message,
+      inquiryType,
+      submissionDate,
+      userAgent,
+      timestamp
+    } = req.body;
+
+    // Create email content
+    const emailContent = `
+      <h2>New Contact Form Submission</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Inquiry Type:</strong> ${inquiryType}</p>
+      <p><strong>Subject:</strong> ${subject}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message.replace(/\n/g, '<br>')}</p>
+      
+      <hr>
+      <p><strong>Submission Date:</strong> ${new Date(submissionDate).toLocaleString()}</p>
+      <p><strong>Timestamp:</strong> ${timestamp}</p>
+      <p><strong>User Agent:</strong> ${userAgent}</p>
+      
+      <p>Best regards,<br>SEVA SHIKSHA Contact System</p>
+    `;
+
+    // Email options to admin
+    const mailOptions = {
+      from: process.env.EMAIL_USER || 'your-email@yourdomain.com',
+      to: process.env.ADMIN_EMAIL || 'admin@yourdomain.com',
+      subject: `New Contact Form: ${subject}`,
+      html: emailContent,
+      replyTo: email
+    };
+
+    // Send email to admin
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Contact email sent:', info.messageId);
+
+    res.status(200).json({
+      success: true,
+      message: 'Contact email sent successfully',
+      messageId: info.messageId
+    });
+
+  } catch (error) {
+    console.error('Error sending contact email:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to send contact email',
+      error: error.message
+    });
+  }
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'OK', message: 'Server is running' });

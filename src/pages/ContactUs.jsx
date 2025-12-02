@@ -194,37 +194,70 @@ const ContactUs = () => {
     e.preventDefault()
     setIsFormSubmitting(true)
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    try {
+      const emailPayload = {
+        ...formData,
+        submissionDate: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        timestamp: new Date().getTime()
+      };
 
-    console.log('Form data:', formData)
-    toast.success(
-      <div className="flex items-center gap-2">
-        <CheckCircle className="w-5 h-5 text-green-600" />
-        <div>
-          <p className="font-medium">Message sent successfully!</p>
-          <p className="text-sm text-gray-600">We'll respond within 2-4 hours</p>
-        </div>
-      </div>,
-      { duration: 4000 }
-    )
+      const response = await fetch('http://localhost:3001/api/send-contact-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(emailPayload)
+      });
 
-    // Update stats
-    setFormStats(prev => ({
-      ...prev,
-      totalInquiries: prev.totalInquiries + 1
-    }))
+      const result = await response.json();
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-      inquiryType: 'general'
-    })
-    setIsFormSubmitting(false)
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to send message');
+      }
+
+      console.log('Form data sent:', formData)
+      toast.success(
+        <div className="flex items-center gap-2">
+          <CheckCircle className="w-5 h-5 text-green-600" />
+          <div>
+            <p className="font-medium">Message sent successfully!</p>
+            <p className="text-sm text-gray-600">We'll respond within 2-4 hours</p>
+          </div>
+        </div>,
+        { duration: 4000 }
+      )
+
+      // Update stats
+      setFormStats(prev => ({
+        ...prev,
+        totalInquiries: prev.totalInquiries + 1
+      }))
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        inquiryType: 'general'
+      })
+    } catch (error) {
+      console.error('Error sending message:', error)
+      toast.error(
+        <div className="flex items-center gap-2">
+          <AlertCircle className="w-5 h-5 text-red-600" />
+          <div>
+            <p className="font-medium">Failed to send message</p>
+            <p className="text-sm text-gray-600">Please try again later</p>
+          </div>
+        </div>,
+        { duration: 4000 }
+      )
+    } finally {
+      setIsFormSubmitting(false)
+    }
   }
 
   const handleChange = (e) => {

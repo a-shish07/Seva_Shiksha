@@ -50,6 +50,10 @@ web_modules/
 # Optional npm cache directory
 .npm
 
+#env files
+.env
+.env.*
+
 # Optional eslint cache
 .eslintcache
 

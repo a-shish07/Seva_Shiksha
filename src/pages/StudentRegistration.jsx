@@ -123,6 +123,40 @@ const StudentRegistration = () => {
       setIsLoading(true);
       console.log('Form Data:', data);
 
+      // Prepare form data for email
+      const emailPayload = {
+        formType: 'Student Registration',
+        amount: 999,
+        formData: JSON.stringify(data),
+        submissionDate: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        timestamp: new Date().getTime()
+      };
+
+      // Send email with form details
+      try {
+        const emailResponse = await fetch('http://localhost:3001/api/send-registration-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(emailPayload)
+        });
+
+        const emailResult = await emailResponse.json();
+        
+        if (!emailResponse.ok) {
+          console.warn('Email notification failed:', emailResult);
+          // Continue anyway - don't block registration if email fails
+        } else {
+          console.log('Email sent successfully:', emailResult);
+          toast.success('Form submitted successfully. Confirmation email sent.');
+        }
+      } catch (emailError) {
+        console.warn('Error sending email:', emailError);
+        toast.warning('Form submitted but email notification failed. Please continue to payment.');
+      }
+
       // Redirect to payment page with form data
       navigate('/payment', {
         state: {
@@ -132,6 +166,7 @@ const StudentRegistration = () => {
         }
       });
     } catch (error) {
+      console.error('Error:', error);
       toast.error('Failed to submit form. Please try again.');
     } finally {
       setIsLoading(false);
@@ -184,21 +219,12 @@ const StudentRegistration = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Registration Type <span className="text-red-500">*</span>
+                    Member/Coordinator Code
                   </label>
-                  <Controller
-                    name="registrationType"
-                    control={control}
-                    rules={{ required: 'Registration type is required' }}
-                    render={({ field }) => (
-                      <Select
-                        {...field}
-                        options={registrationTypeOptions}
-                        placeholder="Select Registration Type"
-                        className="react-select-container"
-                        classNamePrefix="react-select"
-                      />
-                    )}
+                  <input
+                    {...register('registrationType')}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    placeholder="Enter the code"
                   />
                   {errors.registrationType && <p className="text-red-500 text-sm mt-1">{errors.registrationType.message}</p>}
                 </div>

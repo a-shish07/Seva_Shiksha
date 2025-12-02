@@ -186,16 +186,16 @@ const HeroSection = () => {
                     alt={heroContent.title}
                     className="w-full h-full object-contain"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-900/30 to-transparent"></div>
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-primary-900/30 to-transparent"></div> */}
 
-                  <div className="absolute bottom-6 left-6 bg-black/40 backdrop-blur-sm border border-white/20 rounded-lg px-5 py-3 text-white shadow-lg">
+                  {/* <div className="absolute bottom-6 left-6 bg-black/40 backdrop-blur-sm border border-white/20 rounded-lg px-5 py-3 text-white shadow-lg">
                     <p className="text-xs uppercase tracking-wider text-gold-300">
                       {heroContent.highlight.label}
                     </p>
                     <p className="text-sm font-semibold">
-                      {heroContent.highlight.name}
+                      {heroContent.highlight.name} 
                     </p>
-                  </div>
+                  </div> */}
                 </motion.div>
               </AnimatePresence>
             </div>
