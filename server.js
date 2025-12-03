@@ -45,12 +45,12 @@ if (!fs.existsSync('uploads')) {
 }
 
 // Configure nodemailer with Hostinger SMTP
-const transporter = nodemailer.createTransporter({
-  host: process.env.SMTP_HOST || 'smtp.hostinger.com', // Replace with your Hostinger SMTP host
-  port: 587,
-  secure: false, // true for 465, false for other ports
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || 'smtp.hostinger.com', 
+  port: process.env.SMTP_PORT || 465,
+  secure: process.env.SMTP_PORT == 465 ? true : false, // true for 465, false for other ports
   auth: {
-    user: process.env.EMAIL_USER || 'your-email@yourdomain.com', // Your Hostinger email
+    user: process.env.EMAIL_USER || 'info@sevashiksha.in',
     pass: process.env.EMAIL_PASS || 'your-email-password' // Your email password or app password
   }
 });
@@ -97,8 +97,8 @@ app.post('/api/send-registration-email', upload.single('paymentScreenshot'), asy
 
     // Email options
     const mailOptions = {
-      from: process.env.EMAIL_USER || 'your-email@yourdomain.com',
-      to: process.env.ADMIN_EMAIL || 'admin@yourdomain.com', // Email where you want to receive notifications
+      from: process.env.EMAIL_USER || 'info@sevashiksha.in',
+      to: process.env.ADMIN_EMAIL || 'info@sevashiksha.in', // Email where you want to receive notifications
       subject: `New ${formType} Registration - ₹${amount}`,
       html: emailContent,
       attachments: screenshotPath ? [{
@@ -172,8 +172,8 @@ app.post('/api/send-contact-email', async (req, res) => {
 
     // Email options to admin
     const mailOptions = {
-      from: process.env.EMAIL_USER || 'your-email@yourdomain.com',
-      to: process.env.ADMIN_EMAIL || 'admin@yourdomain.com',
+      from: process.env.EMAIL_USER || 'info@sevashiksha.in',
+      to: process.env.ADMIN_EMAIL || 'info@sevashiksha.in',
       subject: `New Contact Form: ${subject}`,
       html: emailContent,
       replyTo: email
