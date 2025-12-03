@@ -63,7 +63,7 @@ const ContactUs = () => {
       description: 'Detailed responses to complex queries',
       icon: <Mail className="w-8 h-8" />,
       color: 'from-blue-500 to-purple-500',
-      primary: 'info@sevashiksha.com',
+      primary: 'info@sevashiksha.in',
       secondary: 'support@sevashiksha.com',
       action: 'Send Email',
       availability: '24/7 Monitored',

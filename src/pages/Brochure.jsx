@@ -213,7 +213,7 @@ const Brochure = () => {
               <span className="font-medium">📞 094305 21027 / 8709283592</span>
             </div>
             <div className="flex items-center justify-center space-x-2 text-accent-400">
-              <span className="font-medium">✉️ info@sevashiksha.com</span>
+              <span className="font-medium">✉️ info@sevashiksha.in</span>
             </div>
           </div>
         </motion.div>

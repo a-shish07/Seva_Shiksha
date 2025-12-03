@@ -116,7 +116,7 @@ const BiharMahilaScholarship = () => {
 
   const support = [
     { label: "हेल्पलाइन", value: "+91 94305 21027" },
-    { label: "ईमेल", value: "info@sevashiksha.com" },
+    { label: "ईमेल", value: "info@sevashiksha.in" },
     { label: "कार्यालय", value: "पटना, बिहार" }
   ]
 

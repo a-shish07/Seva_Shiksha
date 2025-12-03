@@ -75,7 +75,7 @@ const Navbar = () => {
         window.location.href = 'tel:+919430521027'
         break
       case 'email':
-        window.location.href = 'mailto:info@sevashiksha.com'
+        window.location.href = 'mailto:info@sevashiksha.in'
         break
       case 'whatsapp':
         window.open('https://wa.me/919430521027', '_blank', 'noopener,noreferrer')
@@ -269,7 +269,7 @@ const Navbar = () => {
                 onClick={() => handleQuickContact('email')}
               >
                 <Mail className="w-3 h-3 md:w-4 md:h-4" />
-                <span className="font-medium">info@sevashiksha.com</span>
+                <span className="font-medium">info@sevashiksha.in</span>
               </div>
               <div className="flex items-center space-x-1 text-accent-200 hidden lg:flex">
                 <MapPin className="w-3 h-3 md:w-4 md:h-4" />

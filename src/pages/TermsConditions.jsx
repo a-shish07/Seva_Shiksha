@@ -90,7 +90,7 @@ const TermsConditions = () => {
       id: 10,
       icon: <Phone className="w-6 h-6" />,
       title: "Contact & Support",
-      content: "If you have any questions or concerns about these Terms and Conditions, please contact us at info@sevashiksha.com or call 094305 21027 / 8709283592. We are committed to addressing your queries promptly and professionally.",
+      content: "If you have any questions or concerns about these Terms and Conditions, please contact us at info@sevashiksha.in or call 094305 21027 / 8709283592. We are committed to addressing your queries promptly and professionally.",
       category: "Support",
       color: "from-cyan-500 to-blue-500"
     }
@@ -345,7 +345,7 @@ const TermsConditions = () => {
                 </div>
                 <h4 className="text-xl font-semibold mb-2">Email Support</h4>
                 <p className="text-blue-200 text-sm mb-3">Written inquiries and documentation</p>
-                <p className="text-white font-medium">info@sevashiksha.com</p>
+                <p className="text-white font-medium">info@sevashiksha.in</p>
               </div>
               
               <div className="text-center group">

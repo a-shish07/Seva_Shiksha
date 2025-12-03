@@ -405,7 +405,7 @@ const PrivacyPolicy = () => {
           </h3>
           <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
             If you have questions or concerns about our Privacy Policy or our data practices, 
-            please contact us at info@sevashiksha.com. We're committed to addressing your privacy concerns promptly and transparently.
+            please contact us at info@sevashiksha.in. We're committed to addressing your privacy concerns promptly and transparently.
           </p>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -424,7 +424,7 @@ const PrivacyPolicy = () => {
               </div>
               <h4 className="text-xl font-semibold mb-2 text-gray-900">Email Support</h4>
               <p className="text-green-600 text-sm mb-3">Written privacy inquiries</p>
-              <p className="text-gray-900 font-medium">info@sevashiksha.com</p>
+              <p className="text-gray-900 font-medium">info@sevashiksha.in</p>
             </div>
             
             <div className="text-center group">
